@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fichie de Stager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- START FORM BODY -->
+    <div id="container">
+      <header>
+        <img src="src/logo.png">
+        <h1>Fiche de stagiare</h1>
+      </header>
+  
+      <form action="action_page.php" method="post">
+        <fieldset>
+          <legend>Fields marked with * are required</legend>
+          <br />
+  
+          <!-- START DIV part-1 PERSONAL INFORMATION -->
+          <div id="part-1">
+            <h2>LES INFORMATIONS PERSONNELLES</h2>
+            <label for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name" required>
+            <br />
+            <label for="last-name">Last Name</label>
+            <input type="text" name="last-name" id="last-name" required>
+            <br />
+            <label for="cin">CIN</label>
+            <input type="text" name="cin" id="cin" required>
+            <br />
+            <label for="birthdate">Birth Date</label>
+            <input type="date" name="birthdate" min="1917-01-01" id="birthdate" required>
+            <br />
+            <label for="birtplace">Birth Place</label>
+            <input type="text" name="birtplace" id="birtplace" required>
+            <br />
+            <label for="filiere">Filiere</label>
+            <input type="text" name="filiere" id="filiere" required>
+            <br />
+            <label for="niveau">Niveau</label>
+            <input type="text" name="niveau" id="niveau" required>
+            <br />
+            <label for="etablissement-scoliare">Etablissement Scoliare</label>
+            <input type="text" name="etablissement-scoliare" id="etablissement-scoliare" required>
+            <br />
+            <br />
+          </div>
+          <!-- END DIV part-1 PERSONAL INFORMATION -->
+          <br />
+  
+          <!-- START DIV part-2 DETAILS DU STAGE -->
+          <div id="part-2">
+            <h2>DETAILS DU STAGE</h2>
+            <div class="pds">
+                <div>
+                <label for="periode-du-stage">Période du stage</label>
+                <input type="date" name="periode-du-stage" id="periode-du-stage" required>
+                </div>
+                <div>
+                    <label for="birthdate">a</label>
+                    <input type="date" name="a" id="a" required>
+                </div>
+            </div>
+            <label for="valid1">Validé par (Prénom & Nom et poste de responsable au sien d’établissement)</label>
+            <input type="text" name="valid1" id="valid1" required>
+            <label for="valid2">Validé par (Prénom & Nom et poste de responsable au sien d’entreprise)</label>
+            <input type="text" name="valid2" id="valid2" required>
+          </div>
+          <!-- END DIV part-2 DETAILS DU STAGE -->
+          <br /><br />
+          <button type="button" name="button" id="submitButton" onclick="stagaire()">
+            Submit
+        </button>
+          <input type="reset" id="resetButton" value="Reset all info" tabindex="-1">
+        </fieldset>
+      </form>
+    </div>
+    <!-- END FORM BODY -->
+    <script src="app.js"></script>
+  </body>
+  
+</html>

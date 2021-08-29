@@ -1,0 +1,29 @@
+
+body{
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    background-color: whitesmoke;
+    padding-top: 80px;
+}
+
+.container{
+    border: 2px solid cornflowerblue;
+    margin: auto;
+    width: 500px;
+    min-height: 900px;
+    background-color: cornsilk;
+}
+
+.container h2{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    color: cornflowerblue;
+}
+
+.form{
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

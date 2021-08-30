@@ -29,7 +29,20 @@ stagaireForm.push(stageend);
 stagaireForm.push(validpar1);
 stagaireForm.push(validpar2);
 console.log(stagaireForm);
-sessionStorage.setItem('fichedustagaire', JSON.stringify(stagaireForm));
- window.location.replace("fichiedustagaire.html");
+var url = "http://swapi.co/api/";
+
+$.ajax({
+  type: "POST",
+  url: url,
+  data: JSON.stringify(stagaireForm),
+  contentType: "application/json; charset=utf-8",
+  dataType: "json",
+  error: function() {
+    alert("Error");
+  },
+  success: function() {
+    alert("OK");
+  }
+});
 }
 

@@ -55,14 +55,20 @@ body{
     border: solid #117DB0 2px;
     border-radius: 10px;
     padding: 10px;
+    margin: auto;
 }
 
 .info-input{
-    text-align: center;
+    text-align: left;
     padding: 2px;
 }
 
 .input-title{
+    float: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+.input-title-large{
     font-weight: bold;
     font-size: 20px;
 }
@@ -77,12 +83,21 @@ body{
 }
 
 .signatures{
-    padding-top: 40px;
-    width: 900px;
+    padding-top: 20px;
+    width: 80%;
     margin: auto;
 }
-
-.signature{
+.signature1{
+    float: left;
+    width: 25%;
+}
+.signature2{
+    float: left;
+    width: 50%;
+}
+.signature3{
+    float: right;
+    width: 25%;
 }
 
 .sign{
@@ -95,7 +110,7 @@ body{
 }
 
 .tail{
-    padding-top: 50px;
+    padding-top: 80px;
     font-size: 15px;
     text-align: center;
 }

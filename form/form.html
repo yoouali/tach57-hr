@@ -6,12 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="from.js"></script>
 </head>
 <body>
     <div class="container">
         <h2>LES INFORMATIONS PERSONAILES</h2>
-        <form action="form.html" method="GET" class="form">
+        <form   method="post" class="form">
+            <div class="input-groupe">
+                <input id="cin" type="text" name="cin" placeholder="CIN" required>
+            </div>
+            <div class="input-groupe">
+                <input id="prenom" type="text" name="Prenom" placeholder="Prenom" required>
+            </div>
+            <div class="input-groupe">
+                <input id="nom" type="text" name="Nom" placeholder="Nom" required>
+            </div>
+            <div class="input-groupe">
+                <input id="email" type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-groupe">
+                <input id="tel" type="text" name="tel" placeholder="Tel" required>
+            </div>
+            <div class="input-groupe">
+                <input id="datedenaisance" type="text" name="datedenaisance" placeholder="MM/DD/YYYY"
+                onfocus="(this.type='date')" required onblur="(this.type='text')">
+            </div>
+            <div class="input-groupe">
+                <input id="lieudenaisance" type="text" name="lieudenaisance" placeholder="lieu de naisance" required>
+            </div>
+
+            <button class="input-button" onclick="submitform()">SUBMIT</button>
         </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
 </body>
 </html>

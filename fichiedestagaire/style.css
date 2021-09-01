@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+html{
+    width: 595px;
+    height: 842px;
+}
 body{
-    width:100%;
-    height:100%;
+    width:595px;
+    height:842px;
     background-color: darkgray;
 }
 
@@ -20,13 +24,13 @@ body{
 
 .fiche{
     margin: auto;
-    width: 1000px;
-    height: 1124px;
+    width: 100%;
+    height: 100%;
     background-color: white;
 }
 
 .logo{
-    width:500px;
+    width:300px;
     margin: auto;
 }
 
@@ -36,7 +40,7 @@ body{
 
 .title{
     font-weight: bold;
-    font-size: 30px;
+    font-size: small;
     color: #117DB0;
 }
 
@@ -47,14 +51,14 @@ body{
 .info-title{
     font-weight: bold;
     color: #4B4B4D;
-    font-size: 26px;
+    font-size: small;
 }
 
 .info{
-    width: 800px;
+    width: 500px;
     border: solid #117DB0 2px;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: small;
+    padding: 2px;
     margin: auto;
 }
 
@@ -66,15 +70,15 @@ body{
 .input-title{
     float: left;
     font-weight: bold;
-    font-size: 20px;
+    font-size: small;
 }
 .input-title-large{
     font-weight: bold;
-    font-size: 20px;
+    font-size: small;
 }
 
 .input-text{
-    font-size: 20px;   
+    font-size: small;   
 }
 
 .info-input-large{
@@ -101,16 +105,16 @@ body{
 }
 
 .sign{
-    font-size:20px ;
+    font-size:small ;
 }
 
 .sign-of{
-    font-size: 20px;
+    font-size: small;
     font-weight: bold;
 }
 
 .tail{
-    padding-top: 80px;
-    font-size: 15px;
+    padding-top: 20px;
+    font-size: small;
     text-align: center;
 }

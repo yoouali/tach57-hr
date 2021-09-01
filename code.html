@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche de Stager</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    width: 595px;
+    height: 842px;
+}
+body{
+    width:595px;
+    height:842px;
+    background-color: darkgray;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: darkgray;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.fiche{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.logo{
+    width:300px;
+    margin: auto;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.title{
+    font-weight: bold;
+    font-size: small;
+    color: #117DB0;
+}
+
+.information{
+    text-align: center;
+}
+
+.info-title{
+    font-weight: bold;
+    color: #4B4B4D;
+    font-size: small;
+}
+
+.info{
+    width: 500px;
+    border: solid #117DB0 2px;
+    border-radius: small;
+    padding: 2px;
+    margin: auto;
+}
+
+.info-input{
+    text-align: left;
+    padding: 2px;
+}
+
+.input-title{
+    float: left;
+    font-weight: bold;
+    font-size: small;
+}
+.input-title-large{
+    font-weight: bold;
+    font-size: small;
+}
+
+.input-text{
+    font-size: small;   
+}
+
+.info-input-large{
+    padding: 2px;
+    text-align: left;
+}
+
+.signatures{
+    padding-top: 20px;
+    width: 80%;
+    margin: auto;
+}
+.signature1{
+    float: left;
+    width: 25%;
+}
+.signature2{
+    float: left;
+    width: 50%;
+}
+.signature3{
+    float: right;
+    width: 25%;
+}
+
+.sign{
+    font-size:small ;
+}
+
+.sign-of{
+    font-size: small;
+    font-weight: bold;
+}
+
+.tail{
+    padding-top: 20px;
+    font-size: small;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div id="pdf" class="container">
+        <div class="fiche" id="fi">
+            <p class="title">FICHE DE STAGAIRE</p>
+            <br>
+            <div class="informations">
+                <p class="info-title">LES INFORMATIONS PERSONNELLES</p>
+                <div class="info">
+                    <div class="info-input">
+                        <p class="input-title">CIN :</p>
+                        <p class="input-text" id="cin">Q35353535</p>
+                    </div>
+                    <div class="info-input">
+                        <p class="input-title">Prenom :</p>
+                        <p class="input-text" id="prenom">YOUSSEF</p>
+                    </div>
+                    <div class="info-input">
+                        <p class="input-title">Nom :</p>
+                        <p class="input-text" id="nom">OUALI</p>
+                    </div>
+                        <div class="info-input">
+                            <p class="input-title">Date de naissance et lieu :</p>
+                            <p class="input-text" id="datedenais">11 / 10 / 1998</p>
+                        </div>
+                        <div class="info-input">
+                            <p class="input-title">  a :</p>
+                            <p class="input-text" id="lieudenais">LAMHARA TAROUDANT</p>
+                        </div>
+                    <div class="info-input">
+                        <p class="input-title">Filiere :</p>
+                        <p class="input-text" id="filiere">DEVELOPMENT INFORMATIQUE</p>  
+                    </div>
+                    <div class="info-input">
+                        <p class="input-title">Niveau :</p>
+                        <p class="input-text" id="niveau">JENIOR</p>
+                    </div>
+                    <div class="info-input">
+                        <p class="input-title">Etablissement Scoliare :</p>
+                        <p class="input-text" id="etablissementscoliare">1337 - KHOURIBGA</p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <p class="info-title">DETAILS DU STAGE</p>
+                <div class="info">
+                    <div class="info-input">
+                        <p class="input-title">Sujet du stage : </p>
+                        <p class="input-text" id="sujetdestage">FRONT-END DEVELOPER AT TECH-57</p>
+                    </div>
+                    <br>
+                    <div class="date-input">
+                        <div class="info-input">
+                            <p class="input-title">Période du stage :</p>
+                            <p class="input-text" id="datedestage1">25 - 08 - 2021</p>
+                        </div>
+                        <div class="info-input">
+                            <p class="input-title">  à :</p>
+                            <p class="input-text" id="datedestage2">25 - 02 - 2022</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="info-input-large">
+                        <p class="input-title-large">Validé par (Prénom & Nom et poste de responsable au sien d’établissement) :</p>
+                        <p class="input-text" id="validpar1">OGALO LHAJ LEARBI MAT</p>
+                    </div>
+                    <br>
+                    <div class="info-input-large">
+                        <p class="input-title-large">Validé par (Prénom & Nom et poste de responsable au sien d’entreprise) :</p>
+                        <p class="input-text" id="validpar2">OGALO LHAJ LEARBI MAT</p>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="signatures">
+                <div class="signature1">
+                    <p class="sign">Signature</p>
+                    <p class="sign-of">Stagiaire</p>
+                </div>
+                <div class="signature2">
+                    <p class="sign">Signature</p>
+                    <p class="sign-of">Directeur d’établissement</p>
+                </div>
+                <div class="signature3">
+                    <p class="sign">Signature</p>
+                    <p class="sign-of">Directeur d’établissement</p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="tail">
+                <p class="tail-text">N°4, Bloc « Q », BV 16 Novembre, Nahda, Khouribga</p>
+                <p class="tail-text">Tél : +212 650 299 812 | Patente : 42000637 | RC : 5869 | CNSS : 1537829 | IFC : 37611931            </p>
+                <p class="tail-text">E-mail : contact@tech57.ma |  www.tech57.ma</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

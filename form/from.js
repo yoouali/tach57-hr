@@ -46,7 +46,7 @@ function submitform(){
 var xhr = new XMLHttpRequest();
 
 xhr.open("POST", url);
-// xhr.responseType = "blob";
+xhr.responseType = "blob";
 xhr.setRequestHeader("Accept", "application/json");
 xhr.setRequestHeader("Content-Type", "application/json");
 
@@ -56,12 +56,10 @@ xhr.onreadystatechange = function () {
       console.log(xhr.status);
       console.log(xhr.response);
     
-   //  var blob = new Blob([xhr.response], {type: "application/pdf;charset=utf-8"});
-   //  console.log(blob);
+    var blob = new Blob([xhr.response], {type: "application/pdf"});
+    console.log(blob);
 
-   //    saveAs(blob, "test.pdf")
-   const pdf = 'https://stagiaire.herokuapp.com/' + xhr.responseText;
-   window.open(pdf);
+      saveAs(blob, "test.pdf")
    }};
    xhr.send(form);
 }

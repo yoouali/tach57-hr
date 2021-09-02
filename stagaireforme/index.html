@@ -52,7 +52,7 @@
                 <p>DETAILS DU STAGE</p>
                 <form class="form">
                     <div class="input-groupe">
-                        <input id="Sujetdestage" name="Sujetdestage" type="text" placeholder=" " class="input">
+                        <input id="Sujetdestage" name="Sujetdestage" type="text" placeholder=" " class="input" required>
                         <label for="Sujetdestage" class="label"><span>Sujet de stage</span></label>
                     </div>
                     <div class="input-groupe">
@@ -63,10 +63,52 @@
                         <input id="Datedefin" name="Datedefin" type="text" placeholder=" " class="input">
                         <label for="Datedefin" class="label"><span>Date de fin</span></label>
                     </div>
-                    
+                    <div class="input-checkbox-groupe">
+                        <div class="radio-group">
+                            <label for="typedestage">Libre</label>
+                            <input id="libre" name="typedestage" type="radio" placeholder=" ">
+                        </div>
+                        <div class="radio-group">
+                            <label for="typedestage">PFE</label>
+                            <input id="pfe" name="typedestage" type="radio" placeholder=" ">
+                        </div>
+                        <div class="radio-group">
+                            <label for="typedestage">PFA</label>
+                            <input id="pfa" name="typedestage" type="radio" placeholder=" ">
+                        </div>
+                    </div>
                 </form>
             </div>
         </section>
     </div>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        var fileList;
+        function writepdf(file){
+            console.log(file)
+        }
+        const fileSelector = document.getElementById('Convention');
+        fileSelector.addEventListener('change', (event) => {
+        fileList = event.target.files;
+        writepdf(fileList);
+  });
+    console.log(fileList);
+    const url = "https://stagiaire.herokuapp.com/api/stagiaire/store";
+    var formData = new FormData();
+    formData.append("thefile", fileList);
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+        var a;
+        if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.status);
+        console.log(xhr.response);
+    }};
+     xhr.send(formData);
+    </script> -->
 </body>
 </html>

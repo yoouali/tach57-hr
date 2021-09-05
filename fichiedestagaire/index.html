@@ -7,6 +7,7 @@
     <title>Fiche de Stager</title>
     <script src="html2pdf.bundle.min.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
         *{
     margin: 0;
     padding: 0;
@@ -22,20 +23,24 @@ body{
     width: 100%;
     height: 100%;
     margin: auto;
-    background-color: red;
+    padding: 0;
+    background-color: white;
     text-align: center;
 }
 
 .fiche{
     margin: auto;
-    width: 595px;
-    height: 843px;
+    width: 794px;
+    height: 1100px;
     margin: auto;
     background-color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+margin-left: -10px;
 }
 
 .logo{
-    width:300px;
+    width:50%;
     margin: auto;
 }
 
@@ -45,7 +50,7 @@ body{
 
 .title{
     font-weight: bold;
-    font-size: small;
+    font-size: large;
     color: #117DB0;
 }
 
@@ -56,34 +61,37 @@ body{
 .info-title{
     font-weight: bold;
     color: #4B4B4D;
-    font-size: small;
+    font-size: x-large;
 }
 
 .info{
-    width: 500px;
+    width: 80%;
     border: solid #117DB0 2px;
     border-radius: 10px;
-    padding: 2px;
+    padding: 5px;
     margin: auto;
 }
 
 .info-input{
     text-align: left;
-    padding: 2px;
+    padding: 5px;
 }
 
 .input-title{
     float: left;
     font-weight: bold;
-    font-size: small;
+    font-size: medium;
+    padding-right: 5px;
 }
 .input-title-large{
     font-weight: bold;
-    font-size: small;
+    font-size: medium;
 }
 
 .input-text{
-    font-size: small;   
+    font-size: bold;
+    font-weight: 400;
+    color: black;
 }
 
 .info-input-large{
@@ -92,9 +100,10 @@ body{
 }
 
 .signatures{
-    padding-top: 20px;
-    width: 80%;
+    padding-top: 10px;
+    width: 90%;
     margin: auto;
+    margin-right: 60px;
 }
 .signature1{
     float: left;
@@ -110,7 +119,7 @@ body{
 }
 
 .sign{
-    font-size:small ;
+    font-size:small;
 }
 
 .sign-of{
@@ -119,7 +128,7 @@ body{
 }
 
 .tail{
-    padding-top: 20px;
+    padding-top: 120px;
     font-size: small;
     text-align: center;
 }
@@ -177,7 +186,6 @@ body{
                         <p class="input-title">Sujet du stage : </p>
                         <p class="input-text" id="sujetdestage">FRONT-END DEVELOPER AT TECH-57</p>
                     </div>
-                    <br>
                     <div class="date-input">
                         <div class="info-input">
                             <p class="input-title">Période du stage :</p>
@@ -188,7 +196,6 @@ body{
                             <p class="input-text" id="datedestage2">25 - 02 - 2022</p>
                         </div>
                     </div>
-                    <br>
                     <div class="info-input-large">
                         <p class="input-title-large">Validé par (Prénom & Nom et poste de responsable au sien d’établissement) :</p>
                         <p class="input-text" id="validpar1">OGALO LHAJ LEARBI MAT</p>
@@ -201,7 +208,6 @@ body{
                     <br>
                 </div>
             </div>
-            <br>
             <br>
             <div class="signatures">
                 <div class="signature1">
@@ -217,10 +223,6 @@ body{
                     <p class="sign-of">Directeur d’établissement</p>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
             <div class="tail">
                 <p class="tail-text">N°4, Bloc « Q », BV 16 Novembre, Nahda, Khouribga</p>
                 <p class="tail-text">Tél : +212 650 299 812 | Patente : 42000637 | RC : 5869 | CNSS : 1537829 | IFC : 37611931            </p>
@@ -236,8 +238,8 @@ body{
         <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script>
         const element = document.getElementById('contnet');
-        // const element = document.getElementsByName('body');
         html2pdf().from(element).save();
+        setTimeout("window.close()",1500) 
     </script>
 </body>
 </html>

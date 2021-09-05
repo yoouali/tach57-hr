@@ -245,7 +245,7 @@ body{
 .info-title{
     font-weight: bold;
     color: #4B4B4D;
-    font-size: small;
+    font-size: x-small;
 }
 
 .info{
@@ -264,20 +264,19 @@ body{
 
 .input-title{
     float: left;
-    font-weight: bolder;
+    font-weight: bold;
     font-size: xx-small;
     padding-right: 5px;
     color: black;
 
 }
 .input-title-large{
-    font-weight: bolder;
-    font-size: xx-small;
+    font-weight: bold;
+    font-size:xx-small;
     color: black;
 }
 
 .input-text{
-    font-weight: bold;
     font-size: xx-small;
     color: black;
 }

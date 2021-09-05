@@ -239,7 +239,9 @@ margin-left: -10px;
     <script>
         const element = document.getElementById('contnet');
         html2pdf().from(element).save();
-        setTimeout("window.close()",1500) 
+        setTimeout(function(){
+            window.close()
+        },2000) 
     </script>
 </body>
 </html>

@@ -20,9 +20,10 @@
                 <div class="check-point default-point"></div>
             </div>
             <div class="box">
+            <form name="myform">
             <div id="per" class="stagaire-form">
                 <p>LES INFORMATION PERSONNELES</p>
-                <form class="form">
+                <div class="form">
                     <div class="double-input-groupe">
                         <div class="double-input">
                         <input id="Prenom" name="Prenom" type="text" placeholder=" " class="input">
@@ -46,33 +47,35 @@
                         <label for="Email" class="label"><span>Email</span></label>
                     </div>
                     <div class="input-groupe">
-                        <input id="Datedenaisance" name="Datedenaisance" type="text" placeholder=" " class="input" onfocus="(this.type='date')" required onblur="(this.type='text')">
+                        <input id="Datedenaisance" name="Datedenaisance" type="text" placeholder=" " class="input" onfocus="(this.type='date')"  onblur="(this.type='text')">
                         <label for="Datedenaisance" class="label"><span>Date de naisance</span></label>
                     </div>
                     <div class="input-groupe">
                         <input id="Lieudenaisance" name="Lieudenaisance" type="text" placeholder=" " class="input">
                         <label for="Lieudenaisance" class="label"><span>Lieu de naisance</span></label>
                     </div>
-                </form>
+                </div>
+                <p id="move-error"></p>
+                <button id="move1" type="button">move</button>
             </div>
             <div  id="det" class="stagaire-form">
                 <p>DETAILS DU STAGE</p>
-                <form class="form">
+                <div class="form">
                     <div class="input-groupe">
-                        <input id="Sujetdestage" name="Sujetdestage" type="text" placeholder=" " class="input" required>
+                        <input id="Sujetdestage" name="Sujetdestage" type="text" placeholder=" " class="input" >
                         <label for="Sujetdestage" class="label"><span>Sujet de stage</span></label>
                     </div>
                     <div class="double-input-groupe">
                     <div class="double-input">
-                        <input id="Datededebut" name="Datededebut" type="text" placeholder=" " onfocus="(this.type='date')" required onblur="(this.type='text')" class="input">
+                        <input id="Datededebut" name="Datededebut" type="text" placeholder=" " onfocus="(this.type='date')"  onblur="(this.type='text')" class="input">
                         <label for="Datededebut" class="label"><span>Date de debut</span></label>
                     </div>
                     <div class="double-input">
-                        <input id="Datedefin" name="Datedefin" type="text" placeholder=" " onfocus="(this.type='date')" required onblur="(this.type='text')" class="input">
+                        <input id="Datedefin" name="Datedefin" type="text" placeholder=" " onfocus="(this.type='date')"  onblur="(this.type='text')" class="input">
                         <label for="Datedefin" class="label"><span>Date de fin</span></label>
                     </div>
                 </div>
-                    <div class="input-checkbox-groupe">
+                    <!-- <div class="input-checkbox-groupe">
                         <span>Type de stage</span>
                         <div class="radio-group">
                             <label for="typedestage">Libre</label>
@@ -86,22 +89,33 @@
                             <label for="typedestage">PFA</label>
                             <input id="pfa" name="typedestage" type="radio" placeholder=" ">
                         </div>
+                    </div> -->
+                    <div class="slecte input-groupe">
+                        <select id="typedestage" name="typedestage">
+                            <option value="libre">Libre</option>
+                            <option value="pfa">PFA</option>
+                            <option value="pfe">PFE</option>
+                            <option value="application">APPLICATION</option>
+                          </select>
                     </div>
-                    <div class="input-groupe">
-                        <input id="Convention" name="Convention" accept=".pdf" type="file" placeholder=" " class="input" required>
+                    <div class="input-groupe" id="conv-group">
+                        <input id="Convention" name="Convention" accept=".pdf" type="file" placeholder=" " class="input" >
                         <label for="Convention" class="label"><span>Convention</span></label>
                     </div>
                     <div class="input-groupe">
-                        <input id="Assurance" name="Assurance" accept=".pdf" type="file" placeholder=" " class="input" required>
+                        <input id="Assurance" name="Assurance" accept=".pdf" type="file" placeholder=" " class="input" >
                         <label for="Assurance" class="label"><span>Assurance</span></label>
                     </div>
                     <div class="input-groupe">
-                        <input id="cv" name="cv" type="file" placeholder=" " class="input" required>
+                        <input id="cv" name="cv" type="file" placeholder=" " class="input" >
                         <label for="cv" class="label"><span>CV</span></label>
                     </div>
-                </form>
+                </div>
+                <button id="move2" type="button">back</button>
+                <button type="submit">submit</button>
             </div>
         </div>
+    </form>
         <div class="fichedustagiare">
             <div id="contnet" class="container">
                 <div class="fiche" id="fi">
@@ -115,23 +129,23 @@
                         <div class="info">
                             <div class="info-input">
                                 <p class="input-title">CIN :</p>
-                                <p class="input-text" id="cin">Q35353535</p>
+                                <p class="input-text" id="cin"></p>
                             </div>
                             <div class="info-input">
                                 <p class="input-title">Prenom :</p>
-                                <p class="input-text" id="prenom">YOUSSEF</p>
+                                <p class="input-text" id="prenom"></p>
                             </div>
                             <div class="info-input">
                                 <p class="input-title">Nom :</p>
-                                <p class="input-text" id="nom">OUALI</p>
+                                <p class="input-text" id="nom"></p>
                             </div>
                                 <div class="info-input">
                                     <p class="input-title">Date de naissance et lieu :</p>
-                                    <p class="input-text" id="datedenais">11 / 10 / 1998</p>
+                                    <p class="input-text" id="datedenais"></p>
                                 </div>
                                 <div class="info-input">
                                     <p class="input-title">  a :</p>
-                                    <p class="input-text" id="lieudenais">LAMHARA TAROUDANT</p>
+                                    <p class="input-text" id="lieudenais"></p>
                                 </div>
                             <div class="info-input">
                                 <p class="input-title">Filiere :</p>
@@ -151,25 +165,25 @@
                         <div class="info">
                             <div class="info-input">
                                 <p class="input-title">Sujet du stage : </p>
-                                <p class="input-text" id="sujetdestage">FRONT-END DEVELOPER AT TECH-57</p>
+                                <p class="input-text" id="sujetdestage"></p>
                             </div>
                             <div class="date-input">
                                 <div class="info-input">
                                     <p class="input-title">Période du stage :</p>
-                                    <p class="input-text" id="datedestage1">25 - 08 - 2021</p>
+                                    <p class="input-text" id="datedestage1"></p>
                                 </div>
                                 <div class="info-input">
                                     <p class="input-title">  à :</p>
-                                    <p class="input-text" id="datedestage2">25 - 02 - 2022</p>
+                                    <p class="input-text" id="datedestage2"></p>
                                 </div>
                             </div>
                             <div class="info-input-large">
                                 <p class="input-title-large">Validé par (Prénom & Nom et poste de responsable au sien d’établissement) :</p>
-                                <p class="input-text" id="validpar1">OGALO LHAJ LEARBI MAT</p>
+                                <p class="input-text" id="validpar1">       </p>
                             </div>
                             <div class="info-input-large">
                                 <p class="input-title-large">Validé par (Prénom & Nom et poste de responsable au sien d’entreprise) :</p>
-                                <p class="input-text" id="validpar2">OGALO LHAJ LEARBI MAT</p>
+                                <p class="input-text" id="validpar2">       </p>
                             </div>
                         </div>
                     </div>
@@ -201,42 +215,116 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
-        var fileList;
-        var cvlist;
-        function writepdf(file){
-            console.log(file)
-            var formData = new FormData();
-            formData.append("thefile", file);
+        var slectestage = document.getElementById("typedestage");
+        var conv = document.getElementById("conv-group");
+            var value = slectestage.value;
+            if (value === "libre"){
+                conv.style.display="none";
+            }
+            else {
+                conv.style.display="block";
         }
-        const fileSelector = document.getElementById('Convention');
-        fileSelector.addEventListener('change', (event) => {
-        fileList = event.target.files;
-        writepdf(fileList);
-  });
-  function writecv(file){
-            console.log(file)
+        var movebutun = document.getElementById('move1');
+        movebutun.addEventListener("click", function(){
+
+            if (!validatemove())
+            {
+            var side1 = document.getElementById('per');
+            var side2 = document.getElementById('det');
+            side1.classList.remove("move2in");
+            side1.classList.add("moveout");
+            side2.classList.remove("move2out");
+            side2.classList.add("movein");
+            }
+        })
+        var backbutton = document.getElementById('move2');
+        backbutton.addEventListener("click", function(){
+            var side1 = document.getElementById('per');
+            var side2 = document.getElementById('det');
+            side1.classList.remove("moveout")
+            side1.classList.add("move2in");
+            side1.classList.remove("movein")
+            side2.classList.add("move2out");
+        })
+
+        function validatemove() {
+            var moveerror = document.getElementById("move-error");
+            let x1 = document.forms["myform"]["Prenom"].value;
+            let x2 = document.forms["myform"]["Nom"].value;
+            let x3 = document.forms["myform"]["CIN"].value;
+            let x4 = document.forms["myform"]["TEL"].value;
+            let x5 = document.forms["myform"]["Email"].value;
+            let x6 = document.forms["myform"]["Datedenaisance"].value;
+            let x7 = document.forms["myform"]["Lieudenaisance"].value;
+            if([x1, x2, x3, x4, x5, x6, x7].includes(""))
+            {
+                moveerror.innerText = "please fill all the fields";
+                setTimeout(function(){
+                    moveerror.innerText = "";
+                }, 5000)
+                return false;
+            }
+            if (!emailRegex.test(x5))
+            {
+                    moveerror.innerText = "email invalid";
+                setTimeout(function(){
+                    moveerror.innerText = "";
+                }, 5000)
+                return false;
+            }
+            return true;
         }
-        const filecv = document.getElementById('cv');
-        filecv.addEventListener('change', (event) => {
-        cvList = event.target.files;
-        writecv(cvList);
-  });
-    console.log(fileList);
+        let emailRegex = new RegExp(
+        /^(?!.{150})(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+        slectestage.addEventListener("change", function(e){
+            var value = e.target.value;
+            if (value === "libre"){
+                conv.style.display="none";
+            }
+            else {
+                conv.style.display="block";
+            }
+        })
     const url = "https://stagiaire.herokuapp.com/api/stagiaire/store";
-
-    // var xhr = new XMLHttpRequest();
-
-    // xhr.open("POST", url);
-    // xhr.setRequestHeader("Accept", "application/json");
-    // xhr.setRequestHeader("Content-Type", "application/json");
-
-    // xhr.onreadystatechange = function () {
-    //     var a;
-    //     if (xhr.readyState === 4 && xhr.status === 200) {
-    //     console.log(xhr.status);
-    //     console.log(xhr.response);
-    // }};
-    //  xhr.send(formData);
+    let formElement = document.querySelector("form");
+    formElement.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let formData = new FormData(formElement);
+    setfichedustage();
+    for (var [key, value] of formData.entries()) { 
+    console.log(key, value);
+    }
+    let request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.onreadystatechange = function () {
+  if(request.readyState === XMLHttpRequest.DONE) {
+      var status = request.status;
+      if (status === 0 || (status >= 200 && status < 400)) {
+        // The request has been completed successfully
+        // console.log(request.responseText);
+      } else {
+        // Oh no! There has been an error with the request!
+      }
+    }
+}
+    request.send(formData);
+})
+    function setfichedustage(){
+    var data = [];
+    var cin = document.getElementById("CIN").value;
+    var prenom = document.getElementById("Prenom").value;
+    var nom = document.getElementById("Nom").value;
+    var datedenaisance = document.getElementById("Datedenaisance").value; 
+    var lieudenaisance = document.getElementById("Lieudenaisance").value;
+    var datededebut = document.getElementById("Datededebut").value; 
+    var datedefin = document.getElementById("Datededebut").value;
+    console.log("0000000000000000000000000000000");
+    document.getElementById("cin").innerText = cin;
+    document.getElementById("prenom").innerText = prenom;
+    document.getElementById("nom").innerText = nom;
+    document.getElementById("datedenais").innerText = datedenaisance;
+    }
     </script>
 </body>
 </html>

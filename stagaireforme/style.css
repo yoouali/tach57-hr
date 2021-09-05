@@ -69,15 +69,15 @@ body{
     padding-bottom: 15px;
     background-color: #117DB0;
     text-align: center;
-    /* position: absolute; */
+    position: absolute;
 }
-/* 
+
 .box{
     position: relative;
     width: 100%;
     height: 430px;
     overflow: hidden;
-} */
+}
 
 .stagaire-form p{
     width: 70%;
@@ -207,6 +207,7 @@ body{
     padding-bottom: 10px;
     font-family: 'Poppins';
     font-style: normal;
+    /* display: none; */
 }
 
 .container{
@@ -317,15 +318,43 @@ body{
     font-size: xx-small;
     text-align: center;
 }
-/* #det{
+
+.move-disabled{
+    opacity: 50%;
+}
+
+.move-enabled{
+    opacity: unset;
+}
+
+ #det{
     left: +100%;
 }
 
-.box:hover #det {
-    -webkit-transition: all 1s, -webkit-transform 1s;
-    transition: all 1s, transform 1s;
+#per{
     left: 0;
-} */
+}
+
+.movein {
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    left: 0 !important;
+}
+.moveout {
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    left: -100% !important;
+}
+.move2in {
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    left: 0% !important;
+}
+.move2out {
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    left: 100% !important;
+}
 /* .box:hover #det {
     -webkit-transition: all 1s, -webkit-transform 1s;
     transition: all 1s, transform 1s;

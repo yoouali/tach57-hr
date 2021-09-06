@@ -19,7 +19,7 @@
                 <div class="check-point default-point"></div>
                 <div class="check-point default-point"></div>
             </div>
-            <div class="box">
+            <div id="box" class="box">
             <form name="myform">
             <div id="per" class="stagaire-form">
                 <p>LES INFORMATION PERSONNELES</p>
@@ -116,7 +116,7 @@
             </div>
         </div>
     </form>
-        <div class="fichedustagiare">
+        <div id="fichedustagaire" class="fichedustagiare">
             <div id="contnet" class="container">
                 <div class="fiche" id="fi">
                     <div class="logo">
@@ -170,20 +170,20 @@
                             <div class="date-input">
                                 <div class="info-input">
                                     <p class="input-title">Période du stage :</p>
-                                    <p class="input-text" id="datedestage1"></p>
+                                    <p class="input-text" id="periodedustage"></p>
                                 </div>
                                 <div class="info-input">
                                     <p class="input-title">  à :</p>
-                                    <p class="input-text" id="datedestage2"></p>
+                                    <p class="input-text" id="datedefin"></p>
                                 </div>
                             </div>
                             <div class="info-input-large">
                                 <p class="input-title-large">Validé par (Prénom & Nom et poste de responsable au sien d’établissement) :</p>
-                                <p class="input-text" id="validpar1">       </p>
+                                <p class="input-text" id="validpar1">   </p>
                             </div>
                             <div class="info-input-large">
                                 <p class="input-title-large">Validé par (Prénom & Nom et poste de responsable au sien d’entreprise) :</p>
-                                <p class="input-text" id="validpar2">       </p>
+                                <p class="input-text" id="validpar2">   </p>
                             </div>
                         </div>
                     </div>
@@ -210,11 +210,14 @@
                     </div>
                 </div>
             </div>
+            <button id="telecharger">Telecharger</button>
         </div>
         </section>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
+        let formData;
+        const url = "https://stagiaire.herokuapp.com/api/stagiaire/store";
         var slectestage = document.getElementById("typedestage");
         var conv = document.getElementById("conv-group");
             var value = slectestage.value;
@@ -286,45 +289,88 @@
                 conv.style.display="block";
             }
         })
-    const url = "https://stagiaire.herokuapp.com/api/stagiaire/store";
     let formElement = document.querySelector("form");
+    formElement.addEventListener('keydown', (e) => {
+        if(e.keyCode === 13){
+        e.preventDefault();
+    }
+    })
     formElement.addEventListener('submit', (e) => {
     e.preventDefault();
-    let formData = new FormData(formElement);
+    formData = new FormData(formElement);
     setfichedustage();
-    for (var [key, value] of formData.entries()) { 
-    console.log(key, value);
-    }
-    let request = new XMLHttpRequest();
-    request.open("POST", url);
-    request.onreadystatechange = function () {
-  if(request.readyState === XMLHttpRequest.DONE) {
-      var status = request.status;
-      if (status === 0 || (status >= 200 && status < 400)) {
-        // The request has been completed successfully
-        // console.log(request.responseText);
-      } else {
-        // Oh no! There has been an error with the request!
-      }
-    }
-}
-    request.send(formData);
+    // for (var [key, value] of formData.entries()) { 
+    // console.log(key, value);
+    // }
+//     let request = new XMLHttpRequest();
+//     request.open("POST", url);
+//     request.onreadystatechange = function () {
+//   if(request.readyState === XMLHttpRequest.DONE) {
+//       var status = request.status;
+//       if (status === 0 || (status >= 200 && status < 400)) {
+//         // The request has been completed successfully
+//         // console.log(request.responseText);
+//       } else {
+//         // Oh no! There has been an error with the request!
+//       }
+//     }
+// }
+//     request.send(formData);
 })
     function setfichedustage(){
     var data = [];
+    document.getElementById("fichedustagaire").style.display = "block";
+    document.getElementById("box").style.display = "none";
     var cin = document.getElementById("CIN").value;
     var prenom = document.getElementById("Prenom").value;
     var nom = document.getElementById("Nom").value;
     var datedenaisance = document.getElementById("Datedenaisance").value; 
     var lieudenaisance = document.getElementById("Lieudenaisance").value;
-    var datededebut = document.getElementById("Datededebut").value; 
-    var datedefin = document.getElementById("Datededebut").value;
+    var datededebut = document.getElementById("Datededebut").value;
+    var datedefin = document.getElementById("Datedefin").value;
+    var sujet = document.getElementById("Sujetdestage").value;
+    data.push(cin);
+    data.push(prenom);
+    data.push(nom);
+    data.push(datedenaisance);
+    data.push(lieudenaisance);
+    data.push(sujet);
+    data.push(datededebut);
+    data.push(datedefin);
+    sessionStorage.setItem('fuchedustagaire', JSON.stringify(data));
+    console.log(JSON.stringify(data));
     console.log("0000000000000000000000000000000");
     document.getElementById("cin").innerText = cin;
     document.getElementById("prenom").innerText = prenom;
     document.getElementById("nom").innerText = nom;
     document.getElementById("datedenais").innerText = datedenaisance;
+    document.getElementById("lieudenais").innerText = lieudenaisance;
+    document.getElementById("periodedustage").innerText = datededebut;
+    document.getElementById("datedefin").innerText = datedefin;
+    document.getElementById("sujetdestage").innerText = sujet;
     }
+    var telecharger = document.getElementById("telecharger");
+    telecharger.addEventListener("click", (e) => {
+    window.open("./fichedestagaire.html");
+    // for (var [key, value] of formData.entries()) { 
+    // console.log(key, value); 
+    // let request = new XMLHttpRequest();
+    // request.open("POST", url);
+    // request.onreadystatechange = function () {
+    // if(request.readyState === XMLHttpRequest.DONE) {
+    // var status = request.status;
+    // if (status === 0 || (status >= 200 && status < 400)) {
+    //         // The request has been completed successfully
+    //         // console.log(request.responseText);
+    //     } else {
+    //         // Oh no! There has been an error with the request!
+    //     }
+    //     }
+    // }
+    // request.send(formData);
+    // }
+
+    })
     </script>
 </body>
 </html>

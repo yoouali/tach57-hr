@@ -147,23 +147,23 @@ margin-left: -10px;
                 <div class="info">
                     <div class="info-input">
                         <p class="input-title">CIN :</p>
-                        <p class="input-text" id="cin">Q35353535</p>
+                        <p class="input-text" id="cin"></p>
                     </div>
                     <div class="info-input">
                         <p class="input-title">Prenom :</p>
-                        <p class="input-text" id="prenom">YOUSSEF</p>
+                        <p class="input-text" id="prenom"></p>
                     </div>
                     <div class="info-input">
                         <p class="input-title">Nom :</p>
-                        <p class="input-text" id="nom">OUALI</p>
+                        <p class="input-text" id="nom"></p>
                     </div>
                         <div class="info-input">
                             <p class="input-title">Date de naissance et lieu :</p>
-                            <p class="input-text" id="datedenais">11 / 10 / 1998</p>
+                            <p class="input-text" id="datedenais"></p>
                         </div>
                         <div class="info-input">
                             <p class="input-title">  a :</p>
-                            <p class="input-text" id="lieudenais">LAMHARA TAROUDANT</p>
+                            <p class="input-text" id="lieudenais"></p>
                         </div>
                     <div class="info-input">
                         <p class="input-title">Filiere :</p>
@@ -184,16 +184,16 @@ margin-left: -10px;
                 <div class="info">
                     <div class="info-input">
                         <p class="input-title">Sujet du stage : </p>
-                        <p class="input-text" id="sujetdestage">FRONT-END DEVELOPER AT TECH-57</p>
+                        <p class="input-text" id="sujetdestage"></p>
                     </div>
                     <div class="date-input">
                         <div class="info-input">
                             <p class="input-title">Période du stage :</p>
-                            <p class="input-text" id="datedestage1">25 - 08 - 2021</p>
+                            <p class="input-text" id="datedestage1"></p>
                         </div>
                         <div class="info-input">
                             <p class="input-title">  à :</p>
-                            <p class="input-text" id="datedestage2">25 - 02 - 2022</p>
+                            <p class="input-text" id="datedestage2"></p>
                         </div>
                     </div>
                     <div class="info-input-large">
@@ -237,6 +237,15 @@ margin-left: -10px;
         <script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake/browser.js"></script>
         <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script>
+        var data = sessionStorage.getItem('fichedustagaire');
+        document.getElementById("cin").innerText = data[0];
+        document.getElementById("prenom").innerText = data[1];
+        document.getElementById("nom").innerText = data[2];
+        document.getElementById("datedenais").innerText = data[3];
+        document.getElementById("lieudenais").innerText = data[4];
+        document.getElementById("sujetdestage").innerText = data[5];
+        document.getElementById("datedestage1").innerText = data[6];
+        document.getElementById("datedestage2").innerText = data[7];
         const element = document.getElementById('contnet');
         html2pdf().from(element).save();
         setTimeout(function(){

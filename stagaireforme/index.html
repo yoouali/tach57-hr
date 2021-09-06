@@ -338,8 +338,6 @@
     data.push(datededebut);
     data.push(datedefin);
     sessionStorage.setItem('fuchedustagaire', JSON.stringify(data));
-    console.log(JSON.stringify(data));
-    console.log("0000000000000000000000000000000");
     document.getElementById("cin").innerText = cin;
     document.getElementById("prenom").innerText = prenom;
     document.getElementById("nom").innerText = nom;
@@ -352,24 +350,22 @@
     var telecharger = document.getElementById("telecharger");
     telecharger.addEventListener("click", (e) => {
     window.open("./fichedestagaire.html");
-    // for (var [key, value] of formData.entries()) { 
-    // console.log(key, value); 
-    // let request = new XMLHttpRequest();
-    // request.open("POST", url);
-    // request.onreadystatechange = function () {
-    // if(request.readyState === XMLHttpRequest.DONE) {
-    // var status = request.status;
-    // if (status === 0 || (status >= 200 && status < 400)) {
-    //         // The request has been completed successfully
-    //         // console.log(request.responseText);
-    //     } else {
-    //         // Oh no! There has been an error with the request!
-    //     }
-    //     }
-    // }
-    // request.send(formData);
-    // }
-
+    for (var [key, value] of formData.entries()) { 
+    console.log(key, value); }
+    let request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.onreadystatechange = function () {
+    if(request.readyState === XMLHttpRequest.DONE) {
+    var status = request.status;
+    if (status === 0 || (status >= 200 && status < 400)) {
+            // The request has been completed successfully
+            console.log(request.responseText);
+        } else {
+            // Oh no! There has been an error with the request!
+        }
+        }
+    }
+    request.send(formData);
     })
     </script>
 </body>

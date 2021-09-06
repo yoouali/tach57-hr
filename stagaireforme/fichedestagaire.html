@@ -236,7 +236,6 @@ margin-left: -10px;
         <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script>
     var data1 = sessionStorage.getItem('fuchedustagaire');
-        console.log(data1);
         var data = JSON.parse(data1);
         document.getElementById("cin").innerText = data[0];
         document.getElementById("prenom").innerText = data[1];
@@ -248,9 +247,9 @@ margin-left: -10px;
         document.getElementById("datedestage2").innerText = data[7];
         const element = document.getElementById('contnet');
         html2pdf().from(element).save();
-        // setTimeout(function(){
-        //     window.close()
-        // },2000) 
+        setTimeout(function(){
+            window.close()
+        },1500) 
     </script>
 </body>
 </html>

@@ -237,6 +237,7 @@ margin-left: -10px;
     <script>
     var data1 = sessionStorage.getItem('fuchedustagaire');
         var data = JSON.parse(data1);
+        sessionStorage.clear();
         document.getElementById("cin").innerText = data[0];
         document.getElementById("prenom").innerText = data[1];
         document.getElementById("nom").innerText = data[2];

@@ -90,8 +90,9 @@
                             <input id="pfa" name="typedestage" type="radio" placeholder=" ">
                         </div>
                     </div> -->
-                    <div class="slecte input-groupe">
-                        <select id="typedestage" name="typedestage">
+                    <div  class="schools input-groupe">
+                        <select class="selecttion" id="typedestage" name="typedestage">
+                            <option value="">Type de stage</option>
                             <option value="libre">Libre</option>
                             <option value="pfa">PFA</option>
                             <option value="pfe">PFE</option>
@@ -99,8 +100,8 @@
                           </select>
                     </div>
                     <div id="scholls-groupe" class="schools input-groupe">
-                        <select name="schools" id="scholls">
-                            <option value="scholl">SCHOLL</option>
+                        <select class="selecttion" name="schools" id="scholls">
+                            <option value="">SCHOLL</option>
                             <option value="ENSA">ENSA</option>
                             <option value="1337">1337</option>
                             <option value="ISGIISTA">ISGI ISTA</option>
@@ -242,7 +243,7 @@
         var filniv = document.getElementById("filniv");
         var schollsgroupe = document.getElementById("scholls-groupe");
             var value = slectestage.value;
-            if (value === "libre"){
+            if (value === "libre" || value === ""){
                 conv.style.display="none";
                 schollsgroupe.style.display="none";
                 filniv.style.display="none";
@@ -250,7 +251,7 @@
             else {
                 conv.style.display="block";
                 schollsgroupe.style.display="block";
-                if(scholls.value !== "1337" && scholls.value !== "scholl")
+                if(scholls.value !== "1337" && scholls.value !== "")
                     filniv.style.display="flex";
         }
         var movebutun = document.getElementById('move1');
@@ -308,7 +309,7 @@
         );
         slectestage.addEventListener("change", function(e){
             var value = e.target.value;
-            if (value === "libre"){
+            if (value === "libre" || value === ""){
                 conv.style.display="none";
                 schollsgroupe.style.display="none";
                 filniv.style.display="none";
@@ -316,7 +317,7 @@
             else {
                 conv.style.display="block";
                 schollsgroupe.style.display="block";
-                if(scholls.value !== "1337" && scholls.value !== "scholl")
+                if(scholls.value !== "1337" && scholls.value !== "")
                     filniv.style.display="flex";
         }
         })
@@ -395,7 +396,7 @@
     document.getElementById("fil").innerText = filiere;
     document.getElementById("niv").innerText = niveau;
     document.getElementById("etablissementscoliare").innerText = scholl;
-    if (scholl === "scholl")
+    if (scholl === "")
         document.getElementById("etablissementscoliare-input").style.display="none";
     if (filiere === "")
         document.getElementById("fil-input").style.display="none";

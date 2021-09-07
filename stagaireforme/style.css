@@ -144,6 +144,26 @@ body{
     font-size: small;
 }
 
+.schools{
+    border: 1px solid white;
+    border-radius: 2px;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: small;
+}
+.selecttion{
+    height: 100%;
+    width: 100%;
+    background-color: #117DB0;
+    border: none;
+    color: white;
+    outline: none;
+    padding-left: 3px;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: small;
+}
+
 .label {
     display: block;
     transform: translate(0, -3rem);

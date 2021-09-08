@@ -47,12 +47,12 @@
                         <label for="Email" class="label"><span>Email</span></label>
                     </div>
                     <div class="input-groupe">
-                        <input id="Datedenaisance" name="Datedenaisance" type="text" placeholder=" " class="input" onfocus="(this.type='date')"  onblur="(this.type='text')">
-                        <label for="Datedenaisance" class="label"><span>Date de naisance</span></label>
+                        <input id="DateDeNaisance" name="DateDeNaisance" type="text" placeholder=" " class="input" onfocus="(this.type='date')"  onblur="(this.type='text')">
+                        <label for="DateDeNaisance" class="label"><span>Date de naisance</span></label>
                     </div>
                     <div class="input-groupe">
-                        <input id="Lieudenaisance" name="Lieudenaisance" type="text" placeholder=" " class="input">
-                        <label for="Lieudenaisance" class="label"><span>Lieu de naisance</span></label>
+                        <input id="LieuDeNaisance" name="LieuDeNaisance" type="text" placeholder=" " class="input">
+                        <label for="LieuDeNaisance" class="label"><span>Lieu de naisance</span></label>
                     </div>
                 </div>
                 <p id="move-error"></p>
@@ -62,21 +62,21 @@
                 <p>DETAILS DU STAGE</p>
                 <div class="form">
                     <div class="input-groupe">
-                        <input id="Sujetdestage" name="Sujetdestage" type="text" placeholder=" " class="input" >
-                        <label for="Sujetdestage" class="label"><span>Sujet de stage</span></label>
+                        <input id="SujetDeStage" name="SujetDeStage" type="text" placeholder=" " class="input" >
+                        <label for="SujetDeStage" class="label"><span>Sujet de stage</span></label>
                     </div>
                     <div class="double-input-groupe">
                     <div class="double-input">
-                        <input id="Datededebut" name="Datededebut" type="text" placeholder=" " onfocus="(this.type='date')"  onblur="(this.type='text')" class="input">
-                        <label for="Datededebut" class="label"><span>Date de debut</span></label>
+                        <input id="DateDeDebut" name="DateDeDebut" type="text" placeholder=" " onfocus="(this.type='date')"  onblur="(this.type='text')" class="input">
+                        <label for="DateDeDebut" class="label"><span>Date de debut</span></label>
                     </div>
                     <div class="double-input">
-                        <input id="Datedefin" name="Datedefin" type="text" placeholder=" " onfocus="(this.type='date')"  onblur="(this.type='text')" class="input">
-                        <label for="Datedefin" class="label"><span>Date de fin</span></label>
+                        <input id="DateDeFin" name="DateDeFin" type="text" placeholder=" " onfocus="(this.type='date')"  onblur="(this.type='text')" class="input">
+                        <label for="DateDeFin" class="label"><span>Date de fin</span></label>
                     </div>
                 </div>
                     <div  class="schools input-groupe">
-                        <select class="selecttion" id="typedestage" name="typedestage">
+                        <select class="selecttion" id="TypeDeStage" name="TypeDeStage">
                             <option value="">Type de stage</option>
                             <option value="libre">Libre</option>
                             <option value="pfa">PFA</option>
@@ -85,7 +85,7 @@
                           </select>
                     </div>
                     <div id="scholls-groupe" class="schools input-groupe">
-                        <select class="selecttion" name="schools" id="scholls">
+                        <select class="selecttion" name="Etablissement" id="Scholls">
                             <option value="">SCHOLL</option>
                             <option value="ENSA">ENSA</option>
                             <option value="1337">1337</option>
@@ -111,8 +111,8 @@
                         <label for="Assurance" class="label"><span>Assurance</span></label>
                     </div>
                     <div class="input-groupe">
-                        <input id="cv" name="cv" type="file" placeholder=" " class="input" >
-                        <label for="cv" class="label"><span>CV</span></label>
+                        <input id="CV" name="CV" type="file" placeholder=" " class="input" >
+                        <label for="CV" class="label"><span>CV</span></label>
                     </div>
                 </div>
                 <p id="submit-error"></p>
@@ -225,7 +225,7 @@
         const url = "https://stagiaire.herokuapp.com/api/stagiaire/store";
         var slectestage = document.getElementById("typedestage");
         var conv = document.getElementById("conv-group");
-        var scholls = document.getElementById("scholls");
+        var scholls = document.getElementById("Scholls");
         var filniv = document.getElementById("filniv");
         var schollsgroupe = document.getElementById("scholls-groupe");
             var value = slectestage.value;
@@ -243,7 +243,7 @@
         var movebutun = document.getElementById('move1');
         movebutun.addEventListener("click", function(){
 
-            if (validatemove())
+            if (!validatemove())
             {
             var side1 = document.getElementById('per');
             var side2 = document.getElementById('det');
@@ -270,8 +270,8 @@
             let x3 = document.forms["myform"]["CIN"].value;
             let x4 = document.forms["myform"]["TEL"].value;
             let x5 = document.forms["myform"]["Email"].value;
-            let x6 = document.forms["myform"]["Datedenaisance"].value;
-            let x7 = document.forms["myform"]["Lieudenaisance"].value;
+            let x6 = document.forms["myform"]["DateDeNaisance"].value;
+            let x7 = document.forms["myform"]["LieuDeNaisance"].value;
             if([x1, x2, x3, x4, x5, x6, x7].includes(""))
             {
                 // document.getElementById("Prenom").classList.add("inputerror");
@@ -323,16 +323,16 @@
     })
     function validatsubmit() {
         var submiterror = document.getElementById("submit-error");
-        let x1 = document.forms["myform"]["Sujetdestage"].value;
-        let x2 = document.forms["myform"]["Datededebut"].value;
-        let x3 = document.forms["myform"]["Datedefin"].value;
-        let x4 = document.forms["myform"]["typedestage"].value;
-        let x5 = document.forms["myform"]["scholls"].value;
+        let x1 = document.forms["myform"]["SujetDeStage"].value;
+        let x2 = document.forms["myform"]["DateDeDebut"].value;
+        let x3 = document.forms["myform"]["DateDeFin"].value;
+        let x4 = document.forms["myform"]["TypeDeStage"].value;
+        let x5 = document.forms["myform"]["Etablissement"].value;
         let x6 = document.forms["myform"]["Filiere"].value;
         let x7 = document.forms["myform"]["Niveau"].value;
         let x8 = document.forms["myform"]["Convention"].value;
         let x9 = document.forms["myform"]["Assurance"].value;
-        let x10 = document.forms["myform"]["cv"].value;
+        let x10 = document.forms["myform"]["CV"].value;
         if([x1, x2, x3, x4, x9, x10].includes("") || (x4 !== "libre" && (x5 === "" || x8 === "")) || (x5 !== "1337" && x5 != "" && (x6 === "" || x7 === "")))
         {
             submiterror.innerText = "please fill all the fields";
@@ -341,11 +341,11 @@
                 }, 5000)
                 return false;
         }
-        return true;
+        return false;
     }
     formElement.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!validatsubmit())
+    if (validatsubmit())
         return ;
     formData = new FormData(formElement);
     setfichedustage();
@@ -357,14 +357,14 @@
     var cin = document.getElementById("CIN").value;
     var prenom = document.getElementById("Prenom").value;
     var nom = document.getElementById("Nom").value;
-    var datedenaisance = document.getElementById("Datedenaisance").value; 
-    var lieudenaisance = document.getElementById("Lieudenaisance").value;
-    var datededebut = document.getElementById("Datededebut").value;
-    var datedefin = document.getElementById("Datedefin").value;
-    var sujet = document.getElementById("Sujetdestage").value;
+    var datedenaisance = document.getElementById("DateDeNaisance").value; 
+    var lieudenaisance = document.getElementById("LieuDeNaisance").value;
+    var datededebut = document.getElementById("DateDeDebut").value;
+    var datedefin = document.getElementById("DateDeFin").value;
+    var sujet = document.getElementById("SujetDeStage").value;
     var filiere = document.getElementById("Filiere").value;
     var niveau = document.getElementById("Niveau").value;
-    var scholl = document.getElementById("scholls").value;
+    var scholl = document.getElementById("Scholls").value;
     data.push(cin);
     data.push(prenom);
     data.push(nom);

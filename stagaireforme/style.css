@@ -387,3 +387,8 @@ body{
 .section{
     background-color: #117DB0;
 }
+
+.inputerror{
+    border: 1px solid red;
+    box-shadow: -2px 0px 4px rgba(255, 0, 0, 0.25), 2px 0px 4px rgba(255, 0, 0, 0.25), 0px -4px 4px rgba(255, 0, 0, 0.25), 0px 6px 7px rgba(255, 0, 0, 0.25);
+}

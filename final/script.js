@@ -20,7 +20,7 @@ var value = slectestage.value;
 var movebutun = document.getElementById('move1');
 movebutun.addEventListener("click", function(){
 
-    if (!validatemove())
+    if (validatemove())
     {
     var side1 = document.getElementById('per');
     var side2 = document.getElementById('det');
@@ -51,7 +51,6 @@ function validatemove() {
     let x7 = document.forms["myform"]["LieuDeNaissance"].value;
     if([x1, x2, x3, x4, x5, x6, x7].includes(""))
     {
-        // document.getElementById("Prenom").classList.add("inputerror");
         moveerror.innerText = "please fill all the fields";
         setTimeout(function(){
             moveerror.innerText = "";
@@ -141,7 +140,7 @@ function checkstagetype(){
 }
 formElement.addEventListener('submit', (e) => {
 e.preventDefault();
-if (validatsubmit())
+if (!validatsubmit())
 return ;
 checkstagetype();
 formData = new FormData(formElement);

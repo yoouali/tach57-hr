@@ -1,11 +1,11 @@
 let formData;
 const url = "https://stagiaire.herokuapp.com/api/stagiaire/store";
-var slectestage = document.getElementById("typedestage");
+var slectestage = document.getElementById("TypeDeStage");
 var conv = document.getElementById("conv-group");
-var scholls = document.getElementById("scholls");
+var scholls = document.getElementById("Scholls");
 var filniv = document.getElementById("filniv");
 var schollsgroupe = document.getElementById("scholls-groupe");
-    var value = slectestage.value;
+var value = slectestage.value;
     if (value === "libre" || value === ""){
         conv.style.display="none";
         schollsgroupe.style.display="none";
@@ -47,8 +47,8 @@ function validatemove() {
     let x3 = document.forms["myform"]["CIN"].value;
     let x4 = document.forms["myform"]["TEL"].value;
     let x5 = document.forms["myform"]["Email"].value;
-    let x6 = document.forms["myform"]["Datedenaisance"].value;
-    let x7 = document.forms["myform"]["Lieudenaisance"].value;
+    let x6 = document.forms["myform"]["DateDeNaissance"].value;
+    let x7 = document.forms["myform"]["LieuDeNaissance"].value;
     if([x1, x2, x3, x4, x5, x6, x7].includes(""))
     {
         // document.getElementById("Prenom").classList.add("inputerror");
@@ -100,16 +100,16 @@ e.preventDefault();
 })
 function validatsubmit() {
 var submiterror = document.getElementById("submit-error");
-let x1 = document.forms["myform"]["Sujetdestage"].value;
-let x2 = document.forms["myform"]["Datededebut"].value;
-let x3 = document.forms["myform"]["Datedefin"].value;
-let x4 = document.forms["myform"]["typedestage"].value;
-let x5 = document.forms["myform"]["scholls"].value;
+let x1 = document.forms["myform"]["SujetDeStage"].value;
+let x2 = document.forms["myform"]["DateDeDebut"].value;
+let x3 = document.forms["myform"]["DateDeFin"].value;
+let x4 = document.forms["myform"]["TypeDeStage"].value;
+let x5 = document.forms["myform"]["Etablissement"].value;
 let x6 = document.forms["myform"]["Filiere"].value;
 let x7 = document.forms["myform"]["Niveau"].value;
 let x8 = document.forms["myform"]["Convention"].value;
 let x9 = document.forms["myform"]["Assurance"].value;
-let x10 = document.forms["myform"]["cv"].value;
+let x10 = document.forms["myform"]["CV"].value;
 if([x1, x2, x3, x4, x9, x10].includes("") || (x4 !== "libre" && (x5 === "" || x8 === "")) || (x5 !== "1337" && x5 != "" && (x6 === "" || x7 === "")))
 {
     submiterror.innerText = "please fill all the fields";
@@ -134,19 +134,19 @@ document.getElementById("box").style.display = "none";
 var cin = document.getElementById("CIN").value;
 var prenom = document.getElementById("Prenom").value;
 var nom = document.getElementById("Nom").value;
-var datedenaisance = document.getElementById("Datedenaisance").value; 
-var lieudenaisance = document.getElementById("Lieudenaisance").value;
-var datededebut = document.getElementById("Datededebut").value;
-var datedefin = document.getElementById("Datedefin").value;
-var sujet = document.getElementById("Sujetdestage").value;
+var datedenaissance = document.getElementById("DateDeNaissance").value; 
+var lieudenaissance = document.getElementById("LieuDeNaissance").value;
+var datededebut = document.getElementById("DateDeDebut").value;
+var datedefin = document.getElementById("DateDeFin").value;
+var sujet = document.getElementById("SujetDeStage").value;
 var filiere = document.getElementById("Filiere").value;
 var niveau = document.getElementById("Niveau").value;
-var scholl = document.getElementById("scholls").value;
+var scholl = document.getElementById("Scholls").value;
 data.push(cin);
 data.push(prenom);
 data.push(nom);
-data.push(datedenaisance);
-data.push(lieudenaisance);
+data.push(datedenaissance);
+data.push(lieudenaissance);
 data.push(filiere);
 data.push(niveau);
 data.push(scholl);
@@ -158,8 +158,8 @@ sessionStorage.setItem('fuchedustagaire', JSON.stringify(data));
 document.getElementById("cin").innerText = cin;
 document.getElementById("prenom").innerText = prenom;
 document.getElementById("nom").innerText = nom;
-document.getElementById("datedenais").innerText = datedenaisance;
-document.getElementById("lieudenais").innerText = lieudenaisance;
+document.getElementById("datedenais").innerText = datedenaissance;
+document.getElementById("lieudenais").innerText = lieudenaissance;
 document.getElementById("periodedustage").innerText = datededebut;
 document.getElementById("datedefin").innerText = datedefin;
 document.getElementById("sujetdestage").innerText = sujet;
@@ -175,7 +175,7 @@ document.getElementById("niv-input").style.display="none";
 }
 var telecharger = document.getElementById("telecharger");
 telecharger.addEventListener("click", (e) => {
-window.open("./fichedustagaire.html");
+window.open("./fichedestagaire.html");
 for (var [key, value] of formData.entries()) { 
 console.log(key, value); }
 let request = new XMLHttpRequest();

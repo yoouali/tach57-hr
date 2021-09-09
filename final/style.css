@@ -405,6 +405,14 @@ button:active {
     transition: all 0.2s ease-in-out, transform 0.2s;
     left: 100% !important;
 }
+
+#move2{
+    margin-right: 10px;
+}
+
+#submit{
+    margin-left: 10px;
+}
 /* .box:hover #det {
     -webkit-transition: all 1s, -webkit-transform 1s;
     transition: all 1s, transform 1s;
@@ -459,6 +467,17 @@ button:active {
 
     .container{
         width: 80%;
+    }
+
+    .stagaire-form p{
+        width: 70%;
+        color: white;
+        margin: auto;
+        font-size: large;
+        padding-bottom: 20px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
     }
 
     .form{

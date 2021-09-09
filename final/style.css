@@ -9,7 +9,7 @@
 
 body{
     background-color: whitesmoke;
-    padding-top: 10%;
+    padding-top: 20px;
     padding-bottom: 10%;
 }
 
@@ -20,49 +20,6 @@ body{
     max-width: 600px;
     min-width: 400px;
     background-color: blue;
-}
-
-@media (max-width: 410px){
-
-    .container{
-        width: 100%;
-        min-width: 1px;
-    }
-
-    .form{
-        width:  90% !important;
-        margin: auto;
-    }
-    button{
-        width: 30% !important;
-    }
-    .fichedustagiare{
-        width: 100% !important;
-        margin: auto;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        font-family: 'Poppins';
-        font-style: normal;
-        display: none;
-    }
-    #telecharger{
-        margin-top: 10px;
-        width: 40% !important;
-    }
-}
-
-@media (min-width: 900px){
-
-    .container{
-        width: 60%;
-    }
-
-    .form{
-        max-width: 400px !important;
-        margin: auto;
-    }
-
-
 }
 
 .header{
@@ -467,4 +424,201 @@ button:active {
 
 .error-form{
     color: #F93D5C !important;
+}
+
+@media (max-width: 410px){
+
+    .container{
+        width: 100%;
+        min-width: 1px;
+    }
+
+    .form{
+        width:  90% !important;
+        margin: auto;
+    }
+    button{
+        width: 30% !important;
+    }
+    .fichedustagiare{
+        width: 100% !important;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: 'Poppins';
+        font-style: normal;
+        display: none;
+    }
+    #telecharger{
+        margin-top: 10px;
+        width: 40% !important;
+    }
+}
+
+@media (min-width: 900px){
+
+    .container{
+        width: 80%;
+    }
+
+    .form{
+        max-width: 400px !important;
+        margin: auto;
+    }
+
+    .input-groupe{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .double-input-groupe{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .double-input{
+        width: 48%;
+    }
+    
+    .input-groupe-upload{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+        border: 1px solid #999;
+        border-radius: 2px;
+        background-color: #117DB0;
+        color: white;
+        outline: none;
+        padding-left: 3px;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: medium;
+    }
+    
+    .input{
+        width: 100%;
+        height: 100%;
+        border: 1px solid #999;
+        border-radius: 2px;
+        background-color: #117DB0;
+        color: white;
+        outline: none;
+        padding-left: 3px;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: large;
+    }
+    
+    .schools{
+        border: 1px solid white;
+        border-radius: 2px;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: large;
+    }
+    .selecttion{
+        height: 100%;
+        width: 100%;
+        background-color: #117DB0;
+        border: none;
+        color: white;
+        outline: none;
+        padding-left: 3px;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: large;
+    }
+    
+    .label {
+        display: block;
+        transform: translate(0, -3rem);
+        text-align: left;
+        font-family: Roboto;
+        font-style: normal;
+        font-size: large;
+        padding-left: 5px;
+      }
+      
+      @supports (not (-ms-ime-align:auto)) {
+          .label {
+            color: #999;
+            transform: translate(0.25rem, -2.3rem);
+            transition: all 0.2s ease-out;
+          }
+      
+          .input:focus + .label,
+          .input:not(:placeholder-shown) + .label {
+            color: white;
+            transform: translate(0, -3.6rem);
+            font-family: Roboto;
+            font-style: normal;
+            font-size: small;
+            padding-left: 5px;
+          }
+      }
+    
+      .input:focus, .input:not(:placeholder-shown) {
+          border:1px solid white;
+      }
+      .label span{
+          background-color: #117DB0;
+          padding-left: 2px;
+          padding-right: 2px;
+    }
+    
+    .input::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+    }
+    
+    .radio-goupe{
+        width: 25%;
+        color: white;
+    }
+    
+    .input-checkbox-groupe{
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        background-color: red;
+        justify-content: space-between;
+    }
+    
+    button{
+        width: 15%;
+        height: 50px;
+        background-color: #117DB0;
+        border: none;
+        box-shadow: -1px 1px 2px rgba(7, 50, 70, 0.2), 1px -1px 2px rgba(7, 50, 70, 0.2), -1px -1px 2px rgba(27, 200, 255, 0.9), 1px 1px 3px rgba(7, 50, 70, 0.9), inset 1px 1px 2px rgba(27, 200, 255, 0.3), inset -1px -1px 2px rgba(7, 50, 70, 0.5);
+        border-radius: 2px;
+        color: white;
+        font-size: medium;
+        font-family: Roboto;
+        font-style: normal;
+    }
+    
+    button:active {
+        box-shadow: 1px 1px 2px rgba(27, 200, 255, 0.3), -1px -1px 2px rgba(7, 50, 70, 0.5), inset -1px 1px 2px rgba(7, 50, 70, 0.2), inset 1px -1px 2px rgba(7, 50, 70, 0.2), inset -1px -1px 2px rgba(27, 200, 255, 0.9), inset 1px 1px 3px rgba(7, 50, 70, 0.9);    border-radius: 2px;
+    }
+    
+    #telecharger{
+        margin-top: 10px;
+        width: 30%;
+    }
+    .fichedustagiare{
+        width: 90%;
+        max-width: 400px !important;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: 'Poppins';
+        font-style: normal;
+        display: none;
+    }
 }

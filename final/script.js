@@ -20,7 +20,7 @@ var value = slectestage.value;
 var movebutun = document.getElementById('move1');
 movebutun.addEventListener("click", function(){
 
-    if (validatemove())
+    if (!validatemove())
     {
     var side1 = document.getElementById('per');
     var side2 = document.getElementById('det');
@@ -120,10 +120,30 @@ if([x1, x2, x3, x4, x9, x10].includes("") || (x4 !== "libre" && (x5 === "" || x8
 }
 return true;
 }
+function checkstagetype(){
+    var typedestage = document.getElementById("TypeDeStage");
+    var school = document.getElementById("Scholls");
+    var filiere = document.getElementById("Filiere");
+    var niveau = document.getElementById("Niveau");
+    var Convention = document.getElementById("Convention");
+    if (typedestage.value === "libre")
+    {
+        school.value = "";
+        filiere.value = "";
+        niveau.value = "";
+        Convention.value = "";
+    }
+    if (school.value === "1337")
+    {
+        filiere.value = "";
+        niveau.value = "";
+    }
+}
 formElement.addEventListener('submit', (e) => {
 e.preventDefault();
-if (!validatsubmit())
+if (validatsubmit())
 return ;
+checkstagetype();
 formData = new FormData(formElement);
 setfichedustage();
 })

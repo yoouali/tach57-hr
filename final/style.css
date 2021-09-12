@@ -14,7 +14,7 @@ body{
 }
 
 .container{
-    width: 60%;
+    width: 80%;
     margin: auto;
     text-align: center;
     max-width: 600px;
@@ -36,38 +36,6 @@ body{
     font-family: 'Poppins';
     color: #117DB0;
     font-style: normal;
-}
-
-.etapes{
-    width: 100%;
-    background-color: #117DB0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-
-.check-point{
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    margin: auto;
-}
-
-.default-point {
-    border: 2px solid #117DB0;
-    background-color: white;
-}
-
-.edit-point{
-    border: 2px solid white;
-    background-color: #117DB0;
-}
-
-.valid-point{
-    border: 2px solid white;
-    background-color: green;
 }
 
 .stagaire-form{
@@ -98,8 +66,8 @@ body{
 }
 
 .form{
-    width: 60%;
-    max-width: 230px;
+    width: 80%;
+    max-width: 300px;
     margin: auto;
 }
 
@@ -434,13 +402,28 @@ button:active {
     color: #F93D5C !important;
 }
 
-@media (max-width: 410px){
+@media (max-width: 500px){
+
+    body{
+        background-color: #117DB0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 
     .container{
         width: 100%;
         min-width: 1px;
     }
-
+    .stagaire-form p{
+        width: 80%;
+        color: white;
+        margin: auto;
+        font-size: small;
+        padding-bottom: 10px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+    }
     .form{
         width:  90% !important;
         margin: auto;
@@ -463,7 +446,7 @@ button:active {
     }
 }
 
-@media (min-width: 900px){
+@media (min-width: 500px){
 
     .container{
         width: 80%;

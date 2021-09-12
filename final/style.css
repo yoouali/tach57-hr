@@ -71,11 +71,81 @@ body{
     margin: auto;
 }
 
+.input-slect{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background-color: #117DB0;
+    outline: none;
+    padding-left: 3px;
+    padding: 0;
+    position: relative;
+}
+
+.input-slect-nactive{
+    border: 1px solid #999;
+    color: #999;
+}
+
+
+.input-slect-active{
+    border: 1px solid white;
+    color: white;
+}
+
+.upload{
+    cursor:pointer;height:100%;width:100%;opacity:0;filter:alpha(opacity=0);
+    position: absolute;
+    left: 0%;
+    top: 0%;
+}
+
+
+.file-name{
+    height: 100%;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: medium;
+    padding-top: 10px;
+    padding-left: 30%;
+}
+
+.chose-file{
+    position: absolute;
+    color: #117DB0;
+    border:2px #117DB0 solid;
+    border-radius: 2px;
+    height: 100%;
+    width: 25%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 12px;
+    background-color: #999;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: large;
+}
+
+
 .input-groupe{
     width: 100%;
     height: 40px;
     margin-bottom: 10px;
 }
+
+.selecttion:focus{
+    color: white;
+}
+
+/* #type-stage{
+    border: 2px solid #999 !important;
+} */
+
+/* #scholls-groupe{
+    border: 2px solid #999 !important;
+} */
 
 .double-input-groupe{
     width: 100%;
@@ -120,18 +190,19 @@ body{
 }
 
 .schools{
-    border: 1px solid white;
+    border: 1px solid #999;
     border-radius: 2px;
     font-family: Roboto;
     font-style: normal;
     font-size: small;
 }
+
 .selecttion{
     height: 100%;
     width: 100%;
     background-color: #117DB0;
     border: none;
-    color: white;
+    color: #999;
     outline: none;
     padding-left: 3px;
     font-family: Roboto;
@@ -517,7 +588,7 @@ button:active {
     }
     
     .schools{
-        border: 1px solid white;
+        border: 1px solid #999;
         border-radius: 2px;
         font-family: Roboto;
         font-style: normal;
@@ -528,7 +599,7 @@ button:active {
         width: 100%;
         background-color: #117DB0;
         border: none;
-        color: white;
+        color: #999;
         outline: none;
         padding-left: 3px;
         font-family: Roboto;
@@ -593,7 +664,7 @@ button:active {
     }
     
     button{
-        width: 15%;
+        width: 30%;
         height: 50px;
         background-color: #117DB0;
         border: none;

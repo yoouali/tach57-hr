@@ -5,6 +5,94 @@ var conv = document.getElementById("conv-group");
 var scholls = document.getElementById("Scholls");
 var filniv = document.getElementById("filniv");
 var schollsgroupe = document.getElementById("scholls-groupe");
+
+
+var assur = document.getElementById("Assurance");
+var assurSlect = document.getElementById("assurance-input");
+var assurchose = document.getElementById("chose-file");
+var assurFile = document.getElementById("assurance-file");
+assur.onchange = () => {
+    if (assur.value === "")
+    {
+        return;
+    }
+    else{
+        assurSlect.classList.remove("input-slect-nactive");
+        assurSlect.classList.add("input-slect-active");
+        assurchose.style.backgroundColor="white";
+        assurFile.innerText = assur.files[0].name;
+        console.log(assur.value)
+    }
+}
+
+var typestage= document.getElementById("TypeDeStage");
+var typestageborder = document.getElementById("type-stage");
+typestage.onchange = () => {
+    if (typestage.value === "")
+        {
+            typestage.style.color="#999";
+            typestageborder.style.borderColor="#999";
+        }
+    else{
+        typestage.style.color="white";
+        typestageborder.style.borderColor="white";
+        console.log(typestage.value);
+    }
+}
+
+var schol = document.getElementById("Scholls");
+var scholborder = document.getElementById("scholls-groupe");
+schol.onchange = () => {
+    if (schol.value === "")
+        {
+            schol.style.color="#999";
+            scholborder.style.borderColor="#999";
+        }
+    else{
+        schol.style.color="white";
+        scholborder.style.borderColor="white";
+        console.log(schol.value);
+    }
+}
+
+
+var conve = document.getElementById("Convention");
+var convSlect = document.getElementById("convention-input");
+var convchose = document.getElementById("chose-conv");
+var convFile = document.getElementById("convention-file");
+conve.onchange = () => {
+    if (conve.value === "")
+    {
+        return;
+    }
+    else{
+        convSlect.classList.remove("input-slect-nactive");
+        convSlect.classList.add("input-slect-active");
+        convchose.style.backgroundColor="white";
+        convFile.innerText = conve.files[0].name;
+        console.log(conve.value)
+    }
+}
+
+var cv = document.getElementById("CV");
+var cvSlect = document.getElementById("cv-input");
+var cvchose = document.getElementById("chose-cv");
+var cvFile = document.getElementById("cv-file");
+cv.onchange = () => {
+    if (cv.value === "")
+    {
+        return;
+    }
+    else{
+        cvSlect.classList.remove("input-slect-nactive");
+        cvSlect.classList.add("input-slect-active");
+        cvchose.style.backgroundColor="white";
+        cvFile.innerText = cv.files[0].name;
+        console.log(cv.value)
+    }
+}
+
+
 var value = slectestage.value;
     if (value === "libre" || value === ""){
         conv.style.display="none";
@@ -86,7 +174,7 @@ slectestage.addEventListener("change", function(e){
 })
 scholls.addEventListener("change", function(e){
     var value = e.target.value;
-    if (value === "1337" || scholls.value === "scholl")
+    if (value === "1337" || scholls.value === "")
         filniv.style.display="none";
     else
         filniv.style.display="flex";

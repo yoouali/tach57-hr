@@ -78,7 +78,7 @@
                         <label for="DateDeFin" class="label"><span>Date de fin</span></label>
                     </div>
                 </div>
-                    <div  class="schools input-groupe">
+                    <div id="type-stage" class="schools input-groupe">
                         <select class="selecttion" id="TypeDeStage" name="TypeDeStage">
                             <option value="">Type de stage</option>
                             <option value="libre">Libre</option>
@@ -89,7 +89,7 @@
                     </div>
                     <div id="scholls-groupe" class="schools input-groupe">
                         <select class="selecttion" name="Etablissement" id="Scholls">
-                            <option value="">SCHOLL</option>
+                            <option value="">Etablissement</option>
                             <option value="ENSA">ENSA</option>
                             <option value="1337">1337</option>
                             <option value="ISGIISTA">ISGI ISTA</option>
@@ -105,17 +105,26 @@
                         <label for="Niveau" class="label"><span>Niveau</span></label>
                     </div>
                      </div>
-                    <div class="input-groupe" id="conv-group">
-                        <input id="Convention" name="Convention" accept=".pdf" type="file" placeholder=" " class="input" >
-                        <label for="Convention" class="label"><span>Convention</span></label>
+                    <div  class="input-groupe" id="conv-group">
+                        <div id="convention-input" class="input-slect input-slect-nactive"><div id="chose-conv" class="chose-file">Convention 
+                        </div>
+                        <div id="convention-file" class="file-name">choisir un fichier</div>
+                        <input class="upload" type="file" name="Convention" id="Convention" accept=".pdf">
+                        </div>
                     </div>
-                    <div class="input-groupe">
-                        <input id="Assurance" name="Assurance" accept=".pdf" type="file" placeholder=" " class="input" >
-                        <label for="Assurance" class="label"><span>Assurance</span></label>
+                    <div  class="input-groupe">
+                        <div id="assurance-input" class="input-slect input-slect-nactive"><div id="chose-file" class="chose-file">Assurance 
+                        </div>
+                        <div id="assurance-file" class="file-name">choisir un fichier</div>
+                        <input class="upload" type="file" name="Assurance" id="Assurance" accept=".pdf">
+                        </div>
                     </div>
-                    <div class="input-groupe">
-                        <input id="CV" name="CV" type="file" placeholder=" " class="input" >
-                        <label for="CV" class="label"><span>CV</span></label>
+                    <div  class="input-groupe">
+                        <div id="cv-input" class="input-slect input-slect-nactive"><div id="chose-cv" class="chose-file">CV 
+                        </div>
+                        <div id="cv-file" class="file-name">choisir un fichier</div>
+                        <input class="upload" type="file" name="CV" id="CV">
+                        </div>
                     </div>
                 </div>
                 <p class="error-form" id="submit-error"></p>

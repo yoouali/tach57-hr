@@ -243,7 +243,7 @@
         var movebutun = document.getElementById('move1');
         movebutun.addEventListener("click", function(){
 
-            if (validatemove())
+            if (!validatemove())
             {
             var side1 = document.getElementById('per');
             var side2 = document.getElementById('det');
@@ -310,7 +310,7 @@
         })
         scholls.addEventListener("change", function(e){
             var value = e.target.value;
-            if (value === "1337" || scholls.value === "scholl")
+            if (value === "1337" || scholls.value === "")
                 filniv.style.display="none";
             else
                 filniv.style.display="flex";

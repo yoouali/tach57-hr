@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-bottom: 10%;
+}
+
+/* container styling */
+.container{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    max-width: 600px;
+    min-width: 400px;
+    background-color: blue;
+}
+
+
+/* header styling */
+.header{width:100%;background-color: white;padding-bottom: 30px;}
+.header img{width: 50%;}
+.header h1{font-family: 'Roboto';color: #117DB0;font-style: normal;}
+/* end header styling */
+
+/* form styling */
+.entrepreneur-form{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #117DB0;
+    text-align: center;
+    font-family: 'Poppins';
+}
+.form{
+    width: 60%;
+    max-width: 400px;
+    padding-bottom: 15px;
+    margin: auto;
+}
+.form p{
+    color: white;
+    padding-bottom: 5px;
+}
+/* end form styling */
+
+
+/*input groupe styling */
+.input-groupe{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+}
+.double-input-groupe{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.double-input{width: 49%;}
+/* end input groupe styling */
+
+/* input and label styling */
+.input{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #999;
+    border-radius: 2px;
+    background-color: #117DB0;
+    color: white;
+    outline: none;
+    padding-left: 3px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: medium;
+}
+.label{
+    display: block;
+    transform: translate(0, -3rem);
+    text-align: left;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: medium;
+    padding-left: 5px;
+}
+@supports (not (-ms-ime-align:auto)) {
+    .label {
+      color: #999;
+      transform: translate(0.25rem, -2.3rem);
+      transition: all 0.2s ease-out;
+    }
+    .input:focus + .label,
+    .input:not(:placeholder-shown) + .label {
+      color: white;
+      transform: translate(0, -3.6rem);
+      font-family: Roboto;
+      font-style: normal;
+      font-size: x-small;
+      padding-left: 5px;
+    }
+}
+.input:focus, .input:not(:placeholder-shown) {border:1px solid white;}
+.label span{background-color: #117DB0;padding-left: 2px;padding-right: 2px;}
+.input::-webkit-calendar-picker-indicator {filter: invert(1);}
+/* end input and label styling */
+
+/* button styling */
+button{
+    width:20%;
+    height: 50px;
+    text-align: center;
+    background-color: #117DB0;
+    border: 1px solid white;
+    border-radius: 2px;
+    /* box-shadow: -4px 4px 8px rgba(7, 50, 70, 0.2), 4px -4px 8px rgba(7, 50, 70, 0.2), -4px -4px 8px rgba(27, 200, 255, 0.9), 4px 4px 10px rgba(7, 50, 70, 0.9), inset 1px 1px 2px rgba(27, 200, 255, 0.3), inset -1px -1px 2px rgba(7, 50, 70, 0.5);    font-style: 'Poppins'; */
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+button:active{
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    box-shadow: 1px 1px 2px rgba(27, 200, 255, 0.3), -1px -1px 2px rgba(7, 50, 70, 0.5), inset -4px 4px 8px rgba(7, 50, 70, 0.2), inset 4px -4px 8px rgba(7, 50, 70, 0.2), inset -4px -4px 8px rgba(27, 200, 255, 0.9), inset 4px 4px 10px rgba(7, 50, 70, 0.9);
+}
+/* end butto styling */

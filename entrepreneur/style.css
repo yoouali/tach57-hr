@@ -158,3 +158,35 @@ button:active{
     font-size: small;
 }
 /* end success message styling */
+
+/* loading styling */
+.loading{
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 2px;
+    max-width: 300px;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#filed1{
+    border-radius: 2px;
+    width: 10%;
+    height: 70px;
+    background-color: #117DB0;
+}
+#filed2{
+    border-radius: 2px;
+    width: 10%;
+    height: 50px;
+    background-color: #117DB0;
+}
+#filed3{
+    border-radius: 2px;
+    width: 10%;
+    height: 20px;
+    background-color: #117DB0;
+}
+/* end loading styling */

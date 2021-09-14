@@ -196,4 +196,11 @@ button:active{
       height: 15px;
     }
 }
+
+.loading:hover .test{
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    font-size: xx-large !important;
+    display: none;
+}
 /* end loading styling */

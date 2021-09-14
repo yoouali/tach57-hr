@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap');
+
 
 *{
     margin: 0;
@@ -29,7 +31,7 @@ body{
 /* header styling */
 .header{width:100%;background-color: white;padding-bottom: 30px;}
 .header img{width: 50%;}
-.header h1{font-family: 'Roboto';color: #117DB0;font-style: normal;}
+.header h1{font-family: 'Rajdhani', sans-serif;color: #117DB0;font-style: normal;}
 /* end header styling */
 
 /* form styling */
@@ -42,27 +44,32 @@ body{
     font-family: 'Poppins';
 }
 .form{
-    width: 60%;
+    width: 70%;
     max-width: 400px;
-    padding-bottom: 15px;
+    padding: 15px;
     margin: auto;
+    backdrop-filter: blur(20px);
 }
 .form p{
     color: white;
     padding-bottom: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: large;
 }
 /* end form styling */
 
 
 /*input groupe styling */
 .input-groupe{
-    width: 100%;
+    width: 90%;
     height: 50px;
+    margin: auto;
     margin-bottom: 15px;
 }
 .double-input-groupe{
-    width: 100%;
+    width: 90%;
     height: 50px;
+    margin: auto;
     margin-bottom: 15px;
     display: flex;
     flex-direction: row;
@@ -124,6 +131,7 @@ button{
     border: 1px solid white;
     border-radius: 2px;
     /* box-shadow: -4px 4px 8px rgba(7, 50, 70, 0.2), 4px -4px 8px rgba(7, 50, 70, 0.2), -4px -4px 8px rgba(27, 200, 255, 0.9), 4px 4px 10px rgba(7, 50, 70, 0.9), inset 1px 1px 2px rgba(27, 200, 255, 0.3), inset -1px -1px 2px rgba(7, 50, 70, 0.5);    font-style: 'Poppins'; */
+    font-family: 'Rajdhani', sans-serif;
     font-size: large;
     font-weight: bold;
     color: white;
@@ -196,7 +204,6 @@ button:active{
       height: 15px;
     }
 }
-
 .loading:hover .test{
     -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
     transition: all 0.2s ease-in-out, transform 0.2s;
@@ -204,3 +211,47 @@ button:active{
     display: none;
 }
 /* end loading styling */
+
+/* check loading styling */
+.check{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 2px solid #4F8A10;
+    border-radius: 50%;
+    border-left-color: #117DB0;
+    animation: rotate 1.2s linear infinite;
+}
+@keyframes rotate{
+    50%{
+        border-left-color: #117DB0;
+    }
+    75%{
+        border-left-color: #117DB0;
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.check .check-icon{
+    display:none;
+}
+
+.check:hover .check-icon{
+    display: block;
+}
+
+.check .check-icon::after{
+    position: absolute;
+    content: "";
+    top: 45%;
+    left: 25px;
+    transform: scaleX(-1) rotate(135deg);
+    height: 36px;
+    width: 20px;
+    border-top: 4px solid #4F8A10;
+    border-right: 4px solid #4F8A10;
+    transform-origin: left top;
+}
+/* end check loading styling */

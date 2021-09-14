@@ -221,27 +221,32 @@ button:active{
     justify-content: center;
     margin: auto;
 }
+.loading-title{
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: x-large;
+}
 .check{
     position: absolute;
     width: 100px;
     height: 100px;
     display: inline-block;
-    border: 2px solid #4F8A10;
+    border: 2px solid white;
     border-radius: 50%;
     top: 25px;
     border-left-color:#117DB0;
     animation: rotate 1.2s linear infinite;
 }
-
 @keyframes rotate{
     100%{
         transform: rotate(360deg);
     }
 }
-.check .check-icon{
+.check-icon{
+    display: none;
 }
 
-.check:hover .check-icon{
+.check-icon{
 }
 
 .check-icon::after{

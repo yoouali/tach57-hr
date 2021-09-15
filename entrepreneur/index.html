@@ -18,6 +18,7 @@
         <section>
             <form name="myform">
 
+                <div class="box">
                 <div id="EntrepreneurForm" class="entrepreneur-form">
                     <div class="form">
                         <!-- INFORMATION PERSONNELLES -->
@@ -81,18 +82,17 @@
                 </div>
 
                 <!-- loading  -->
-                <div class="entrepreneur-form">
+                <div id="loading" class="entrepreneur-form">
                     <p class="loading-title">Loading . . .</p>
                     <div class="checkbox">
-                        <input id="input" type="checkbox" class="incheck">
-                        <div class="check" for=""></div>
-                        <div class="check-icon"></div>
+                        <div id="loadingCheck" class="check" for=""></div>
+                        <div id="loadingIcon" class="check-icon"></div>
                     </div>
                 </div>
                 <!-- end loading -->
 
                 <!-- result message -->
-                <div id="ResultMessage" class="entrepreneur-form">
+                <!-- <div id="ResultMessage" class="entrepreneur-form">
                     <div class="message-container">
                         <div class="message-header">Hello Mr youssef ouali</div>
                         <br>
@@ -105,11 +105,13 @@
                             tech-57 sttaf
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- result messgae end -->
+                </div>
+
             </form>
         </section>
     </div>
-
+    <script src="script.js"></script>
 </body>
 </html>

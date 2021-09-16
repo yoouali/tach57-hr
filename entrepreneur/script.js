@@ -47,14 +47,33 @@ var dateAdhesion = document.getElementById("DateDadhesion");
 var valableJusquau = document.getElementById("ValableJusquau");
 
 function checkForm(){
-    if (prenom.value == ""){setClassError(prenom, "Prenom");return false;}
+    if (prenom.value == ""){setClassError(prenom, "prenom");return false;}
+    if (nom.value == ""){setClassError(nom, "nom");return false;}
+    if (cin.value == ""){setClassError(cin, "cin");return false;}
+    if (tel.value == ""){setClassError(tel, "tel");return false;}
+    if (email.value == ""){setClassError(email, "email");return false;}
+    if(!emailRegex.test(email.value)){
+        email.style.color ="red";
+        setTimeout(function(){email.style.color="white";}, 300);
+        formError.innerText = "The given email was invalid";
+        setTimeout(function(){formError.innerText = "";}, 2000);
+        return false;
+    }
+    if (dateNaissance.value == ""){setClassError(dateNaissance, "date de naissance");return false;}
+    if (lieuNaissance.value == ""){setClassError(lieuNaissance, "lieu de naissance");return false;}
+    if (identifiant.value == ""){setClassError(identifiant, "N°dinscription au reistre national");return false;}
+    if (dateAdhesion.value == ""){setClassError(dateAdhesion, "Date D'adhesion");return false;}
+    if (valableJusquau.value == ""){setClassError(valableJusquau, "Valable Jusqu'au");return false;}
     return true;
 }
 
+let emailRegex = new RegExp(/^(?!.{150})(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 // setclassError
-function setClassError(e, filed){
-    formError.innerText = "Ples file " + filed + " filed";
-    setTimeout(function(){formError.innerText = "";}, 3000)
+function setClassError(filedId, filedName){
+    filedId.style.borderColor ="red";
+    setTimeout(function(){filedId.style.borderColor="#999";}, 2000);
+    formError.innerText = "Ples file " + filedName + " filed";
+    setTimeout(function(){formError.innerText = "";}, 2000)
 }
 
 // end check Form

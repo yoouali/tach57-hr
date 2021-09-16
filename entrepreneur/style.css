@@ -124,7 +124,7 @@ body{
       padding-left: 5px;
     }
 }
-.input:focus, .input:not(:placeholder-shown) {border:1px solid white;}
+.input:focus, .input:not(:placeholder-shown) {border:1px solid white !important;}
 .label span{background-color: #117DB0;padding-left: 2px;padding-right: 2px;}
 .input::-webkit-calendar-picker-indicator {filter: invert(1);}
 /* end input and label styling */

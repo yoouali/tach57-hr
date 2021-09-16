@@ -64,7 +64,6 @@ body{
     font-family: 'Rajdhani', sans-serif;
     font-size: large;
 }
-/* end form styling */
 
 
 /*input groupe styling */
@@ -130,6 +129,15 @@ body{
 .input::-webkit-calendar-picker-indicator {filter: invert(1);}
 /* end input and label styling */
 
+/* form error styling */
+.FormError{
+    color: #d93025;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    /* visibility: hidden; */
+}
+/* end form error styling */
+
 /* button styling */
 button{
     width:20%;
@@ -149,78 +157,13 @@ button:active{
     transition: all 0.2s ease-in-out, transform 0.2s;
     box-shadow: 1px 1px 2px rgba(27, 200, 255, 0.3), -1px -1px 2px rgba(7, 50, 70, 0.5), inset -4px 4px 8px rgba(7, 50, 70, 0.2), inset 4px -4px 8px rgba(7, 50, 70, 0.2), inset -4px -4px 8px rgba(27, 200, 255, 0.9), inset 4px 4px 10px rgba(7, 50, 70, 0.9);
 }
-/* end butto styling */
+/* end button styling */
 
-/* success message styling */
-.message-container{
-    color: white;
-    width: 70%;
-    margin: auto;
-    padding: 2px;
-    font-family: 'Poppins';
-}
-.message-header{
-    text-align: left;
-    font-style:unset;
-    font-size: large;
-}
-.message{
-    text-align: center;
-    font-size: medium;
-}
-.message-tail{
-    text-align: right;
-    font-size: small;
-}
-/* end success message styling */
+/* end form styling */
+
+
 
 /* loading styling */
-.loading{
-    padding-top: 20px;
-    max-width: 300px;
-    width: 20%;
-    height: 100px;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.filed{
-    border-radius: 15px;
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    display: inline-block;
-}
-#filed1{animation: loadingA 1.5s 1s infinite;}
-#filed2{animation: loadingA 1.5s 0.5s infinite;}
-#filed3{animation: loadingA 1.5s 0s infinite;}
-@keyframes loadingA {
-    0% {
-      height: 15px;
-    }
-    25% {
-      height: 35px;
-    }
-    50% {
-      height: 60px;
-    }
-    75% {
-      height: 35px;
-    }
-    100% {
-      height: 15px;
-    }
-}
-.loading:hover .test{
-    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
-    transition: all 0.2s ease-in-out, transform 0.2s;
-    font-size: xx-large !important;
-    display: none;
-}
-/* end loading styling */
-
-/* check loading styling */
 .checkbox{
     position: relative;
     width: 150px;
@@ -234,6 +177,8 @@ button:active{
     font-family: 'Rajdhani', sans-serif;
     font-size: x-large;
 }
+
+/* check loading styling */
 .check{
     position: absolute;
     width: 100px;
@@ -250,10 +195,6 @@ button:active{
         transform: rotate(360deg);
     }
 }
-.check-icon{
-        display: none;
-}
-
 .check-animation{
     animation: none;
     animation: complet 0.8s ease;
@@ -304,7 +245,7 @@ button:active{
         border-bottom-color:red;
     }
 }
-.check-icon::after{
+.check-icon{
     position: absolute;
     content: "";
     top: 70px;
@@ -334,12 +275,12 @@ button:active{
         opacity: 1;
     }
 }
+/* end check loading styling */
 
 #loading{
-    top: 100%;
+    top: 598px;
     padding-top: 30%;
 }
-
 .movein{
     -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
     transition: all 0.2s ease-in-out, transform 0.2s;
@@ -350,4 +291,26 @@ button:active{
     transition: all 0.2s ease-in-out, transform 0.2s;
     top: -598px !important;
 }
-/* end check loading styling */
+.movein2{
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    top: 0px !important;
+}
+.moveout2{
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    top: 598px !important;
+}
+/* end loading styling */
+
+
+
+/* result message styling */
+#ResultMessage{
+    padding-top: 30%;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: x-large;
+    display: none;
+}
+/* end result message styling */

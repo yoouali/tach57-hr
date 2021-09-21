@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 10%;
+}
+
+/* container styling */
+.container{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    max-width: 600px;
+    min-width: 400px;
+    border: 0.02px solid #999;
+    box-shadow: -4px 4px 8px rgba(100, 100, 100, 0.2), 4px -4px 8px rgba(100, 100, 100, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.9), 4px 4px 10px rgba(100, 100, 100, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(100, 100, 100, 0.5);
+    background-color: blue;
+}
+
+.entrepreneur-form{
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: 'Poppins';
+    background-color: #117DB0;
+}
+
+.form{
+    width: 80%;
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
+    backdrop-filter: blur(20px);
+}
+.form p{
+    color: white;
+    padding-bottom: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: xx-large;
+}
+
+.input-groupe{
+    width: 90%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.input{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #999;
+    border-radius: 2px;
+    background-color: #117DB0;
+    color: white;
+    outline: none;
+    padding-left: 3px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: medium;
+}
+.label{
+    display: block;
+    transform: translate(0, -3rem);
+    text-align: left;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: medium;
+    padding-left: 5px;
+}
+@supports (not (-ms-ime-align:auto)) {
+    .label {
+      color: #999;
+      transform: translate(0.25rem, -2.3rem);
+      transition: all 0.2s ease-out;
+    }
+    .input:focus + .label,
+    .input:not(:placeholder-shown) + .label {
+      color: white;
+      transform: translate(0, -3.6rem);
+      font-family: Roboto;
+      font-style: normal;
+      font-size: x-small;
+      padding-left: 5px;
+    }
+}
+.input:focus, .input:not(:placeholder-shown) {border:1px solid white !important;}
+.label span{background-color: #117DB0;padding-left: 2px;padding-right: 2px;}
+.input::-webkit-calendar-picker-indicator {filter: invert(1);}
+
+button{
+    width:20%;
+    height: 50px;
+    text-align: center;
+    background-color: #117DB0;
+    border: 1px solid white;
+    border-radius: 2px;
+    /* box-shadow: -4px 4px 8px rgba(7, 50, 70, 0.2), 4px -4px 8px rgba(7, 50, 70, 0.2), -4px -4px 8px rgba(27, 200, 255, 0.9), 4px 4px 10px rgba(7, 50, 70, 0.9), inset 1px 1px 2px rgba(27, 200, 255, 0.3), inset -1px -1px 2px rgba(7, 50, 70, 0.5);    font-style: 'Poppins'; */
+    font-family: 'Rajdhani', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+button:active{
+    -webkit-transition: all 0.2s ease-in-out, -webkit-transform 0.2s;
+    transition: all 0.2s ease-in-out, transform 0.2s;
+    box-shadow: 1px 1px 2px rgba(27, 200, 255, 0.3), -1px -1px 2px rgba(7, 50, 70, 0.5), inset -4px 4px 8px rgba(7, 50, 70, 0.2), inset 4px -4px 8px rgba(7, 50, 70, 0.2), inset -4px -4px 8px rgba(27, 200, 255, 0.9), inset 4px 4px 10px rgba(7, 50, 70, 0.9);
+}
+
+.FormError{
+    color: #d93025;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    /* visibility: hidden; */
+}

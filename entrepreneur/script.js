@@ -101,9 +101,7 @@ function moveOutAnimation(){
 
 //reauest check
 function checkAniamtion(e){
-    console.log("the respone text :");
     var tab = JSON.parse(e);
-    // console.log(tab);
     if (e === "true"){
         loadingCheck.classList.add("check-animation");
         setTimeout(function() {loadingIcon.classList.add("check-icon");}, 800);
@@ -114,20 +112,11 @@ function checkAniamtion(e){
         setTimeout(function() {loadingCheck.classList.remove("error-animation");}, 800);
         setTimeout(function() {moveOutAnimation();;}, 800);
         setTimeout(function(){
-            if (tab.errors.Email){
-                email.style.color="red";
-                setTimeout(function(){email.style.color="white";}, 2000)
-            }
-            if (tab.errors.Identifiant){
-                identifiant.style.color="red";
-                setTimeout(function(){identifiant.style.color="white";}, 2000)
-            }
-
-            if (tab.errors.Email && tab.errors.Identifiant){formError.innerText = "Email meawd indetifient meawd";setTimeout(function(){formError.innerText = "";}, 3000)}
-            
-            if (tab.errors.Identifiant && !tab.errors.Email){formError.innerText = "indetifient meawd";setTimeout(function(){formError.innerText = "";}, 3000)}
-            
-            if (tab.errors.Email && !tab.errors.Identifiant){formError.innerText = "Email meawd";setTimeout(function(){formError.innerText = "";}, 3000)}
+        if (tab.errors.Email){email.style.color="red";setTimeout(function(){email.style.color="white";}, 2000)}
+        if (tab.errors.Identifiant){identifiant.style.color="red";setTimeout(function(){identifiant.style.color="white";}, 2000)}
+        if (tab.errors.Email && tab.errors.Identifiant){formError.innerText = "Email meawd indetifient meawd";setTimeout(function(){formError.innerText = "";}, 3000)}
+        if (tab.errors.Identifiant && !tab.errors.Email){formError.innerText = "indetifient meawd";setTimeout(function(){formError.innerText = "";}, 3000)}
+        if (tab.errors.Email && !tab.errors.Identifiant){formError.innerText = "Email meawd";setTimeout(function(){formError.innerText = "";}, 3000)}
         }, 100);
     }
 }

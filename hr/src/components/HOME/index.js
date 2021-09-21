@@ -1,7 +1,11 @@
+import axios from "axios";
 import { Redirect  } from "react-router";
 
 function Home(){
-    const isLogged = !!sessionStorage.getItem('token_object');
+    const config = {header:{Authorization: 'Bearer' + localStorage.getItem('token')}};
+    axios.get('https://stagiaire.herokuapp.com/api', config).then(res =>{console.log(res);},err => {console.log(err)})
+
+    const isLogged = localStorage.getItem('token');
     if (!isLogged) {
         return (
             <Redirect to="/login" />

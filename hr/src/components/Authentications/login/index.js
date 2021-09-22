@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import { Redirect  } from "react-router";
 import axios from 'axios';
 import './style.css';
@@ -6,7 +7,7 @@ import './style.css';
 
 
 function Login(){
-
+  const history = useHistory();
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
 
@@ -20,16 +21,16 @@ function Login(){
     axios.post("https://stagiaire.herokuapp.com/api/login",data)
       .then(res => {
         console.log(res)
-        localStorage.setItem('token', res.data.token);
-        return (
-          <Redirect to="/login" />
-        )
+        localStorage.setItem('token', res.data.data.token);
+        history.push("/")
       })
       .catch(err => {
         console.log(err)
       })
   };
 
+  const isLogged = localStorage.getItem('token');
+  if (isLogged && isLogged !== undefined) {return (<Redirect to="/" />)}
   return(
     <div>
       <div className="container">

@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Home from './components/HOME';
 import Login from './components/Authentications/login';
+import './style.css';
 
 
 function App() {

@@ -6,7 +6,7 @@ function Home(){
     const token = localStorage.getItem('token');
     const config = {header:{'Authorization': 'Bearer ' + token}};
     console.log(config)
-    axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
+    axios.get('https://stagiaire.herokuapp.com/api/user/all', {headers: {"Authorization": `Bearer ${token}`}})
     .then(res =>{console.log(res);})
     .catch(err => {console.log("sadsfdsf");console.log(err)})
 

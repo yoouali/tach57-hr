@@ -5,10 +5,19 @@ import './style.css';
 
 function Home(){
     const [isLoading, setLoading] = useState(true);
-    const [user, setUser] = useState(); 
+    const [user, setUser] = useState();
+    const [entrepreneur, setEntrepreneur] = useState();
+
     useEffect(() => {
         const token = localStorage.getItem('token');
         const config = {header:{'Authorization': 'Bearer ' + token}};
+
+        axios.get('https://stagiaire.herokuapp.com/api/auto-entrepreneur/notActive', {headers: {"Authorization": `Bearer ${token}`}})
+        .then(res =>{console.log(res);
+            setEntrepreneur(res.data);
+        })
+        .catch(err => {console.log(err)})
+
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
             setUser(res.data);

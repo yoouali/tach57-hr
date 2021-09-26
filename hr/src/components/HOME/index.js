@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useState, useContext, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
 import './style.css';
 
@@ -26,7 +26,34 @@ function Home(){
         .catch(err => {console.log(err)})
     }, []);
 
+    function handelUserNav(){
+        let element = document.getElementById("userNav");
+        if (element.style.display === "none")
+            element.style.display="block";
+        else
+            element.style.display="none";
+        
+    }
+    document.addEventListener("click", function(evt) {
+        let flyoutEl = document.getElementById('user'),
+          targetEl = evt.target; // clicked element      
+        do {
+          if(targetEl == flyoutEl) {
+            // This is a click inside, does nothing, just return.
+           console.log("click inside");
+            return;
+          }
+          // Go up the DOM
+          targetEl = targetEl.parentNode;
+        } while (targetEl);
+        // This is a click outside.
+        if (document.getElementById("userNav").style.display === "block")
+            document.getElementById("userNav").style.display = "none";
+      });
+
     
+    console.log("entrepreneur :");
+    console.log(entrepreneur);
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
 
@@ -39,9 +66,9 @@ function Home(){
             <section>
                 <div className="header">
                     <div className="logo">jdfhdskhf</div>
-                    <div className="user">
-                        <span>{user.role}</span>
-                        <ul className="user-nav">
+                    <div id="user" className="user">
+                        <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.role}</span></div>
+                        <ul id="userNav" className="user-nav">
                             <li>Setting</li>
                             <li>logout</li>
                         </ul>

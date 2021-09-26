@@ -17,3 +17,33 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.user{
+    width: 120px;
+}
+.user-role{
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    padding-top: 10%;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+.user-role:hover{
+    color: green;
+}
+
+.user-nav{
+    text-align: center;
+    list-style-type: none;
+    background-color: whitesmoke;
+    display: none;
+}
+
+.user-nav-dropdown{
+    display: block;
+}

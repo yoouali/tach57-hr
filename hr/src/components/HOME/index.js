@@ -2,6 +2,8 @@ import axios from "axios";
 import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
 import './style.css';
+import logo from './logo.png';
+import Entrepreneur from '../entrepreneur';
 
 function Home(){
     const [isLoading, setLoading] = useState(true);
@@ -10,8 +12,6 @@ function Home(){
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        const config = {header:{'Authorization': 'Bearer ' + token}};
-
         axios.get('https://stagiaire.herokuapp.com/api/auto-entrepreneur/notActive', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
             setEntrepreneur(res.data);
@@ -38,7 +38,7 @@ function Home(){
         let flyoutEl = document.getElementById('user'),
           targetEl = evt.target; // clicked element      
         do {
-          if(targetEl == flyoutEl) {
+          if(targetEl === flyoutEl) {
             // This is a click inside, does nothing, just return.
            console.log("click inside");
             return;
@@ -65,16 +65,21 @@ function Home(){
         <div>
             <section>
                 <div className="header">
-                    <div className="logo">jdfhdskhf</div>
+                    <div className="logo"><img src={logo} alt="teck-57-log"/></div>
                     <div id="user" className="user">
                         <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.role}</span></div>
                         <ul id="userNav" className="user-nav">
+                            <li>Profile</li>
                             <li>Setting</li>
-                            <li>logout</li>
+                            <li className="logout">logout</li>
                         </ul>
                     </div>
                 </div>
             </section>
+            <div className="homeContainer">
+                <Entrepreneur />
+                <Entrepreneur />
+            </div>
             <h1>Home Page</h1>
         </div>
     )

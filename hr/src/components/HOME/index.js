@@ -8,15 +8,10 @@ import Entrepreneur from '../entrepreneur';
 function Home(){
     const [isLoading, setLoading] = useState(true);
     const [user, setUser] = useState();
-    const [entrepreneur, setEntrepreneur] = useState();
+   
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get('https://stagiaire.herokuapp.com/api/auto-entrepreneur/notActive', {headers: {"Authorization": `Bearer ${token}`}})
-        .then(res =>{console.log(res);
-            setEntrepreneur(res.data);
-        })
-        .catch(err => {console.log(err)})
 
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
@@ -52,8 +47,6 @@ function Home(){
       });
 
     
-    console.log("entrepreneur :");
-    console.log(entrepreneur);
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
 
@@ -80,7 +73,6 @@ function Home(){
                 <Entrepreneur />
                 <Entrepreneur />
             </div>
-            <h1>Home Page</h1>
         </div>
     )
 }

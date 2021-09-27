@@ -12,6 +12,128 @@
     width: 400px;
     height: 250px;
     background-color: #117DB0;
-    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 2px;
     margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.entrepreneurHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.entrepreneurOperation{
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.entrepreneurHeader p{
+    padding-top: 2px;
+    font-family: 'Poppins';
+    font-size:medium;
+    font-weight: bold;
+}
+
+.entrepreneurOperation div{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 10px;
+    padding: 5px;
+    border:2px solid#117DB0;
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+    color: #117DB0;
+    cursor: pointer;
+}
+
+.entrepreneurOperation div:hover{
+    border: 2px solid green;
+    color: green;
+}
+
+.entrepreneurList{
+    margin-top: 20px;
+    width: 100%;
+    height: 169px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.entrepreneurItem{
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+    border: 1px solid #117DB0;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.operationButton{
+    padding-top: 4px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.operationTitle{
+    padding-top: 5px;
+    padding-left: 5px;
+    max-width: 190px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins';
+    font-size:medium;
+    cursor: pointer;
+}
+.operationTitle:hover{
+    color: #117DB0;
+    font-style: initial;
+}
+.operationTitle p{
+    padding-right: 5px;
+}
+
+.operationButton button{
+    padding-left: 5px;
+    padding-right: 5px;
+    float: right;
+    height: 90%;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.operationButton .active{
+    background-color: white;
+    color: #117DB0;
+    border: 1px solid #117DB0;
+    margin-right: 5px;
+}
+.operationButton .active:hover{
+    color: green;
+    border: 1px solid green;
+}
+.operationButton .active:active{
+    box-shadow: none;
+}
+
+.operationButton .remove{
+    background-color: white;
+    color: #117DB0;
+    border: 1px solid #117DB0;
+}
+.operationButton .remove:hover{
+    color: red;
+    border: 1px solid red;
+}
+.operationButton .remove:active{
+    box-shadow: none;
 }

@@ -33,7 +33,6 @@ function Stagiaire(){
          .catch(err => {console.log(err)})
     }
     function attestationActive(e){
-        console.log("sddasdsad");
         const token = localStorage.getItem('token');
         const url = "https://stagiaire.herokuapp.com/api/stagiaire/attestation/" + e;
         console.log(url);
@@ -54,10 +53,11 @@ function Stagiaire(){
         var namesList = stagiaire.map(function(name){
             return (<div key={name.id} className="stagiaireItem"><div className="operationTitle"><p>{name.Nom}</p><p>{name.Prenom}</p></div><div className="operationButton"><button value={name.id} onClick={({ target }) =>stagiaireActive(target.value)} className="active">Active</button><button className="remove">Remove</button></div></div>);
         })
+        if (attestation){
         console.log(stagiaire);
         var namesList2 = attestation.map(function(name){
             return (<div key={name.id} className="stagiaireItem"><div className="operationTitle"><p>{name.Nom}</p><p>{name.Prenom}</p></div><div className="operationButton"><button value={name.id} onClick={({ target }) =>attestationActive(target.value)} className="active">Attestation</button></div></div>);
-        })
+        })}
 
 
     return(

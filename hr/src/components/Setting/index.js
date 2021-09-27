@@ -2,15 +2,12 @@ import axios from "axios";
 import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
 import './style.css';
-import logo from './logo.png';
-import Entrepreneur from '../entrepreneur';
-import Stagiaire from "../stagiaire";
+import logo from '../../images/logo.png';
 import { Link } from "react-router-dom";
 
-function Home(){
+function Setting(){
     const [isLoading, setLoading] = useState(true);
     const [user, setUser] = useState();
-   
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -22,6 +19,7 @@ function Home(){
         })
         .catch(err => {console.log(err)})
     }, []);
+
 
     function handelUserNav(){
         let element = document.getElementById("userNav");
@@ -48,15 +46,10 @@ function Home(){
             document.getElementById("userNav").style.display = "none";
       });
 
-    
+    if (isLoading) {return <div className="App">Loading...</div>;}
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
-
-    if (isLoading) {
-            return <div className="App">Loading...</div>;
-    }
-
-    return(
+    return (
         <div>
             <section>
                 <div className="header">
@@ -72,12 +65,15 @@ function Home(){
                     </div>
                 </div>
             </section>
-            <div className="homeContainer">
-                <Stagiaire />
-                <Entrepreneur />
+            <div className="settingContainer">
+                <form>
+                    <div className="settingForm">
+                        <div className="inputGroup"></div>
+                    </div>
+                </form>
             </div>
         </div>
     )
 }
 
-export default Home
+export default Setting

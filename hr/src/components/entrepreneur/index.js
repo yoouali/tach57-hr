@@ -34,8 +34,7 @@ function Entrepreneur(){
         return <div className="App">Loading...</div>;
     }
 
-    // if (!isLoading)
-    // {
+    
         console.log(entrepreneur);
         var namesList = entrepreneur.map(function(name){
             if (name.Active === 0)
@@ -43,7 +42,7 @@ function Entrepreneur(){
             else
                 return (<div></div>);
         })
-    // }
+
 
     return(
         <div className="entrepreneurContainer">
@@ -55,14 +54,6 @@ function Entrepreneur(){
                 </div>
             </div>
             <div className="entrepreneurList">
-                {/* <div className="entrepreneurItem">
-                    <div className="operationTitle">
-                        <p>{entrepreneur[0].Nom}</p><p>{entrepreneur[0].Prenom}</p>
-                    </div>
-                    <div className="operationButton"> 
-                        <button className="active">Active</button><button className="remove">Remove</button>
-                    </div>
-                </div> */}
                 {namesList}
             </div>
             <div>

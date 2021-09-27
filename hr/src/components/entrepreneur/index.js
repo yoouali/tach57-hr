@@ -23,8 +23,11 @@ function Entrepreneur(){
 
         axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
          .then(res =>{console.log(res);
-         })
+        })
          .catch(err => {console.log(err)})
+    }
+
+    function updatehola(){
     }
 
     if (isLoading) {
@@ -48,7 +51,7 @@ function Entrepreneur(){
                 <p>ENTREPRENEUR</p>
                 <div className="entrepreneurOperation">
                     <div>All</div>
-                    <div>Refresh</div>
+                    <div onClick={updatehola}>Refresh</div>
                 </div>
             </div>
             <div className="entrepreneurList">

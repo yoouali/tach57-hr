@@ -23,8 +23,17 @@ function Entrepreneur(){
 
         axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
          .then(res =>{console.log(res);
+            removeItem(e);
         })
          .catch(err => {console.log(err)})
+    }
+
+    function removeItem(e){
+        const id = Number(e);
+        const newPeople = entrepreneur.filter(function(item){
+            return item.id !== id
+        });
+        setEntrepreneur(newPeople);
     }
 
     function updatehola(){

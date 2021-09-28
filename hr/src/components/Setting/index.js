@@ -50,7 +50,7 @@ function Setting(){
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
     return (
-        <div>
+        <div className="box">
             <section>
                 <div className="header">
                     <div className="logo"><img src={logo} alt="teck-57-log"/></div>

@@ -36,6 +36,10 @@
     font-weight: bolder;
     color: #117DB0;
     cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 .user-role:hover{
     color: green;

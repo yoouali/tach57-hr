@@ -57,7 +57,7 @@ function Home(){
     }
 
     return(
-        <div>
+        <div className="box">
             <section>
                 <div className="header">
                     <div className="logo"><img src={logo} alt="teck-57-log"/></div>

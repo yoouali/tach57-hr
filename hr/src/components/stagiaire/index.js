@@ -10,7 +10,7 @@ function Stagiaire(){
     useEffect(() => {
         const token = localStorage.getItem('token');
         axios.get('https://stagiaire.herokuapp.com/api/stagiaire/isFinish/1', {headers: {"Authorization": `Bearer ${token}`}})
-        .then(res =>{console.log(res.data.data);
+        .then(res =>{
             setAttestation(res.data.data);
         })
         .catch(err => {console.log(err)})
@@ -29,6 +29,7 @@ function Stagiaire(){
 
         axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
          .then(res =>{console.log(res);
+                removeItem(e);
         })
          .catch(err => {console.log(err)})
     }
@@ -39,22 +40,26 @@ function Stagiaire(){
 
         axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
          .then(res =>{console.log(res);
+                removeItem(e);
         })
          .catch(err => {console.log(err)})
     }
-
-    function updatehola(){
+    
+    function removeItem(e){
+        const id = Number(e);
+        const newPeople = attestation.filter(function(item){
+            return item.id !== id
+        });
+        setAttestation(newPeople);
     }
 
     if (isLoading) {
         return <div className="App">Loading...</div>;
     }
-        console.log(stagiaire);
         var namesList = stagiaire.map(function(name){
             return (<div key={name.id} className="stagiaireItem"><div className="operationTitle"><p>{name.Nom}</p><p>{name.Prenom}</p></div><div className="operationButton"><button value={name.id} onClick={({ target }) =>stagiaireActive(target.value)} className="active">Active</button><button className="remove">Remove</button></div></div>);
         })
         if (attestation){
-        console.log(stagiaire);
         var namesList2 = attestation.map(function(name){
             return (<div key={name.id} className="stagiaireItem"><div className="operationTitle"><p>{name.Nom}</p><p>{name.Prenom}</p></div><div className="operationButton"><button value={name.id} onClick={({ target }) =>attestationActive(target.value)} className="active">Attestation</button></div></div>);
         })}
@@ -66,7 +71,7 @@ function Stagiaire(){
                 <p>STAGIAIRE</p>
                 <div className="stagiaireOperation">
                     <div>All</div>
-                    <div onClick={updatehola}>Refresh</div>
+                    <div>Refresh</div>
                 </div>
             </div>
             <div className="stagiaireList">

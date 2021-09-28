@@ -35,7 +35,6 @@ function Entrepreneur(){
     }
 
     
-        console.log(entrepreneur);
         var namesList = entrepreneur.map(function(name){
             if (name.Active === 0)
             return (<div key={name.id} className="entrepreneurItem"><div className="operationTitle"><p>{name.Nom}</p><p>{name.Prenom}</p></div><div className="operationButton"><button value={name.id} onClick={({ target }) =>entrepreneurActive(target.value)} className="active">Active</button><button className="remove">Remove</button></div></div>);

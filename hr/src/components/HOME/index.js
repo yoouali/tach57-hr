@@ -1,11 +1,21 @@
-import axios from "axios";
 import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
-import './style.css';
-import logo from './logo.png';
+import { Link } from "react-router-dom";
+import axios from "axios";
+
 import Entrepreneur from '../entrepreneur';
 import Stagiaire from "../stagiaire";
-import { Link } from "react-router-dom";
+
+import './style.css';
+
+import logo from './logo.png';
+import profileIcon from '../../images/icons/person.svg';
+import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
+import stagiaireIcon from '../../images/icons/stagiaire.svg';
+import freelancerIcon from '../../images/icons/freelancer.svg';
+
+
+
 
 function Home(){
     const [isLoading, setLoading] = useState(true);
@@ -73,8 +83,15 @@ function Home(){
                 </div>
             </section>
             <div className="homeContainer">
-                <Stagiaire />
-                <Entrepreneur />
+                <div className="sideBar"><div><img src={profileIcon} alt="profileicon" /></div>
+                <div><img src={stagiaireIcon} alt="profileicon" /></div>
+                <div><img src={entrepreneurIcon} alt="profileicon" /></div>
+                <div><img src={freelancerIcon} alt="profileicon" /></div>
+                </div>
+                <div className="dashborde">
+                    <Stagiaire />
+                    <Entrepreneur />
+                </div>
             </div>
         </div>
     )

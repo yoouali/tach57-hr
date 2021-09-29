@@ -69,12 +69,36 @@
 .homeContainer{
     padding-top: 20px;
     padding-bottom: 20px;
-    /* padding-left: 200px; */
+    background-color: #2874A6;
+    background-color: #117DB0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+}
+.sideBar{
+    width: 80px;
+    height: 100%;
+    background-color: azure;
+    padding-top: 10px;
+}
+.sideBar div{
+    margin: 10px 0 20px 6px;
+    padding-top: 10px;
+    width: 80%;
+    height: 25%;
+    max-height: 64px;
+    background-color: white;
+    text-align: center;
+}
+
+.sideBar div img{
+    height: 80%;
+}
+
+.dashborde{
+    flex: 1 1 auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content:space-around;
-    background-color: #2874A6;
-    background-color: #117DB0;
-    flex: 1 1 auto;
 }

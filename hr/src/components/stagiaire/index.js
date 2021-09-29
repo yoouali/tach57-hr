@@ -29,7 +29,7 @@ function Stagiaire(){
 
         axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
          .then(res =>{console.log(res);
-                removeItem(e);
+            removeStagiaire(e);
         })
          .catch(err => {console.log(err)})
     }
@@ -40,18 +40,26 @@ function Stagiaire(){
 
         axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
          .then(res =>{console.log(res);
-                removeItem(e);
+                removeAttestation(e);
         })
          .catch(err => {console.log(err)})
     }
     
-    function removeItem(e){
+    function removeAttestation(e){
         const id = Number(e);
         const newPeople = attestation.filter(function(item){
             return item.id !== id
         });
         setAttestation(newPeople);
     }
+    function removeStagiaire(e){
+        const id = Number(e);
+        const newPeople = stagiaire.filter(function(item){
+            return item.id !== id
+        });
+        setStagiaire(newPeople);
+    }
+
 
     if (isLoading) {
         return <div className="App">Loading...</div>;

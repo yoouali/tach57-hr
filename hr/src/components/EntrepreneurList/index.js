@@ -11,17 +11,17 @@ import stagiaireIcon from '../../images/icons/stagiaire.svg';
 import freelancerIcon from '../../images/icons/freelancer.svg';
 
 
-function StagiaireList(){
+function EntrepreneurList(){
     const [isLoading, setLoading] = useState(true);
     const [user, setUser] = useState();
-    const [stagiaireList, setStagiaireList] = useState();
+    const [entrepreneurList, setEntrepreneurList] = useState();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
         
-        axios.get('https://stagiaire.herokuapp.com/api/stagiaire', {headers: {"Authorization": `Bearer ${token}`}})
+        axios.get('https://stagiaire.herokuapp.com/api/auto-entrepreneur', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
-            setStagiaireList(res.data.data);
+            setEntrepreneurList(res.data.data);
         })
         .catch(err => {console.log(err)})
 
@@ -58,9 +58,9 @@ function StagiaireList(){
         if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
             document.getElementById("userNav").style.display = "none";
       });
-      if(stagiaireList !== undefined){
-      console.log(stagiaireList);
-      var namelist = stagiaireList.map(function(name){
+      if(entrepreneurList !== undefined){
+      console.log(entrepreneurList);
+      var namelist = entrepreneurList.map(function(name){
           return(
             <div key={name.id} className="item">
             <div className="itemTitle"><p>{name.SujetDeStage}</p></div>
@@ -69,7 +69,8 @@ function StagiaireList(){
             <p className="itemProp">spactate</p>
             </div>
           )
-      })}
+      })
+      }
 
     if (isLoading) {return <div className="App">Loading...</div>;}
     const isLogged = localStorage.getItem('token');
@@ -94,7 +95,7 @@ function StagiaireList(){
                 <div className="sideBar">
                 <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
                 <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
+                <div><img src={entrepreneurIcon} alt="profileicon" /></div>
                 <div><img src={freelancerIcon} alt="profileicon" /></div>
                 </div>
                 <div className="dashborde">
@@ -111,4 +112,4 @@ function StagiaireList(){
     )
 }
 
-export default StagiaireList
+export default EntrepreneurList

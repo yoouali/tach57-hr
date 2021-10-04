@@ -2,6 +2,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Home from './components/HOME';
 import Login from './components/Authentications/login';
 import Setting from './components/Setting';
+import StagiaireList from './components/StagiaireList';
 import './style.css';
 
 
@@ -12,6 +13,7 @@ function App() {
       <Route exact path="/"> <Home /></Route>
       <Route exact path="/login"> <Login /></Route>
       <Route exact path="/setting"> <Setting /></Route>
+      <Route exact path="/Stagiairelist"> <StagiaireList /></Route>
       </BrowserRouter>
     </div>
   );

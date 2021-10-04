@@ -83,9 +83,10 @@ function Home(){
                 </div>
             </section>
             <div className="homeContainer">
-                <div className="sideBar"><div><img src={profileIcon} alt="profileicon" /></div>
+                <div className="sideBar">
+                <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
                 <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
-                <div><img src={entrepreneurIcon} alt="profileicon" /></div>
+                <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
                 <div><img src={freelancerIcon} alt="profileicon" /></div>
                 </div>
                 <div className="dashborde">

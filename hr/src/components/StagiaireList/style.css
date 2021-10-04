@@ -2,3 +2,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap');
 
+.list{
+    width: 90%;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.list .item{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto';
+    font-size: medium;
+}
+.itemTitle{
+    width: 200px;
+}
+.itemTitle p{
+    font-family: 'Poppins' !important; 
+    font-size: medium;
+    font-weight: bold;
+    color: chartreuse;
+}
+
+.itemOwner{
+    display: flex;
+    flex-direction: row;
+}
+.itemOwner p{
+    padding-left: 5px;
+}
+
+.itemDate{
+    display: flex;
+    flex-direction: row;
+}
+.itemDate p{
+    padding-left: 5px;
+}
+.itemProp{
+    cursor:pointer;
+    color: green;
+}
+.itemProp:hover{
+    color: chartreuse;
+}

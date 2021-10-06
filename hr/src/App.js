@@ -4,7 +4,7 @@ import Login from './components/Authentications/login';
 import Setting from './components/Setting';
 import StagiaireList from './components/StagiaireList';
 import EntrepreneurList from './components/EntrepreneurList';
-import StagiaireComp from './components/StagiareComp';
+// import StagiaireComp from './components/StagiareComp';
 
 import './style.css';
 
@@ -17,7 +17,7 @@ function App() {
       <Route exact path="/setting"> <Setting /></Route>
       <Route exact path="/Stagiairelist"> <StagiaireList /></Route>
       <Route exact path="/Entrepreneurlist"> <EntrepreneurList /></Route>
-      <Route exact path="/Stagiaire/:id"> <StagiaireComp/></Route>
+      {/* <Route exact path="/Stagiaire/:id"> <StagiaireComp/></Route> */}
       </BrowserRouter>
     </div>
   );

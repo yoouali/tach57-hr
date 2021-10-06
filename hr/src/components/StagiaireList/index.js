@@ -9,7 +9,6 @@ import profileIcon from '../../images/icons/person.svg';
 import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
 import stagiaireIcon from '../../images/icons/stagiaire.svg';
 import freelancerIcon from '../../images/icons/freelancer.svg';
-import StagiaireComp from "../StagiareComp";
 
 
 function StagiaireList(){
@@ -35,6 +34,8 @@ function StagiaireList(){
     }, []);
 
 
+   
+
     function handelUserNav(){
         let element = document.getElementById("userNav");
         if (element.style.display === "none")
@@ -59,19 +60,32 @@ function StagiaireList(){
         if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
             document.getElementById("userNav").style.display = "none";
       });
+
       if(stagiaireList !== undefined){
-      console.log(stagiaireList);
-      var namelist = stagiaireList.map(function(name){
-          return(
+        var namelist = stagiaireList.map(function(name){
+             return(
             <div key={name.id} className="item">
             <div className="itemTitle"><p>{name.SujetDeStage}</p></div>
             <div className="itemOwner"><p>Ouali</p><p>Youssef</p></div>
             <div className="itemDate"><p>25-08-2021</p><p>25-02-2021</p></div>
-            <Link to={"/Stagiaire/"+name.id}  > <p className="itemProp">spactate</p></Link>
+            <p className="itemProp">spactate</p>
+            {/* <Link to={"/Stagiaire/"+name.id}  > <p className="itemProp">spactate</p></Link> */}
             </div>
           )
       })}
 
+      const [serch, setSerch] = useState();
+      function handleSerch(e) {
+          e.preventDefault();
+          const token = localStorage.getItem('token');
+          if (serch === undefined || serch === "")
+              return;
+          axios.get('https://stagiaire.herokuapp.com/api/stagiaire/'+serch, {headers: {"Authorization": `Bearer ${token}`}})
+          .then(res =>{;
+              setStagiaireList(res.data);
+          })
+          .catch(err => {console.log(err)})
+        }
     if (isLoading) {return <div className="App">Loading...</div>;}
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
@@ -101,7 +115,16 @@ function StagiaireList(){
                 <div className="dashborde">
                     <div className="list">
                         <div className="ListHeader">
-                            <div className="SerchBar"></div>
+                            <div className="SerchBar">
+                                <form onSubmit={handleSerch}>
+                                    <div className="serchInput">
+                                        <input type="text"  placeholder="serch" className="Serch"
+                                        onChange={({ target }) => setSerch(target.value)}
+                                        />
+                                    </div>
+                                    <button className="serchButton">Serch</button>
+                                </form>
+                            </div>
                             <div className="Filter"></div>
                         </div>
                         {namelist}

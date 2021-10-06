@@ -18,16 +18,16 @@ function StagiaireComp(){
     const {id} = useParams();
     const [isLoading, setLoading] = useState(true);
     const [user, setUser] = useState();
-    const [stage, setStage] = useState();
+    // const [stage, setStage] = useState();
    
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get('https://stagiaire.herokuapp.com/api/stagiaire/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
-        .then(res =>{
-            setStage(res.data);
-        })
-        .catch(err => {console.log(err)})
+        // axios.get('https://stagiaire.herokuapp.com/api/stagiaire/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
+        // .then(res =>{
+        //     setStage(res.data);
+        // })
+        // .catch(err => {console.log(err)})
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
             setUser(res.data);

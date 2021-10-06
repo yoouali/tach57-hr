@@ -1,31 +1,33 @@
-import axios from "axios";
 import {useState, useEffect} from 'react';
-import { Redirect  } from "react-router";
-import './style.css';
-import logo from '../../images/logo.png';
+import { Redirect, useParams  } from "react-router";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
+import './style.css';
+
+import logo from '../../images/logo.png';
 import profileIcon from '../../images/icons/person.svg';
 import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
 import stagiaireIcon from '../../images/icons/stagiaire.svg';
 import freelancerIcon from '../../images/icons/freelancer.svg';
-import StagiaireComp from "../StagiareComp";
 
 
-function StagiaireList(){
+
+
+function StagiaireComp(){
+    const {id} = useParams();
     const [isLoading, setLoading] = useState(true);
     const [user, setUser] = useState();
-    const [stagiaireList, setStagiaireList] = useState();
+    const [stage, setStage] = useState();
+   
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        
-        axios.get('https://stagiaire.herokuapp.com/api/stagiaire', {headers: {"Authorization": `Bearer ${token}`}})
-        .then(res =>{console.log(res);
-            setStagiaireList(res.data.data);
+        axios.get('https://stagiaire.herokuapp.com/api/stagiaire/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
+        .then(res =>{
+            setStage(res.data);
         })
         .catch(err => {console.log(err)})
-
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
             setUser(res.data);
@@ -33,7 +35,6 @@ function StagiaireList(){
         })
         .catch(err => {console.log(err)})
     }, []);
-
 
     function handelUserNav(){
         let element = document.getElementById("userNav");
@@ -59,39 +60,31 @@ function StagiaireList(){
         if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
             document.getElementById("userNav").style.display = "none";
       });
-      if(stagiaireList !== undefined){
-      console.log(stagiaireList);
-      var namelist = stagiaireList.map(function(name){
-          return(
-            <div key={name.id} className="item">
-            <div className="itemTitle"><p>{name.SujetDeStage}</p></div>
-            <div className="itemOwner"><p>Ouali</p><p>Youssef</p></div>
-            <div className="itemDate"><p>25-08-2021</p><p>25-02-2021</p></div>
-            <Link to={"/Stagiaire/"+name.id}  > <p className="itemProp">spactate</p></Link>
-            </div>
-          )
-      })}
 
-    if (isLoading) {return <div className="App">Loading...</div>;}
+    
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
+
+    if (isLoading) {
+            return <div className="App">Loading...</div>;
+    }
     return(
         <div className="box">
-        <section>
-            <div className="header">
-                <div className="logo"><img src={logo} alt="teck-57-log"/></div>
-                <div id="user" className="user">
-                    <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.role}</span></div>
-                    <ul id="userNav" className="user-nav">
-                        <li>Profile</li>
-                        <Link to="../Setting">
-                        <li>Setting</li></Link>
-                        <li className="logout">logout</li>
-                    </ul>
+            <section>
+                <div className="header">
+                    <div className="logo"><img src={logo} alt="teck-57-log"/></div>
+                    <div id="user" className="user">
+                        <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.role}</span></div>
+                        <ul id="userNav" className="user-nav">
+                            <li>Profile</li>
+                            <Link to="../Setting">
+                            <li>Setting</li></Link>
+                            <li className="logout">logout</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <div className="homeContainer">
+            </section>
+            <div className="homeContainer">
                 <div className="sideBar">
                 <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
                 <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
@@ -99,17 +92,11 @@ function StagiaireList(){
                 <div><img src={freelancerIcon} alt="profileicon" /></div>
                 </div>
                 <div className="dashborde">
-                    <div className="list">
-                        <div className="ListHeader">
-                            <div className="SerchBar"></div>
-                            <div className="Filter"></div>
-                        </div>
-                        {namelist}
-                    </div>
+                    <p>{id}</p>
                 </div>
             </div>
         </div>
     )
 }
 
-export default StagiaireList
+export default StagiaireComp

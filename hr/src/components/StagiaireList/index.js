@@ -114,9 +114,9 @@ function StagiaireList(){
                 </div>
                 <div className="dashborde">
                     <div className="list">
-                        <div className="ListHeader">
-                            <div className="SerchBar">
-                                <form onSubmit={handleSerch}>
+                        <div className="listHeader">
+                            <div >
+                                <form className="serchBar" onSubmit={handleSerch}>
                                     <div className="serchInput">
                                         <input type="text"  placeholder="serch" className="Serch"
                                         onChange={({ target }) => setSerch(target.value)}

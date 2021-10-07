@@ -72,6 +72,19 @@ function EntrepreneurList(){
       })
       }
 
+      const [serch, setSerch] = useState();
+      function handleSerch(e) {
+          e.preventDefault();
+          const token = localStorage.getItem('token');
+          if (serch === undefined || serch === "")
+              return;
+          axios.get('https://stagiaire.herokuapp.com/api//auto-entrepreneur/'+serch, {headers: {"Authorization": `Bearer ${token}`}})
+          .then(res =>{;
+              setEntrepreneurList(res.data);
+          })
+          .catch(err => {console.log(err)})
+        }
+
     if (isLoading) {return <div className="App">Loading...</div>;}
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
@@ -100,9 +113,25 @@ function EntrepreneurList(){
                 </div>
                 <div className="dashborde">
                     <div className="list">
-                        <div className="ListHeader">
-                            <div className="SerchBar"></div>
-                            <div className="Filter"></div>
+                    <div className="listHeader">
+                            <div >
+                                <form className="serchBar" onSubmit={handleSerch}>
+                                    <div className="serchInput">
+                                        <input type="text"  placeholder="serch" className="Serch"
+                                        onChange={({ target }) => setSerch(target.value)}
+                                        />
+                                    </div>
+                                    <button className="serchButton">Serch</button>
+                                </form>
+                            </div>
+                            <div className="Filter">
+                                <div className="filterTitle">Filters : </div>
+                                <div className="filterOptions">
+                                    <p>New</p>
+                                    <p>Fineshd</p>
+                                    <p>On progrese</p>
+                                </div>
+                            </div>
                         </div>
                         {namelist}
                     </div>

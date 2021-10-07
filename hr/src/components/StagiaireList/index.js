@@ -125,7 +125,14 @@ function StagiaireList(){
                                     <button className="serchButton">Serch</button>
                                 </form>
                             </div>
-                            <div className="Filter"></div>
+                            <div className="Filter">
+                                <div className="filterTitle">Filters : </div>
+                                <div className="filterOptions">
+                                    <p>New</p>
+                                    <p>Fineshd</p>
+                                    <p>On progrese</p>
+                                </div>
+                            </div>
                         </div>
                         {namelist}
                     </div>

@@ -40,5 +40,56 @@
 .leftInfo{
     flex:auto 1 1;
     height: 100%;
-    background-color: blue;
+    background-color: #117DB0;
+    padding-top: 5px;
 }
+
+.perInfo{
+    width: 95%;
+    margin: auto;
+}
+.perInfoTitle{
+    font-family: 'rajdhani';
+    font-size: medium;
+    color: white;
+}
+
+.perInfoData{
+    top: -10px;
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.groupeInfo{
+    margin-bottom: 10px;
+}
+
+.infoTitle{
+    font-family: 'Roboto';
+    font-size: x-small;
+    color: white;
+    width: fit-content;
+    background-color: #117DB0;
+    padding-right: 2px;
+    padding-left: 2px;
+    transform: translate(0.1rem, 0);
+}
+
+.infoValue{
+    width: 200px;
+    overflow: auto;
+    scrollbar-width: none;
+    border: 1px solid white;
+    border-radius: 2px;
+    color: white;
+    font-family: 'Poppins';
+    font-size: medium;
+    padding: 5px;
+}
+.infoValue::-webkit-scrollbar {
+    display: none;
+  }

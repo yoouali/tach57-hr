@@ -109,8 +109,34 @@ function StagiaireComp(){
                         </div>
                         <div className="leftInfo">
                             <div className="perInfo">
-                                <div className="NameInfo">Youssef Ouali</div>
-                                <dov className=""></dov>
+                            <div className="perInfoTitle"><p>Personnelle Information</p></div>
+                            <div className="perInfoData">
+
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">name</div>
+                                    <div className="infoValue">Youssef Ouali</div>
+                                </div>
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">Email</div>
+                                    <div className="infoValue">youssefouali!@gmail.com</div>
+                                </div>
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">CIN</div>
+                                    <div className="infoValue">q2313213</div>
+                                </div>
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">TEL</div>
+                                    <div className="infoValue">0777672016</div>
+                                </div>
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">birtplace</div>
+                                    <div className="infoValue">lamhara taroudant</div>
+                                </div>
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">birtplace</div>
+                                    <div className="infoValue">lamhara taroudant</div>
+                                </div>
+                            </div>
                             </div>
                             <div className="proInfo"></div>
                         </div>

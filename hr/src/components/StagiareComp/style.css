@@ -8,18 +8,36 @@
     border-radius: 5px;
     overflow: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.rightBar{
+.stageTitle{
+    width: 60%;
+    height: 25px;
+    margin: auto;
+    text-align: center;
+    color: black;
+    font-family: 'rajdhani';
+    font-size: large;
+    font-weight: bold;
+}
+
+.stageInfo{
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.rightInfo{
     width: 150px;
     height: 100%;
     background-color: aqua;
 }
 
-.leftBar{
+.leftInfo{
     flex:auto 1 1;
     height: 100%;
     background-color: blue;

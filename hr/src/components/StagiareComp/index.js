@@ -26,7 +26,7 @@ function StagiaireComp(){
         axios.get('https://stagiaire.herokuapp.com/api/stagiaire/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
             console.log(res);
-            setStage(res.data);
+            setStage(res.data.data);
         })
         .catch(err => {console.log(err)})
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
@@ -69,6 +69,7 @@ function StagiaireComp(){
     if (isLoading) {
             return <div className="App">Loading...</div>;
     }
+    console.log(stage);
     return(
         <div className="box">
             <section>
@@ -94,8 +95,26 @@ function StagiaireComp(){
                 </div>
                 <div className="dashborde">
                 <div className="stageBar">
-                    <div className="rightBar"></div>
-                    <div className="leftBar"></div>
+                    <div className="stageTitle">sklhdkasjhdkashd</div>
+                    <div className="stageInfo">
+                        <div className="rightInfo">
+                            <div className="stageStatus">
+                                <p>Stage</p>
+                                <p>is Over</p>
+                            </div>
+                            <p>CV</p>
+                            <p>Convention</p>
+                            <p>Assurance</p>
+                            <p>Fiche du Stagiaire</p>
+                        </div>
+                        <div className="leftInfo">
+                            <div className="perInfo">
+                                <div className="NameInfo">Youssef Ouali</div>
+                                <dov className=""></dov>
+                            </div>
+                            <div className="proInfo"></div>
+                        </div>
+                    </div>
                 </div>
                 </div>
             </div>

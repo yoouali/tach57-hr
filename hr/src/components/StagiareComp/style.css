@@ -22,6 +22,7 @@
     font-family: 'rajdhani';
     font-size: x-large;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .stageInfo{
@@ -33,10 +34,57 @@
 }
 
 .leftInfo{
-    min-width: 150px;
+    min-width: 200px;
     height: 100%;
-    background-color: aqua;
+    background-color: white;
+    border-right: 1px solid #117DB0;
 }
+.stageStatus{
+    width: 80%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    color: white;
+    font-family: 'rajdhani';
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+#stageNotActive{background-color: red;}
+#stageActive{background-color: #117DB0;}
+#stageOver{background-color: yellow;}
+#stageFineshd{background-color: green;}
+
+.stageFile{
+    width: 80%;
+    padding-left: 5px;
+    margin: auto;
+    cursor: pointer;
+}
+.stageFile p{
+    font-family: 'Poppins';
+    font-size: medium;
+    font-weight: 600;
+    color: #117DB0;
+    text-decoration-line: underline;
+}
+
+.stageButton{
+    width: 70%;
+    height: 30px;
+    margin: auto;
+    margin-top: 10px;
+}
+.stageButton button{
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+}
+#stageButtonRemove{background-color: red;}
 
 .rightInfo{
     flex:auto 1 1;
@@ -56,7 +104,7 @@
 }
 .dateInfo{
     font-family: 'rajdhani';
-    font-size: medium;
+    font-size: large;
     color: #117DB0;
 }
 
@@ -67,7 +115,7 @@
 }
 .perInfoTitle{
     font-family: 'rajdhani';
-    font-size: medium;
+    font-size: large;
     color: #117DB0;
 }
 .perInfoTitle p span{
@@ -79,12 +127,12 @@
     transform: scale(-1, 1);
 }
 .perInfoTitle hr{
-    width: 165px;
+    width: 180px;
     border: none;
     border-top: 1px solid #117DB0;
 }
 #Desc{
-    width: 105px !important;
+    width: 110px !important;
 }
 
 .descInfo{
@@ -139,3 +187,4 @@
 .infoValue::-webkit-scrollbar {
     display: none;
   }
+

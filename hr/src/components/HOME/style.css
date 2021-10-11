@@ -76,7 +76,7 @@
     flex-direction: row;
 }
 .sideBar{
-    width: 80px;
+    min-width: 80px;
     height: 100%;
     background-color: azure;
     padding-top: 10px;

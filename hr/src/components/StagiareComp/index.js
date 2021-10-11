@@ -1,4 +1,4 @@
-import {useState, useEffect, Component} from 'react';
+import {useState, useEffect} from 'react';
 import { Redirect, useParams  } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -82,6 +82,25 @@ function StagiaireComp(){
         var Niveau = null
         if (stage.Niveau !== null)
             Niveau = <div className="groupeInfo"><div className="infoTitle">Niveau</div><div className="infoValue">{stage.Niveau}</div></div>
+        var stageBox = null
+        if (stage.Active === 0)
+            stageBox = <div id="stageNotActive" className="stageStatus"><p>Not Active</p><p> &#10007;</p></div>
+        if (stage.Active === 1 && stage.Finir === 0)
+            stageBox = <div id="stageActive" className="stageStatus"><p>in progress</p><p> &#9991;</p></div>
+        if (stage.Active === 1 && stage.Finir === 1 && stage.Attestation === 0)
+            stageBox = <div id="stageOver" className="stageStatus"><p>Over</p><p> &#10003;</p></div>
+        if (stage.Active === 1 && stage.Finir === 1 && stage.Attestation === 1)
+            stageBox = <div id="stageFineshd" className="stageStatus"><p> Finshed </p><p> &#10003;</p></div>
+        var Convention = null
+        if (stage.Convention !== null)
+            Convention = <div className="stageFile"><p>Convention</p></div>
+        var Attestation = null
+        if (stage.Active === 0)
+            Attestation = <div className="stageButton"><button>Active</button></div>
+        if (stage.Active === 1 && stage.Finir === 1 && stage.Attestation === 0)
+            Attestation = <div className="stageButton"><button>Attestation</button></div>
+        if (stage.Active === 1 && stage.Finir === 1 && stage.Attestation === 1)
+            Attestation = <div className="stageFile"><p>Attestation</p></div>
     }
     return(
         <div className="box">
@@ -111,19 +130,20 @@ function StagiaireComp(){
                     <div className="stageTitle">{stage.SujetDeStage}</div>
                     <div className="stageInfo">
                         <div className="leftInfo">
-                            <div className="stageStatus">
-                                <p>Stage</p>
-                                <p>is Over</p>
-                            </div>
-                            <p>CV</p>
-                            <p>Convention</p>
-                            <p>Assurance</p>
-                            <p>Fiche du Stagiaire</p>
+                            {stageBox}
+                            <div className="stageFile"><p>Fiche du Stagiaire</p></div>
+                            <div className="stageFile"><p>CV</p></div>
+                            <div className="stageFile"><p>Assurance</p></div>
+                            {Convention}
+
+                            {Attestation}
+                            <div className="stageButton"><button>Edit</button></div>
+                            <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">
                             <div className="stageDate">
-                                <div className="dateInfo"><p>Start at 02-10-2021 &#9716;</p></div>
-                                <div className="dateInfo"><p>Over at 02-10-2021 &#9719;</p></div>
+                                <div className="dateInfo"><p>Start at {stage.DateDeDebut} &#9716;</p></div>
+                                <div className="dateInfo"><p>Over at {stage.DateDeFin} &#9719;</p></div>
                             </div>
                             <div className="perInfo">
                                 <div className="perInfoTitle"><p>Descreption <span>&#128396;</span></p><hr id="Desc"></hr></div>
@@ -138,27 +158,27 @@ function StagiaireComp(){
 
                                 <div className="groupeInfo">
                                     <div className="infoTitle">name</div>
-                                    <div className="infoValue">Youssef Ouali</div>
+                                    <div className="infoValue">{stage.Nom} {stage.Prenom}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">Email</div>
-                                    <div className="infoValue">youssefouali!@gmail.com</div>
+                                    <div className="infoValue">{stage.Email}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">CIN</div>
-                                    <div className="infoValue">q2313213</div>
+                                    <div className="infoValue">{stage.CIN}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">TEL</div>
-                                    <div className="infoValue">0777672016</div>
+                                    <div className="infoValue">{stage.TEL}</div>
+                                </div>
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">birtday</div>
+                                    <div className="infoValue">{stage.DateDeNaissance}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">birtplace</div>
-                                    <div className="infoValue">lamhara taroudant</div>
-                                </div>
-                                <div className="groupeInfo">
-                                    <div className="infoTitle">birtplace</div>
-                                    <div className="infoValue">lamhara taroudant</div>
+                                    <div className="infoValue">{stage.LieuDeNaissance}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">Type de Stage</div>
@@ -166,6 +186,7 @@ function StagiaireComp(){
                                 </div>
                                 {Etablissement}
                                 {Filiere}
+                                {Niveau}
                             </div>
                             </div>
                         </div>

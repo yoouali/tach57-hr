@@ -5,6 +5,7 @@ import Setting from './components/Setting';
 import StagiaireList from './components/StagiaireList';
 import EntrepreneurList from './components/EntrepreneurList';
 import StagiaireComp from './components/StagiareComp';
+import EntrepreneurComp from './components/EntrepreneurComp';
 
 import './style.css';
 
@@ -18,6 +19,8 @@ function App() {
       <Route exact path="/Stagiairelist"> <StagiaireList /></Route>
       <Route exact path="/Entrepreneurlist"> <EntrepreneurList /></Route>
       <Route exact path="/Stagiaire/:id"> <StagiaireComp/></Route>
+      <Route exact path="/Entrepreneur/:id"> <EntrepreneurComp/></Route>
+
       </BrowserRouter>
     </div>
   );

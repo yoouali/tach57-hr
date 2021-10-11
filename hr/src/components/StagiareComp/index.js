@@ -155,7 +155,6 @@ function StagiaireComp(){
                             <div className="perInfo">
                                 <div className="perInfoTitle"><p>Stagiaire Information <span>&#128396;</span></p><hr></hr></div>
                             <div className="perInfoData">
-
                                 <div className="groupeInfo">
                                     <div className="infoTitle">name</div>
                                     <div className="infoValue">{stage.Nom} {stage.Prenom}</div>

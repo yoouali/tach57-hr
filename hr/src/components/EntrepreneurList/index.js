@@ -66,7 +66,7 @@ function EntrepreneurList(){
             <div className="itemTitle"><p>{name.SujetDeStage}</p></div>
             <div className="itemOwner"><p>Ouali</p><p>Youssef</p></div>
             <div className="itemDate"><p>25-08-2021</p><p>25-02-2021</p></div>
-            <p className="itemProp">spactate</p>
+            <Link to={"/Entrepreneur/"+name.id}  > <p className="itemProp">spactate</p></Link>
             </div>
           )
       })

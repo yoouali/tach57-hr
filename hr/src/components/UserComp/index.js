@@ -11,7 +11,7 @@ import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
 import stagiaireIcon from '../../images/icons/stagiaire.svg';
 import freelancerIcon from '../../images/icons/freelancer.svg';
 
-function EntrepreneurComp(){
+function UserComp(){
     const {id} = useParams();
     const [isLoading, setLoading] = useState(true);
     const [isLoading2, setLoading2] = useState(true);
@@ -87,11 +87,10 @@ function EntrepreneurComp(){
         </section>
         <div className="homeContainer">
             <div className="sideBar">
-                <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Userlist">  <div><img src={profileIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
-                <div><img src={freelancerIcon} alt="profileicon" /></div>
+            <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
+            <Link to="/Stagiairelist">  <div><img src={profileIcon} alt="profileicon" /></div> </Link>
+            <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
+            <div><img src={freelancerIcon} alt="profileicon" /></div>
             </div>
             <div className="dashborde">
                 <div className="stageBar">
@@ -160,4 +159,4 @@ function EntrepreneurComp(){
     )
 }
 
-export default EntrepreneurComp
+export default UserComp

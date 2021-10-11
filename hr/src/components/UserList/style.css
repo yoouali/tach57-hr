@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap');
+
+.userList{
+    width: 80%;
+    margin: auto;
+    flex: auto 1 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.userTable{
+    width: 200px;
+    height: 200px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#userTableAdmin{background-color: #117DB0;}
+#userTableRh{background-color: #11B03E;}
+
+.userTableRole{
+    color: white;
+    font-family: 'rajdhani';
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.userTableName{
+    width: 90%;
+    height: 90px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    border-radius: 2px;
+    background-color: white;
+    font-family:'rajdhani';
+    font-size: x-large;
+    font-weight: bold;
+}
+.userTableName p{margin: auto;}
+#userTableNameAdmin{color: #117DB0;}
+#userTableNameRh{color: #11B03E;}
+
+
+.userTableStatus{
+    font-family: 'rajdhani';
+    font-style: normal;
+    font-size: large;
+    color: white;
+}
+
+#filterAdmin{
+    background-color: #117DB0;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+}
+#filterRh{
+    background-color: #11B03E;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}

@@ -6,6 +6,8 @@ import StagiaireList from './components/StagiaireList';
 import EntrepreneurList from './components/EntrepreneurList';
 import StagiaireComp from './components/StagiareComp';
 import EntrepreneurComp from './components/EntrepreneurComp';
+import UserComp from './components/UserComp';
+import UserList from './components/UserList';
 
 import './style.css';
 
@@ -18,8 +20,10 @@ function App() {
       <Route exact path="/setting"> <Setting /></Route>
       <Route exact path="/Stagiairelist"> <StagiaireList /></Route>
       <Route exact path="/Entrepreneurlist"> <EntrepreneurList /></Route>
+      <Route exact path="/Userlist"> <UserList /></Route>
       <Route exact path="/Stagiaire/:id"> <StagiaireComp/></Route>
       <Route exact path="/Entrepreneur/:id"> <EntrepreneurComp/></Route>
+      <Route exact path="/user/:id"> <UserComp/></Route>
 
       </BrowserRouter>
     </div>

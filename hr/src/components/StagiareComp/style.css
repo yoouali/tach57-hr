@@ -20,7 +20,7 @@
     text-align: center;
     color: black;
     font-family: 'rajdhani';
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
 }
 
@@ -29,35 +29,81 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin-top: 10px;
 }
 
-.rightInfo{
-    width: 150px;
+.leftInfo{
+    min-width: 150px;
     height: 100%;
     background-color: aqua;
 }
 
-.leftInfo{
+.rightInfo{
     flex:auto 1 1;
     height: 100%;
-    background-color: #117DB0;
+    background-color: white;
     padding-top: 5px;
+}
+
+.stageDate{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #117DB0;
+}
+.dateInfo{
+    font-family: 'rajdhani';
+    font-size: medium;
+    color: #117DB0;
 }
 
 .perInfo{
     width: 95%;
     margin: auto;
+    margin-bottom: 10px;
 }
 .perInfoTitle{
     font-family: 'rajdhani';
     font-size: medium;
-    color: white;
+    color: #117DB0;
+}
+.perInfoTitle p span{
+    display: Inline-block;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+.perInfoTitle hr{
+    width: 165px;
+    border: none;
+    border-top: 1px solid #117DB0;
+}
+#Desc{
+    width: 105px !important;
+}
+
+.descInfo{
+    width: 80%;
+    padding-left: 50px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+}
+.descInfo p{
+    font-family: 'Poppins';
+    font-size: small;
+    font-weight:200;
+    color: #117DB0;
 }
 
 .perInfoData{
     top: -10px;
-    border: 1px solid black;
     padding: 10px;
+    padding-left: 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -71,9 +117,9 @@
 .infoTitle{
     font-family: 'Roboto';
     font-size: x-small;
-    color: white;
+    color: #117DB0;
     width: fit-content;
-    background-color: #117DB0;
+    background-color: white;
     padding-right: 2px;
     padding-left: 2px;
     transform: translate(0.1rem, 0);
@@ -83,9 +129,9 @@
     width: 200px;
     overflow: auto;
     scrollbar-width: none;
-    border: 1px solid white;
+    border: 1px solid #117DB0;
     border-radius: 2px;
-    color: white;
+    color: #117DB0;
     font-family: 'Poppins';
     font-size: medium;
     padding: 5px;

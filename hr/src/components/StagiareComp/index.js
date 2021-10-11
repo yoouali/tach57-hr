@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, Component} from 'react';
 import { Redirect, useParams  } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -17,6 +17,7 @@ import freelancerIcon from '../../images/icons/freelancer.svg';
 function StagiaireComp(){
     const {id} = useParams();
     const [isLoading, setLoading] = useState(true);
+    const [isLoading2, setLoading2] = useState(true);
     const [user, setUser] = useState();
     const [stage, setStage] = useState();
    
@@ -27,12 +28,13 @@ function StagiaireComp(){
         .then(res =>{
             console.log(res);
             setStage(res.data.data);
+            setLoading(false);
         })
         .catch(err => {console.log(err)})
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
             setUser(res.data);
-            setLoading(false);
+            setLoading2(false);
         })
         .catch(err => {console.log(err)})
     }, []);
@@ -66,10 +68,21 @@ function StagiaireComp(){
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
 
-    if (isLoading) {
+    if (isLoading || isLoading2) {
             return <div className="App">Loading...</div>;
     }
-    console.log(stage);
+    if (!isLoading && !isLoading2 && stage)
+    {     
+        var Etablissement = null
+        if (stage.Etablissement !== null)
+            Etablissement = <div className="groupeInfo"><div className="infoTitle">Etablissement</div><div className="infoValue">{stage.Etablissement}</div></div>
+        var Filiere = null
+        if (stage.Filiere !== null)
+            Filiere = <div className="groupeInfo"><div className="infoTitle">Filiere</div><div className="infoValue">{stage.Filiere}</div></div>
+        var Niveau = null
+        if (stage.Niveau !== null)
+            Niveau = <div className="groupeInfo"><div className="infoTitle">Niveau</div><div className="infoValue">{stage.Niveau}</div></div>
+    }
     return(
         <div className="box">
             <section>
@@ -95,9 +108,9 @@ function StagiaireComp(){
                 </div>
                 <div className="dashborde">
                 <div className="stageBar">
-                    <div className="stageTitle">sklhdkasjhdkashd</div>
+                    <div className="stageTitle">{stage.SujetDeStage}</div>
                     <div className="stageInfo">
-                        <div className="rightInfo">
+                        <div className="leftInfo">
                             <div className="stageStatus">
                                 <p>Stage</p>
                                 <p>is Over</p>
@@ -107,9 +120,20 @@ function StagiaireComp(){
                             <p>Assurance</p>
                             <p>Fiche du Stagiaire</p>
                         </div>
-                        <div className="leftInfo">
+                        <div className="rightInfo">
+                            <div className="stageDate">
+                                <div className="dateInfo"><p>Start at 02-10-2021 &#9716;</p></div>
+                                <div className="dateInfo"><p>Over at 02-10-2021 &#9719;</p></div>
+                            </div>
                             <div className="perInfo">
-                            <div className="perInfoTitle"><p>Personnelle Information</p></div>
+                                <div className="perInfoTitle"><p>Descreption <span>&#128396;</span></p><hr id="Desc"></hr></div>
+                                <div className="descInfo"><p>
+                                This HTML file is a template. If you open it directly in the browser, you will see an empty page. You can add webfonts, meta tags, or analytics to this file. The build step will place the bundled scripts into the
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="perInfo">
+                                <div className="perInfoTitle"><p>Stagiaire Information <span>&#128396;</span></p><hr></hr></div>
                             <div className="perInfoData">
 
                                 <div className="groupeInfo">
@@ -136,9 +160,14 @@ function StagiaireComp(){
                                     <div className="infoTitle">birtplace</div>
                                     <div className="infoValue">lamhara taroudant</div>
                                 </div>
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">Type de Stage</div>
+                                    <div className="infoValue">{stage.TypeDeStage}</div>
+                                </div>
+                                {Etablissement}
+                                {Filiere}
                             </div>
                             </div>
-                            <div className="proInfo"></div>
                         </div>
                     </div>
                 </div>

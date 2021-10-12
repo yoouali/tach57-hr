@@ -2,6 +2,7 @@ import {useState, useEffect, useCallback} from 'react';
 import { Redirect, useParams  } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import swal from 'sweetalert';
 
 
 import './style.css';
@@ -83,6 +84,11 @@ function EntrepreneurComp(){
 
     function testRemove(e){
         console.log("hh");
+        swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this imaginary file!",
+            type: "warning",
+        })
     }
     function activeEntrepreneur(e){
         const token = localStorage.getItem('token');

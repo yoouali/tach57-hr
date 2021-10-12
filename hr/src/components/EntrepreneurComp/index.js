@@ -71,7 +71,7 @@ function EntrepreneurComp(){
         if(entrepreneur.Active === 1)
             entrepreneurBox = <div id="stageFineshd" className="stageStatus"><p> Active </p><p> &#10003;</p></div>
         if(entrepreneur.Active === 0)
-            entrepreneurBox = <div id="stageNotActive" className="stageStatus"><p>Not Active</p><p> &#10007;</p></div>
+            entrepreneurBox = <div id="stageNotActive" className="stageStatus"><p id="boxentrepreneuractive1">Not Active</p><p id="boxentrepreneuractive2"> &#10007;</p></div>
         var entrepreneurActive = null
         if (entrepreneur.Active === 0)
             entrepreneurActive = <div id="boxActiveEntrepreneur" className="stageButton"><button value={entrepreneurBox} onClick={({ target }) =>activeEntrepreneur(target.value)} id="entrepreneurActive">Active</button></div>
@@ -87,8 +87,8 @@ function EntrepreneurComp(){
          .then(res =>{
                 document.getElementById("boxActiveEntrepreneur").style.display="none";
                 document.getElementById("stageNotActive").style.backgroundColor="#11B03E";
-                document.getElementById("stageNotActive").innerText="";
-                document.getElementById("stageNotActive").innerText="<p> Active </p><p> &#10003;</p>";
+                document.getElementById("boxentrepreneuractive1").innerText="Active";
+                document.getElementById("boxentrepreneuractive2").innerText="✓";
         })
          .catch(err => {console.log(err)})
     }

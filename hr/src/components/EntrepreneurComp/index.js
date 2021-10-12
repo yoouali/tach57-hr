@@ -125,7 +125,7 @@ function EntrepreneurComp(){
             </div>
             <div className="dashborde">
                 <div className="stageBar">
-                    <div className="stageTitle">Ouali Youssef</div>
+                    <div className="stageTitle">{entrepreneur.Nom} {entrepreneur.Prenom}</div>
                     <div className="stageInfo">
                         <div className="leftInfo">
                             {entrepreneurBox}
@@ -138,28 +138,28 @@ function EntrepreneurComp(){
                             <div className="perInfoTitle"><p>Perssonelle Information <span>&#128396;</span></p><hr id="epi"></hr></div>
                             <div className="perInfoData">
                                 <div className="groupeInfo">
-                                    <div className="infoTitle">naem</div>
-                                    <div className="infoValue">Ouali Youssef</div>
+                                    <div className="infoTitle">name</div>
+                                    <div className="infoValue">{entrepreneur.Nom} {entrepreneur.Prenom}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">Email</div>
-                                    <div className="infoValue">Youssef</div>
+                                    <div className="infoValue">{entrepreneur.Email}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">TEL</div>
-                                    <div className="infoValue">Youssef</div>
+                                    <div className="infoValue">{entrepreneur.TEL}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">CIN</div>
-                                    <div className="infoValue">Youssef</div>
+                                    <div className="infoValue">{entrepreneur.CIN}</div>
                                 </div>
                                 <div className="groupeInfo">
-                                    <div className="infoTitle">Birtday</div>
-                                    <div className="infoValue">1998-10-11</div>
+                                    <div className="infoTitle">Date de naissance</div>
+                                    <div className="infoValue">{entrepreneur.DateDeNaissance}</div>
                                 </div>
                                 <div className="groupeInfo">
-                                    <div className="infoTitle">Birtpalce</div>
-                                    <div className="infoValue">lamhra</div>
+                                    <div className="infoTitle">Lieu de naissance</div>
+                                    <div className="infoValue">{entrepreneur.LieuDeNaissance}</div>
                                 </div>
                             </div>
                             </div>
@@ -168,15 +168,15 @@ function EntrepreneurComp(){
                             <div className="perInfoData">
                                 <div className="groupeInfo">
                                     <div className="infoTitle">N°dinscription au reistre national*</div>
-                                    <div className="infoValue">123456789</div>
+                                    <div className="infoValue">{entrepreneur.Identifiant}</div>
                                 </div>
                                 <div className="groupeInfo">
-                                    <div className="infoTitle">Date D'adhesion*</div>
-                                    <div className="infoValue">1-1-1</div>
+                                    <div className="infoTitle">Date d'adhesion</div>
+                                    <div className="infoValue">{entrepreneur.DateDadhesion}</div>
                                 </div>
                                 <div className="groupeInfo">
-                                    <div className="infoTitle">Valable Jusqu'au*</div>
-                                    <div className="infoValue">1-1-1</div>
+                                    <div className="infoTitle">Valable Jusqu'au</div>
+                                    <div className="infoValue">{entrepreneur.ValableJusquau}</div>
                                 </div>
                             </div>
                             </div>

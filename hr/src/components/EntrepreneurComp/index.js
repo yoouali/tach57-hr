@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import { Redirect, useParams  } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -11,22 +11,25 @@ import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
 import stagiaireIcon from '../../images/icons/stagiaire.svg';
 import freelancerIcon from '../../images/icons/freelancer.svg';
 
+
+
 function EntrepreneurComp(){
     const {id} = useParams();
     const [isLoading, setLoading] = useState(true);
     const [isLoading2, setLoading2] = useState(true);
     const [user, setUser] = useState();
+    const [entrepreneur, setEntrepreneur] = useState();
 
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        // axios.get('https://stagiaire.herokuapp.com/api/stagiaire/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
-        // .then(res =>{
-        //     console.log(res);
-        //     setStage(res.data.data);
-        //     setLoading(false);
-        // })
-        // .catch(err => {console.log(err)})
+        axios.get('https://stagiaire.herokuapp.com/api/auto-entrepreneur/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
+        .then(res =>{
+            console.log(res);
+            setEntrepreneur(res.data);
+            setLoading2(false);
+        })
+        .catch(err => {console.log(err)})
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
             setUser(res.data);
@@ -60,13 +63,40 @@ function EntrepreneurComp(){
         if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
             document.getElementById("userNav").style.display = "none";
       });
+     
+    if(!isLoading2 && !isLoading && entrepreneur)
+    {
+        console.log("set variables")
+        var entrepreneurBox = null;
+        if(entrepreneur.Active === 1)
+            entrepreneurBox = <div id="stageFineshd" className="stageStatus"><p> Active </p><p> &#10003;</p></div>
+        if(entrepreneur.Active === 0)
+            entrepreneurBox = <div id="stageNotActive" className="stageStatus"><p>Not Active</p><p> &#10007;</p></div>
+        var entrepreneurActive = null
+        if (entrepreneur.Active === 0)
+            entrepreneurActive = <div id="boxActiveEntrepreneur" className="stageButton"><button value={entrepreneurBox} onClick={({ target }) =>activeEntrepreneur(target.value)} id="entrepreneurActive">Active</button></div>
+        if (entrepreneur.Active === 1)
+            entrepreneurActive = null;
+        console.log(entrepreneur);
+    }
 
-
+    function activeEntrepreneur(e){
+        const token = localStorage.getItem('token');
+        const url = "https://stagiaire.herokuapp.com/api/auto-entrepreneur/active/" + entrepreneur.id;
+        axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+         .then(res =>{
+                document.getElementById("boxActiveEntrepreneur").style.display="none";
+                document.getElementById("stageNotActive").style.backgroundColor="#11B03E";
+                document.getElementById("stageNotActive").innerText="";
+                document.getElementById("stageNotActive").innerText="<p> Active </p><p> &#10003;</p>";
+        })
+         .catch(err => {console.log(err)})
+    }
     
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
   
-    if (isLoading) {
+    if (isLoading || isLoading2) {
               return <div className="App">Loading...</div>;
     }
     return (
@@ -98,9 +128,8 @@ function EntrepreneurComp(){
                     <div className="stageTitle">Ouali Youssef</div>
                     <div className="stageInfo">
                         <div className="leftInfo">
-                            <div id="stageNotActive" className="stageStatus"><p>Not Active</p><p> &#10007;</p></div>
-                            <div id="stageFineshd" className="stageStatus"><p> Active </p><p> &#10003;</p></div>
-                            <div className="stageButton"><button>Active</button></div>
+                            {entrepreneurBox}
+                            {entrepreneurActive}
                             <div className="stageButton"><button>Edit</button></div>
                             <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
                         </div>

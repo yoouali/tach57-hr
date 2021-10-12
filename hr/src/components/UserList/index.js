@@ -63,10 +63,10 @@ function UserList(){
     if (!isLoading && !isLoading2 && userList)
     {
         var nameList = userList.map(function(name){
-        var userStatus = <div key={name.id} className="userTableStatus">active✓</div>
+        var userStatus = <div className="userTableStatus">active✓</div>
             if (name.role === "admin"){
                 return (
-                    <div id="userTableAdmin" className="userTable">
+                    <div key={name.id} id="userTableAdmin" className="userTable">
                         <div className="userTableRole">ADMIN</div>
                         <div className="userTableName"><p id="userTableNameAdmin">{name.nom} {name.prenom}</p></div>
                         {userStatus}
@@ -75,7 +75,7 @@ function UserList(){
             }
             if (name.role === "rh"){
                 return (
-                    <div id="userTableRh" className="userTable">
+                    <div key={name.id} id="userTableRh" className="userTable">
                         <div className="userTableRole">RH</div>
                         <div className="userTableName"><p id="userTableNameRh">{name.nom} {name.prenom}</p></div>
                         {userStatus}

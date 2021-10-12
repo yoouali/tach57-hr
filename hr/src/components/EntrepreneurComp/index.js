@@ -3,6 +3,7 @@ import { Redirect, useParams  } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+
 import './style.css';
 
 import logo from '../../images/logo.png';
@@ -80,6 +81,9 @@ function EntrepreneurComp(){
         console.log(entrepreneur);
     }
 
+    function testRemove(e){
+        console.log("hh");
+    }
     function activeEntrepreneur(e){
         const token = localStorage.getItem('token');
         const url = "https://stagiaire.herokuapp.com/api/auto-entrepreneur/active/" + entrepreneur.id;
@@ -131,7 +135,7 @@ function EntrepreneurComp(){
                             {entrepreneurBox}
                             {entrepreneurActive}
                             <div className="stageButton"><button>Edit</button></div>
-                            <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
+                            <div className="stageButton"><button onClick={testRemove} id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">
                             <div className="perInfo">

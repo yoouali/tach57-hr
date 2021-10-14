@@ -61,7 +61,10 @@ function UserComp(){
             document.getElementById("userNav").style.display = "none";
       });
 
+    
+    // if (isLo)
 
+    
     
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}

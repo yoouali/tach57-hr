@@ -140,7 +140,7 @@ function EntrepreneurComp(){
                         <div className="leftInfo">
                             {entrepreneurBox}
                             {entrepreneurActive}
-                            <div className="stageButton"><button>Edit</button></div>
+                            <div className="stageButton"><Link to={"/Entrepreneurupdate/"+entrepreneur.id}><button>Edit</button></Link></div>
                             <div className="stageButton"><button onClick={testRemove} id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">

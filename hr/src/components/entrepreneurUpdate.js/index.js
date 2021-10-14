@@ -100,7 +100,7 @@ function EntrepreneurUpdate(){
                     <div className="stageTitle">{entrepreneur.Nom} {entrepreneur.Prenom}</div>
                         <form>
                         <div className="entrepreneurUpdateForm">
-                            <div className="entrepreneurUpdateSectionTitle"><p>Perssonelle Information</p></div>
+                            <div className="entrepreneurUpdateSectionTitle"><p>LES INFORMATIONS PERSONNELLES</p></div>
                             <div class="entrepreneurUpdateFormSection">
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Prenom</label>
@@ -135,41 +135,26 @@ function EntrepreneurUpdate(){
                                     <input placeholder={entrepreneur.LieuDeNaissance}></input>
                                 </div>
                             </div>
-                            <div className="entrepreneurUpdateSectionTitle"><p>Perssonelle Information</p></div>
+                            <div className="entrepreneurUpdateSectionTitle"><p>CARTE D'ENTREPRENEUR</p></div>
                             <div class="entrepreneurUpdateFormSection">
                                 <div className="entrepreneurUpdateInputGroupe">
-                                    <label >Prenom</label>
-                                    <input placeholder={entrepreneur.Prenom}></input>
+                                    <label >N°dinscription au reistre national</label>
+                                    <input placeholder={entrepreneur.Identifiant}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
-                                    <label >Nom</label>
-                                    <input placeholder={entrepreneur.Nom}></input>
+                                    <label >Date D'adhesion</label>
+                                    <input placeholder={entrepreneur.DateDadhesion}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
-                                    <label >Email</label>
-                                    <input placeholder={entrepreneur.Email}></input>
+                                    <label >Valable Jusqu'au</label>
+                                    <input placeholder={entrepreneur.ValableJusquau}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
-                                    <label >CIN</label>
-                                    <input placeholder={entrepreneur.CIN}></input>
-                                </div>
-                                <div className="entrepreneurUpdateInputGroupe">
-                                    <label >TEL</label>
-                                    <input placeholder={entrepreneur.TEL}></input>
-                                </div>
-                                <div className="entrepreneurUpdateInputGroupe">
-                                    <label >Adresse</label>
-                                    <input placeholder={entrepreneur.Adresse}></input>
-                                </div>
-                                <div className="entrepreneurUpdateInputGroupe">
-                                    <label >Date de naissance</label>
-                                    <input placeholder={entrepreneur.DateDeNaissance}></input>
-                                </div>
-                                <div className="entrepreneurUpdateInputGroupe">
-                                    <label >Lieu de naissance</label>
-                                    <input placeholder={entrepreneur.LieuDeNaissance}></input>
+                                    <label >Specialite</label>
+                                    <input placeholder={entrepreneur.Specialite}></input>
                                 </div>
                             </div>
+                            <div>
                         </div>
                         </form>
                 </div>

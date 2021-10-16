@@ -20,6 +20,11 @@ function EntrepreneurUpdate(){
     const [user, setUser] = useState();
     const [entrepreneur, setEntrepreneur] = useState();
 
+        const [formData, setFormData] = useState({
+            Prenom: '',Nom: '',Email: '',CIN: '',TEL: '',Adresse: '',DateDeNaissance: '',LieuDeNaissance: '',
+            Identifiant: '',DateDadhesion: '',ValableJusquau: '',Specialite: ''
+        })
+
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -98,64 +103,87 @@ function EntrepreneurUpdate(){
             <div className="dashborde">
                 <div className="entrepreneurUpdateBox">
                     <div className="stageTitle">{entrepreneur.Nom} {entrepreneur.Prenom}</div>
-                        <form>
+                        <form >
                         <div className="entrepreneurUpdateForm">
                             <div className="entrepreneurUpdateSectionTitle"><p>LES INFORMATIONS PERSONNELLES</p></div>
                             <div className="entrepreneurUpdateFormSection">
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Prenom</label>
-                                    <input placeholder={entrepreneur.Prenom}></input>
+                                    <input type="text" name="Prenom" placeholder={entrepreneur.Prenom}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.Prenom}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Nom</label>
-                                    <input placeholder={entrepreneur.Nom}></input>
+                                    <input type="text" name="Nom" placeholder={entrepreneur.Nom}
+                                           onChange={(e) => setFormData({...formData, Nom: e.target.value})}
+                                           value={formData.Nom}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Email</label>
-                                    <input placeholder={entrepreneur.Email}></input>
+                                    <input type="email" name="Email" placeholder={entrepreneur.Email}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.Email}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >CIN</label>
-                                    <input placeholder={entrepreneur.CIN}></input>
+                                    <input type="text" name="CIN" placeholder={entrepreneur.CIN}
+                                           value={formData.CIN}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >TEL</label>
-                                    <input placeholder={entrepreneur.TEL}></input>
+                                    <input type="text" name="TEL" placeholder={entrepreneur.TEL}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.TEL}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Adresse</label>
-                                    <input placeholder={entrepreneur.Adresse}></input>
+                                    <input type="text" name="Adresse" placeholder={entrepreneur.Adresse}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.Adresse}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date de naissance</label>
-                                    <input placeholder={entrepreneur.DateDeNaissance}></input>
+                                    <input type="text" name="DateDeNaissance" placeholder={entrepreneur.DateDeNaissance}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.DateDeNaissance}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Lieu de naissance</label>
-                                    <input placeholder={entrepreneur.LieuDeNaissance}></input>
+                                    <input type="text" name="LieuDeNaissance" placeholder={entrepreneur.LieuDeNaissance}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.LieuDeNaissance}></input>
                                 </div>
                             </div>
                             <div className="entrepreneurUpdateSectionTitle"><p>CARTE D'ENTREPRENEUR</p></div>
                             <div className="entrepreneurUpdateFormSection">
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >N°dinscription au reistre national</label>
-                                    <input placeholder={entrepreneur.Identifiant}></input>
+                                    <input type="text" name="Identifiant" placeholder={entrepreneur.Identifiant}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.Identifiant}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date D'adhesion</label>
-                                    <input placeholder={entrepreneur.DateDadhesion}></input>
+                                    <input type="text" name="DateDadhesion" placeholder={entrepreneur.DateDadhesion}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.DateDadhesion}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Valable Jusqu'au</label>
-                                    <input placeholder={entrepreneur.ValableJusquau}></input>
+                                    <input type="text" name="ValibleJusquau" placeholder={entrepreneur.ValableJusquau}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.ValableJusquau}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Specialite</label>
-                                    <input placeholder={entrepreneur.Specialite}></input>
+                                    <input type="text" name="Specialite" placeholder={entrepreneur.Specialite}
+                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           value={formData.Specialite}></input>
                                 </div>
                             </div>
                             <div className="entrepreneurUpdateFormButoon">
-                                <button id="enterpreneurButoonCancel">Cancel</button>
+                               <Link to={"/Entrepreneur/" + entrepreneur.id}> <button id="enterpreneurButoonCancel">Cancel</button></Link>
                                 <button>Active</button>
                             </div>
                         </div>

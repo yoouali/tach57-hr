@@ -68,7 +68,9 @@ function EntrepreneurUpdate(){
         if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
             document.getElementById("userNav").style.display = "none";
     });
-
+    function hendleSubmit(e){
+        e.preventDefault()
+    }
 
 
     const isLogged = localStorage.getItem('token');
@@ -103,7 +105,7 @@ function EntrepreneurUpdate(){
             <div className="dashborde">
                 <div className="entrepreneurUpdateBox">
                     <div className="stageTitle">{entrepreneur.Nom} {entrepreneur.Prenom}</div>
-                        <form >
+                        <form onSubmit={hendleSubmit}>
                         <div className="entrepreneurUpdateForm">
                             <div className="entrepreneurUpdateSectionTitle"><p>LES INFORMATIONS PERSONNELLES</p></div>
                             <div className="entrepreneurUpdateFormSection">
@@ -184,8 +186,8 @@ function EntrepreneurUpdate(){
                                 </div>
                             </div>
                             <div className="entrepreneurUpdateFormButoon">
+                                <button type="submit">Active</button>
                                <Link to={"/Entrepreneur/" + entrepreneur.id}> <button id="enterpreneurButoonCancel">Cancel</button></Link>
-                                <button>Active</button>
                             </div>
                         </div>
                         </form>

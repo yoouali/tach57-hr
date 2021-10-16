@@ -101,7 +101,7 @@ function EntrepreneurUpdate(){
                         <form>
                         <div className="entrepreneurUpdateForm">
                             <div className="entrepreneurUpdateSectionTitle"><p>LES INFORMATIONS PERSONNELLES</p></div>
-                            <div class="entrepreneurUpdateFormSection">
+                            <div className="entrepreneurUpdateFormSection">
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Prenom</label>
                                     <input placeholder={entrepreneur.Prenom}></input>
@@ -136,7 +136,7 @@ function EntrepreneurUpdate(){
                                 </div>
                             </div>
                             <div className="entrepreneurUpdateSectionTitle"><p>CARTE D'ENTREPRENEUR</p></div>
-                            <div class="entrepreneurUpdateFormSection">
+                            <div className="entrepreneurUpdateFormSection">
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >N°dinscription au reistre national</label>
                                     <input placeholder={entrepreneur.Identifiant}></input>
@@ -154,7 +154,10 @@ function EntrepreneurUpdate(){
                                     <input placeholder={entrepreneur.Specialite}></input>
                                 </div>
                             </div>
-                            <div>
+                            <div className="entrepreneurUpdateFormButoon">
+                                <button id="enterpreneurButoonCancel">Cancel</button>
+                                <button>Active</button>
+                            </div>
                         </div>
                         </form>
                 </div>

@@ -122,36 +122,37 @@ function EntrepreneurUpdate(){
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Email</label>
                                     <input type="email" name="Email" placeholder={entrepreneur.Email}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, Email: e.target.value})}
                                            value={formData.Email}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >CIN</label>
                                     <input type="text" name="CIN" placeholder={entrepreneur.CIN}
+                                           onChange={(e) => setFormData({...formData, CIN: e.target.value})}
                                            value={formData.CIN}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >TEL</label>
                                     <input type="text" name="TEL" placeholder={entrepreneur.TEL}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, TEL: e.target.value})}
                                            value={formData.TEL}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Adresse</label>
                                     <input type="text" name="Adresse" placeholder={entrepreneur.Adresse}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, Adresse: e.target.value})}
                                            value={formData.Adresse}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date de naissance</label>
                                     <input type="text" name="DateDeNaissance" placeholder={entrepreneur.DateDeNaissance}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, DateDeNaissance: e.target.value})}
                                            value={formData.DateDeNaissance}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Lieu de naissance</label>
                                     <input type="text" name="LieuDeNaissance" placeholder={entrepreneur.LieuDeNaissance}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, LieuDeNaissance: e.target.value})}
                                            value={formData.LieuDeNaissance}></input>
                                 </div>
                             </div>
@@ -160,25 +161,25 @@ function EntrepreneurUpdate(){
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >N°dinscription au reistre national</label>
                                     <input type="text" name="Identifiant" placeholder={entrepreneur.Identifiant}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, Identifiant: e.target.value})}
                                            value={formData.Identifiant}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date D'adhesion</label>
                                     <input type="text" name="DateDadhesion" placeholder={entrepreneur.DateDadhesion}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, DateDadhesion: e.target.value})}
                                            value={formData.DateDadhesion}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Valable Jusqu'au</label>
                                     <input type="text" name="ValibleJusquau" placeholder={entrepreneur.ValableJusquau}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, ValableJusquau: e.target.value})}
                                            value={formData.ValableJusquau}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Specialite</label>
                                     <input type="text" name="Specialite" placeholder={entrepreneur.Specialite}
-                                           onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                           onChange={(e) => setFormData({...formData, Specialite: e.target.value})}
                                            value={formData.Specialite}></input>
                                 </div>
                             </div>

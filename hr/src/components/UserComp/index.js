@@ -101,10 +101,7 @@ function UserComp(){
                     <div className="stageTitle">Ouali Youssef</div>
                     <div className="stageInfo">
                         <div className="leftInfo">
-                            <div id="stageNotActive" className="stageStatus"><p>Not Active</p><p> &#10007;</p></div>
                             <div id="stageFineshd" className="stageStatus"><p> Active </p><p> &#10003;</p></div>
-                            <div className="stageButton"><button>Active</button></div>
-                            <div className="stageButton"><button>Edit</button></div>
                             <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">

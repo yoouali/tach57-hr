@@ -16,12 +16,12 @@ function UserComp(){
     const [isLoading, setLoading] = useState(true);
     const [isLoading2, setLoading2] = useState(true);
     const [user, setUser] = useState();
-    const [useComp, setUserComp] = useState();
+    const [userComp, setUserComp] = useState();
 
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get('https://stagiaire.herokuapp.com/api/user/2' + id, {headers: {"Authorization": `Bearer ${token}`}})
+        axios.get('https://stagiaire.herokuapp.com/api/user/' + id, {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
             console.log(res);
             setUserComp(res.data);
@@ -99,10 +99,10 @@ function UserComp(){
             </div>
             <div className="dashborde">
                 <div className="stageBar">
-                    <div className="stageTitle">Ouali Youssef</div>
+                    <div className="stageTitle">{userComp.Nom} {userComp.Prenom}</div>
                     <div className="stageInfo">
                         <div className="leftInfo">
-                            <div id="stageFineshd" className="stageStatus"><p> Active </p><p> &#10003;</p></div>
+                            <div id="stageFineshd" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>
                             <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">
@@ -110,45 +110,24 @@ function UserComp(){
                             <div className="perInfoTitle"><p>Perssonelle Information <span>&#128396;</span></p><hr id="epi"></hr></div>
                             <div className="perInfoData">
                                 <div className="groupeInfo">
-                                    <div className="infoTitle">naem</div>
-                                    <div className="infoValue">Ouali Youssef</div>
+                                    <div className="infoTitle">Prenom</div>
+                                    <div className="infoValue">{userComp.Prenom}</div>
+                                </div>
+                                <div className="groupeInfo">
+                                    <div className="infoTitle">Nom</div>
+                                    <div className="infoValue">{userComp.Nom}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">Email</div>
-                                    <div className="infoValue">Youssef</div>
+                                    <div className="infoValue">{userComp.Email}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">TEL</div>
-                                    <div className="infoValue">Youssef</div>
+                                    <div className="infoValue">{userComp.TEL}</div>
                                 </div>
                                 <div className="groupeInfo">
                                     <div className="infoTitle">CIN</div>
-                                    <div className="infoValue">Youssef</div>
-                                </div>
-                                <div className="groupeInfo">
-                                    <div className="infoTitle">Birtday</div>
-                                    <div className="infoValue">1998-10-11</div>
-                                </div>
-                                <div className="groupeInfo">
-                                    <div className="infoTitle">Birtpalce</div>
-                                    <div className="infoValue">lamhra</div>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="perInfo">
-                            <div className="perInfoTitle"><p>CARTE D'ENTREPRENEUR <span>&#128396;</span></p><hr id="epi"></hr></div>
-                            <div className="perInfoData">
-                                <div className="groupeInfo">
-                                    <div className="infoTitle">N°dinscription au reistre national*</div>
-                                    <div className="infoValue">123456789</div>
-                                </div>
-                                <div className="groupeInfo">
-                                    <div className="infoTitle">Date D'adhesion*</div>
-                                    <div className="infoValue">1-1-1</div>
-                                </div>
-                                <div className="groupeInfo">
-                                    <div className="infoTitle">Valable Jusqu'au*</div>
-                                    <div className="infoValue">1-1-1</div>
+                                    <div className="infoValue">{userComp.CIN}</div>
                                 </div>
                             </div>
                             </div>

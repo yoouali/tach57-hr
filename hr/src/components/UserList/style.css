@@ -22,6 +22,7 @@
     text-align: center;
     flex-direction: column;
     justify-content: space-around;
+    cursor: pointer;
 }
 #userTableAdmin{background-color: #117DB0;}
 #userTableRh{background-color: #11B03E;}

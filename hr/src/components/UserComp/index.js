@@ -16,17 +16,18 @@ function UserComp(){
     const [isLoading, setLoading] = useState(true);
     const [isLoading2, setLoading2] = useState(true);
     const [user, setUser] = useState();
+    const [useComp, setUserComp] = useState();
 
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        // axios.get('https://stagiaire.herokuapp.com/api/stagiaire/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
-        // .then(res =>{
-        //     console.log(res);
-        //     setStage(res.data.data);
-        //     setLoading(false);
-        // })
-        // .catch(err => {console.log(err)})
+        axios.get('https://stagiaire.herokuapp.com/api/user/2' + id, {headers: {"Authorization": `Bearer ${token}`}})
+        .then(res =>{
+            console.log(res);
+            setUserComp(res.data);
+            setLoading(false);
+        })
+        .catch(err => {console.log(err)})
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
             setUser(res.data);

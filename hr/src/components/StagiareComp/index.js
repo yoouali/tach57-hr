@@ -84,11 +84,11 @@ function StagiaireComp(){
             Niveau = <div className="groupeInfo"><div className="infoTitle">Niveau</div><div className="infoValue">{stage.Niveau}</div></div>
         var stageBox = null
         if (stage.Active === 0)
-            stageBox = <div id="stageNotActive" className="stageStatus"><p>Not Active</p><p> &#10007;</p></div>
+            stageBox = <div id="stageNotActive" className="stageStatus"><p id="boxstagiaireactive1">Not Active</p><p id="boxstagiaireactive2"> &#10007;</p></div>
         if (stage.Active === 1 && stage.Finir === 0)
             stageBox = <div id="stageActive" className="stageStatus"><p>in progress</p><p> &#9991;</p></div>
         if (stage.Active === 1 && stage.Finir === 1 && stage.Attestation === 0)
-            stageBox = <div id="stageOver" className="stageStatus"><p>Over</p><p> &#10003;</p></div>
+            stageBox = <div id="stageOver" className="stageStatus"><p id="boxstagefinshed1">Over</p><p  id="boxstagefinshed2"> &#10003;</p></div>
         if (stage.Active === 1 && stage.Finir === 1 && stage.Attestation === 1)
             stageBox = <div id="stageFineshd" className="stageStatus"><p> Finshed </p><p> &#10003;</p></div>
         var Convention = null
@@ -96,12 +96,38 @@ function StagiaireComp(){
             Convention = <div className="stageFile"><p>Convention</p></div>
         var Attestation = null
         if (stage.Active === 0)
-            Attestation = <div className="stageButton"><button>Active</button></div>
+            Attestation = <div id="activeSctiveButton" className="stageButton"><button onClick={activeStagiaire}>Active</button></div>
         if (stage.Active === 1 && stage.Finir === 1 && stage.Attestation === 0)
-            Attestation = <div className="stageButton"><button>Attestation</button></div>
+            Attestation = <div id="attestationStagiaireButtoon" className="stageButton"><button onClick={attestationStagiaire}>Attestation</button></div>
         if (stage.Active === 1 && stage.Finir === 1 && stage.Attestation === 1)
             Attestation = <div className="stageFile"><p>Attestation</p></div>
     }
+
+    function activeStagiaire(){
+        const token = localStorage.getItem('token');
+        const url = "https://stagiaire.herokuapp.com/api/stagiaire/active/" + stage.id;
+        axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+         .then(res =>{
+                document.getElementById("activeSctiveButton").style.display="none";
+                document.getElementById("stageNotActive").style.backgroundColor="#117DB0";
+                document.getElementById("boxstagiaireactive1").innerText="in progress";
+                document.getElementById("boxstagiaireactive2").innerText="✓";
+        })
+         .catch(err => {console.log(err)})
+    }
+    function attestationStagiaire(){
+        const token = localStorage.getItem('token');
+        const url = "https://stagiaire.herokuapp.com/api/stagiaire/attestation/" + stage.id;
+        axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+         .then(res =>{
+                document.getElementById("attestationStagiaireButtoon").style.display="none";
+                document.getElementById("stageOver").style.backgroundColor="#11B03E";
+                document.getElementById("boxstagefinshed1").innerText="finshed";
+                document.getElementById("boxstagefinshed2").innerText="✓";
+        })
+         .catch(err => {console.log(err)})
+    }
+
     return(
         <div className="box">
             <section>

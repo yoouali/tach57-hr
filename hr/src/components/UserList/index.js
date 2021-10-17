@@ -62,6 +62,7 @@ function UserList(){
       });
     if (!isLoading && !isLoading2 && userList)
     {
+        console.log(userList);
         var nameList = userList.map(function(name){
         var userStatus = <div className="userTableStatus">active✓</div>
             if (name.role === "admin"){

@@ -1,9 +1,8 @@
-import {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect} from 'react';
 import { Redirect, useParams  } from "react-router";
+import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import swal from 'sweetalert';
-
 
 import './style.css';
 
@@ -43,7 +42,7 @@ function EntrepreneurUpdate(){
         .catch(err => {console.log(err)})
     }, []);
 
-
+    const history = useHistory();
     function handelUserNav(){
         let element = document.getElementById("userNav");
         if (element.style.display === "none")
@@ -70,6 +69,15 @@ function EntrepreneurUpdate(){
     });
     function hendleSubmit(e){
         e.preventDefault()
+        if (formData.Prenom !== "")
+            console.log("");
+        const token = localStorage.getItem('token');
+        axios.post('https://stagiaire.herokuapp.com/api/auto-entrepreneur/update/' + id, formData,{headers: {"Authorization": `Bearer ${token}`}})
+        .then(res =>{
+            console.log("hh");
+            history.push("/Entrepreneur/" + id);
+        })
+        .catch(err => {console.log(err)})
     }
 
 

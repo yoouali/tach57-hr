@@ -14,8 +14,8 @@ function Login(){
   function handleSubmit(e) {
     e.preventDefault();
     const data = {
-      email: emailAddress,
-      password: password
+      Email: emailAddress,
+      Password: password
     }
 
     axios.post("https://stagiaire.herokuapp.com/api/login",data)

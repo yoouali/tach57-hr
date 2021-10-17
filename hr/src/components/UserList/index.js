@@ -65,20 +65,22 @@ function UserList(){
         console.log(userList);
         var nameList = userList.map(function(name){
         var userStatus = <div className="userTableStatus">active✓</div>
-            if (name.role === "admin"){
+        console.log(name);
+            if (name.Role === "admin"){
+                console.log("ddf");
                 return (
                     <div key={name.id} id="userTableAdmin" className="userTable">
                         <div className="userTableRole">ADMIN</div>
-                        <div className="userTableName"><p id="userTableNameAdmin">{name.nom} {name.prenom}</p></div>
+                        <div className="userTableName"><p id="userTableNameAdmin">{name.Nom} {name.Prenom}</p></div>
                         {userStatus}
                     </div>
                 )
             }
-            if (name.role === "rh"){
+            if (name.Role === "rh"){
                 return (
                     <div key={name.id} id="userTableRh" className="userTable">
                         <div className="userTableRole">RH</div>
-                        <div className="userTableName"><p id="userTableNameRh">{name.nom} {name.prenom}</p></div>
+                        <div className="userTableName"><p id="userTableNameRh">{name.Nom} {name.Prenom}</p></div>
                         {userStatus}
                     </div>
                 )

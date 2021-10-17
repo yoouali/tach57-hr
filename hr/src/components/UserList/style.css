@@ -35,11 +35,11 @@
 
 .userTableName{
     width: 90%;
-    height: 90px;
+    height: 65px;
     margin: auto;
     text-align: center;
     display: flex;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: white;
     font-family:'rajdhani';
     font-size: x-large;

@@ -25,7 +25,7 @@ function UserComp(){
         .then(res =>{
             console.log(res);
             setUserComp(res.data);
-            setLoading(false);
+            setLoading2(false);
         })
         .catch(err => {console.log(err)})
         axios.get('https://stagiaire.herokuapp.com/api/user', {headers: {"Authorization": `Bearer ${token}`}})
@@ -70,7 +70,7 @@ function UserComp(){
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
   
-    if (isLoading) {
+    if (isLoading || isLoading2) {
               return <div className="App">Loading...</div>;
     }
     return (

@@ -9,6 +9,7 @@ import EntrepreneurComp from './components/EntrepreneurComp';
 import UserComp from './components/UserComp';
 import UserList from './components/UserList';
 import EntrepreneurUpdate from './components/entrepreneurUpdate.js';
+import FreelancerList from './components/FreelancerList';
 
 import './style.css';
 
@@ -22,6 +23,7 @@ function App() {
       <Route exact path="/Stagiairelist"> <StagiaireList /></Route>
       <Route exact path="/Entrepreneurlist"> <EntrepreneurList /></Route>
       <Route exact path="/Userlist"> <UserList /></Route>
+      <Route exact path="/FreelancerList"> <FreelancerList /></Route>
       <Route exact path="/Stagiaire/:id"> <StagiaireComp/></Route>
       <Route exact path="/Entrepreneur/:id"> <EntrepreneurComp/></Route>
       <Route exact path="/user/:id"> <UserComp/></Route>

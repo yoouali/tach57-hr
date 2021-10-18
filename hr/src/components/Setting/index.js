@@ -1,9 +1,17 @@
 import axios from "axios";
 import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
-import './style.css';
-import logo from '../../images/logo.png';
 import { Link } from "react-router-dom";
+
+import './style.css';
+
+import logo from '../../images/logo.png';
+import profileIcon from '../../images/icons/person.svg';
+import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
+import stagiaireIcon from '../../images/icons/stagiaire.svg';
+import freelancerIcon from '../../images/icons/freelancer.svg';
+import Freelancer from '../freelancer';
+
 
 function Setting(){
     const [isLoading, setLoading] = useState(true);
@@ -50,7 +58,7 @@ function Setting(){
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
     return (
-        <div className="box">
+<div className="box">
             <section>
                 <div className="header">
                     <div className="logo"><img src={logo} alt="teck-57-log"/></div>
@@ -65,12 +73,23 @@ function Setting(){
                     </div>
                 </div>
             </section>
-            <div className="settingContainer">
-                <form>
-                    <div className="settingForm">
-                        <div className="inputGroup"></div>
+            <div className="homeContainer">
+                <div className="sideBar">
+                <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
+                <Link to="/Userlist">  <div><img src={profileIcon} alt="profileicon" /></div> </Link>
+                <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
+                <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
+                <Link to="/FreelancerList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
+                </div>
+                <div className="dashborde">
+                    <div className="updateUserBox">
+                        <div className="updateUserLeftBar">
+                            <div className="updateUserLeftBarTitle">Profile Management</div>
+                            <hr></hr>
+                        </div>
+                        <div className="updateUserRightBar"></div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     )

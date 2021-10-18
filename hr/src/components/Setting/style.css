@@ -3,28 +3,35 @@
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap');
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.updateUserBox{
+    width: 90%;
+    background-color: white;
+    border-radius: 2px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
 }
-.body{
 
-}
-
-.settingContainer{
-    width: 100%;
-    height: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
+.updateUserLeftBar{
+    width: 200px;
+    height: 90%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    font-family: 'Poppins';
-    background-color: #117DB0;
 }
-.settingForm{
-    width: 80%;
-    max-width: 500px;
-    padding: 15px;
-    margin: auto;
-    backdrop-filter: blur(20px);
+
+.updateUserLeftBar hr{
+    width: 90%;
+    margin: 0  auto;
+    border: none;
+    border-top: 1px solid #117DB0;
+}
+
+.updateUserLeftBarTitle{
+    height: 80px;
+    padding-top: 10%;
+    font-family: 'Rajdhani';
+    font-size: large;
+    font-weight: 800;
 }

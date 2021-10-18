@@ -156,6 +156,7 @@ function EntrepreneurUpdate(){
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date de naissance</label>
                                     <input type="text" name="DateDeNaissance" placeholder={entrepreneur.DateDeNaissance}
+                                           onFocus={target => {target.target.type = "date"}} onBlur={target => {target.target.type = "text"}}
                                            onChange={(e) => setFormData({...formData, DateDeNaissance: e.target.value})}
                                            value={formData.DateDeNaissance}></input>
                                 </div>
@@ -177,12 +178,14 @@ function EntrepreneurUpdate(){
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date D'adhesion</label>
                                     <input type="text" name="DateDadhesion" placeholder={entrepreneur.DateDadhesion}
+                                           onFocus={target => {target.target.type = "date"}} onBlur={target => {target.target.type = "text"}}
                                            onChange={(e) => setFormData({...formData, DateDadhesion: e.target.value})}
                                            value={formData.DateDadhesion}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Valable Jusqu'au</label>
                                     <input type="text" name="ValibleJusquau" placeholder={entrepreneur.ValableJusquau}
+                                           onFocus={target => {target.target.type = "date"}} onBlur={target => {target.target.type = "text"}}
                                            onChange={(e) => setFormData({...formData, ValableJusquau: e.target.value})}
                                            value={formData.ValableJusquau}></input>
                                 </div>

@@ -217,19 +217,19 @@ function StagiaireUpdate(){
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Assurance</label>
-                                    <input type="file" name="CIN" placeholder={stagiaire.Assurance}
+                                    <input type="file" name="Assurance" placeholder={stagiaire.Assurance}
                                            onChange={(e) => setFormData({...formData, Assurance: e.target.files[0]})}
                                            ></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Convention</label>
-                                    <input type="file" name="CIN" placeholder={stagiaire.Convention}
+                                    <input type="file" name="Convention" placeholder={stagiaire.Convention}
                                            onChange={(e) => setFormData({...formData, Convention: e.target.files[0]})}
                                            ></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Fiche De Stagiaire</label>
-                                    <input type="file" name="CIN" placeholder={stagiaire.FicheDeStagiaire}
+                                    <input type="file" name="FicheDeStagiaire" placeholder={stagiaire.FicheDeStagiaire}
                                            onChange={(e) => setFormData({...formData, FicheDeStagiaire: e.target.files[0]})}
                                            ></input>
                                 </div>

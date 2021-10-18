@@ -164,7 +164,7 @@ function StagiaireComp(){
                             {Convention}
 
                             {Attestation}
-                            <div className="stageButton"><button>Edit</button></div>
+                            <div className="stageButton"><Link to={"/StagiaireUpdate/"+stage.id}> <button>Edit</button></Link></div>
                             <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">

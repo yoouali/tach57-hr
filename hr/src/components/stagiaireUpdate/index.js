@@ -1,5 +1,6 @@
 import {useState, useEffect, useCallback} from 'react';
 import { Redirect, useParams  } from "react-router";
+import { useHistory } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import swal from 'sweetalert';
@@ -22,7 +23,8 @@ function StagiaireUpdate(){
 
         const [formData, setFormData] = useState({
             Prenom: '',Nom: '',Email: '',CIN: '',TEL: '',DateDeNaissance: '',LieuDeNaissance: '',
-            SujetDeStage: ''
+            SujetDeStage: '', DateDeDebut:'', DateDeFin: '', TypeDeStage: '', Etablissement: '',
+            Filiere: '', Niveau: '', CV: '', Assurance: '', Convention: '', FicheDeStagiaire: '',
         })
 
 
@@ -31,7 +33,7 @@ function StagiaireUpdate(){
         axios.get('https://stagiaire.herokuapp.com/api/stagiaire/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
             console.log(res);
-            setStagiaire(res.data);
+            setStagiaire(res.data.data);
             setLoading2(false);
         })
         .catch(err => {console.log(err)})
@@ -43,7 +45,7 @@ function StagiaireUpdate(){
         .catch(err => {console.log(err)})
     }, []);
 
-
+    const history = useHistory();
     function handelUserNav(){
         let element = document.getElementById("userNav");
         if (element.style.display === "none")
@@ -70,6 +72,13 @@ function StagiaireUpdate(){
     });
     function hendleSubmit(e){
         e.preventDefault()
+        const token = localStorage.getItem('token');
+        axios.post('https://stagiaire.herokuapp.com/api/stagiaire/update/' + id, formData,{headers: {"Authorization": `Bearer ${token}`}})
+        .then(res =>{
+            console.log("hh");
+            history.push("/Stagiaire/" + id);
+        })
+        .catch(err => {console.log(err)})
     }
 
 
@@ -152,13 +161,78 @@ function StagiaireUpdate(){
                                            value={formData.LieuDeNaissance}></input>
                                 </div>
                             </div>
-                            <div className="entrepreneurUpdateSectionTitle"><p>CARTE D'ENTREPRENEUR</p></div>
+                            <div className="entrepreneurUpdateSectionTitle"><p>Stagiaire Information</p></div>
                             <div className="entrepreneurUpdateFormSection">
-                                
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Sujet De Stage</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.SujetDeStage}
+                                           onChange={(e) => setFormData({...formData, SujetDeStage: e.target.value})}
+                                           value={formData.SujetDeStage}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Date de Debut</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.DateDeDebut}
+                                           onChange={(e) => setFormData({...formData, DateDeDebut: e.target.value})}
+                                           value={formData.DateDeDebut}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Date De Fin</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.DateDeFin}
+                                           onChange={(e) => setFormData({...formData, DateDeFin: e.target.value})}
+                                           value={formData.DateDeFin}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Type de Stage</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.TypeDeStage}
+                                           onChange={(e) => setFormData({...formData, TypeDeStage: e.target.value})}
+                                           value={formData.TypeDeStage}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Etablissement</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.Etablissement}
+                                           onChange={(e) => setFormData({...formData, Etablissement: e.target.value})}
+                                           value={formData.Etablissement}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Filiere</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.Filiere}
+                                           onChange={(e) => setFormData({...formData, Filiere: e.target.value})}
+                                           value={formData.Filiere}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Niveau</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.Niveau}
+                                           onChange={(e) => setFormData({...formData, Niveau: e.target.value})}
+                                           value={formData.Niveau}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >CV</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.CV}
+                                           onChange={(e) => setFormData({...formData, CV: e.target.value})}
+                                           value={formData.CV}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Assurance</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.Assurance}
+                                           onChange={(e) => setFormData({...formData, Assurance: e.target.value})}
+                                           value={formData.Assurance}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Convention</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.Convention}
+                                           onChange={(e) => setFormData({...formData, Convention: e.target.value})}
+                                           value={formData.Convention}></input>
+                                </div>
+                                <div className="entrepreneurUpdateInputGroupe">
+                                    <label >Fiche De Stagiaire</label>
+                                    <input type="text" name="CIN" placeholder={stagiaire.FicheDeStagiaire}
+                                           onChange={(e) => setFormData({...formData, FicheDeStagiaire: e.target.value})}
+                                           value={formData.FicheDeStagiaire}></input>
+                                </div>
                             </div>
                             <div className="entrepreneurUpdateFormButoon">
                                 <button type="submit">Active</button>
-                               <Link to={"/Entrepreneur/" + stagiaire.id}> <button id="enterpreneurButoonCancel">Cancel</button></Link>
+                               <Link to={"/Stagiaire/" + stagiaire.id}> <button id="enterpreneurButoonCancel">Cancel</button></Link>
                             </div>
                         </div>
                         </form>

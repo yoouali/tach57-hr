@@ -24,7 +24,7 @@ function StagiaireUpdate(){
         const [formData, setFormData] = useState({
             Prenom: '',Nom: '',Email: '',CIN: '',TEL: '',DateDeNaissance: '',LieuDeNaissance: '',
             SujetDeStage: '', DateDeDebut:'', DateDeFin: '', TypeDeStage: '', Etablissement: '',
-            Filiere: '', Niveau: '', CV: '', Assurance: '', Convention: '', FicheDeStagiaire: '',
+            Filiere: '', Niveau: '', CV: null, Assurance: null, Convention: null, FicheDeStagiaire: null,
         })
 
 
@@ -72,6 +72,7 @@ function StagiaireUpdate(){
     });
     function hendleSubmit(e){
         e.preventDefault()
+        console.log(formData);
         const token = localStorage.getItem('token');
         axios.post('https://stagiaire.herokuapp.com/api/stagiaire/update/' + id, formData,{headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
@@ -210,27 +211,27 @@ function StagiaireUpdate(){
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >CV</label>
-                                    <input type="text" name="CIN" placeholder={stagiaire.CV}
-                                           onChange={(e) => setFormData({...formData, CV: e.target.value})}
-                                           value={formData.CV}></input>
+                                    <input type="file" name="CV" placeholder={stagiaire.CV}
+                                           onChange={(e) => setFormData({...formData, CV: e.target.files[0]})}
+                                          ></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Assurance</label>
-                                    <input type="text" name="CIN" placeholder={stagiaire.Assurance}
-                                           onChange={(e) => setFormData({...formData, Assurance: e.target.value})}
-                                           value={formData.Assurance}></input>
+                                    <input type="file" name="CIN" placeholder={stagiaire.Assurance}
+                                           onChange={(e) => setFormData({...formData, Assurance: e.target.files[0]})}
+                                           ></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Convention</label>
-                                    <input type="text" name="CIN" placeholder={stagiaire.Convention}
-                                           onChange={(e) => setFormData({...formData, Convention: e.target.value})}
-                                           value={formData.Convention}></input>
+                                    <input type="file" name="CIN" placeholder={stagiaire.Convention}
+                                           onChange={(e) => setFormData({...formData, Convention: e.target.files[0]})}
+                                           ></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Fiche De Stagiaire</label>
-                                    <input type="text" name="CIN" placeholder={stagiaire.FicheDeStagiaire}
-                                           onChange={(e) => setFormData({...formData, FicheDeStagiaire: e.target.value})}
-                                           value={formData.FicheDeStagiaire}></input>
+                                    <input type="file" name="CIN" placeholder={stagiaire.FicheDeStagiaire}
+                                           onChange={(e) => setFormData({...formData, FicheDeStagiaire: e.target.files[0]})}
+                                           ></input>
                                 </div>
                             </div>
                             <div className="entrepreneurUpdateFormButoon">

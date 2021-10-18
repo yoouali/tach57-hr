@@ -131,7 +131,7 @@ function EntrepreneurComp(){
                 <Link to="/Userlist">  <div><img src={profileIcon} alt="profileicon" /></div> </Link>
                 <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
                 <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
-                <div><img src={freelancerIcon} alt="profileicon" /></div>
+                <Link to="/FreelancerList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
             </div>
             <div className="dashborde">
                 <div className="stageBar">

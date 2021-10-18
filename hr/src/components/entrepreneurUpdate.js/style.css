@@ -54,6 +54,7 @@
     font-weight: 700;
     outline: none;
 }
+.entrepreneurUpdateInputGroupe input::-webkit-calendar-picker-indicator {filter: invert(0.8);}
 .entrepreneurUpdateInputGroupe input:placeholder-shown{background-color: #999;}
 .entrepreneurUpdateInputGroupe input:focus{background-color: white;}
 

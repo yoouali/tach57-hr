@@ -24,10 +24,10 @@ function FreelancerComp(){
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get('https://stagiaire.herokuapp.com/api/stagiaire/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
+        axios.get('https://stagiaire.herokuapp.com/api/freelancer/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
             console.log(res);
-            setFreelancer(res.data.data);
+            setFreelancer(res.data);
             setLoading(false);
         })
         .catch(err => {console.log(err)})
@@ -92,9 +92,10 @@ function FreelancerComp(){
     }
 
     function activeStagiaire(){
+        console.log(freelancer.id);
         const token = localStorage.getItem('token');
         const url = "https://stagiaire.herokuapp.com/api/freelancer/active/" + freelancer.id;
-        axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+        axios.post(url, null,{headers: {"Authorization": `Bearer ${token}`}})
          .then(res =>{
                 document.getElementById("activeSctiveButton").style.display="none";
                 document.getElementById("stageNotActive").style.backgroundColor="#117DB0";
@@ -149,7 +150,7 @@ function FreelancerComp(){
                             <div className="stageFile"><p>Fiche du Freelancer</p></div>
                             <div className="stageFile"><p>CV</p></div>
                             {Attestation}
-                            <div className="stageButton"><button>Edit</button></div>
+                            <div className="stageButton"><Link to={"/FreelancerUpdate/" + freelancer.id}><button>Edit</button></Link></div>
                             <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">
@@ -184,16 +185,8 @@ function FreelancerComp(){
                                     <div className="infoValue">{freelancer.TEL}</div>
                                 </div>
                                 <div className="groupeInfo">
-                                    <div className="infoTitle">TEL</div>
-                                    <div className="infoValue">{freelancer.Address}</div>
-                                </div>
-                                <div className="groupeInfo">
-                                    <div className="infoTitle">birtday</div>
-                                    <div className="infoValue">{freelancer.DateDeNaissance}</div>
-                                </div>
-                                <div className="groupeInfo">
-                                    <div className="infoTitle">birtplace</div>
-                                    <div className="infoValue">{freelancer.LieuDeNaissance}</div>
+                                    <div className="infoTitle">Adresse</div>
+                                    <div className="infoValue">{freelancer.Adresse}</div>
                                 </div>
                             </div>
                             </div>

@@ -12,6 +12,7 @@ import EntrepreneurUpdate from './components/entrepreneurUpdate.js';
 import FreelancerList from './components/FreelancerList';
 import FreelancerComp from './components/FreelancerComp';
 import StagiaireUpdate from './components/stagiaireUpdate';
+import FreelancerUpdate from './components/freelancerUpdate';
 
 import './style.css';
 
@@ -32,6 +33,7 @@ function App() {
       <Route exact path="/freelancer/:id"> <FreelancerComp/></Route>
       <Route exact path="/Entrepreneurupdate/:id"> <EntrepreneurUpdate/></Route>
       <Route exact path="/Stagiaireupdate/:id"> <StagiaireUpdate/></Route>
+      <Route exact path="/FreelancerUpdate/:id"> <FreelancerUpdate/></Route>
 
       </BrowserRouter>
     </div>

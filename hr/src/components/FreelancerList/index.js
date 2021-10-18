@@ -70,8 +70,8 @@ function FreelancerList(){
             <div className="itemTitle"><p>{name.Sujet}</p></div>
             <div className="itemOwner"><p>{name.Nom}</p><p>{name.Prenom}</p></div>
             <div className="itemDate"><p>25-08-2021</p><p>25-02-2021</p></div>
-            <p className="itemProp">spactate</p>
-            {/* <Link to={"/Stagiaire/"+name.id}  > <p className="itemProp">spactate</p></Link> */}
+            {/* <p className="itemProp">spactate</p> */}
+            <Link to={"/freelancer/"+name.id}  > <p className="itemProp">spactate</p></Link>
             </div>
           )
       })}

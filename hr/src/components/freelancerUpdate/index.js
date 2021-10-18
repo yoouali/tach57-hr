@@ -72,9 +72,11 @@ function FreelancerUpdate(){
     });
     function hendleSubmit(e){
         e.preventDefault()
+        console.log(formData)
         const token = localStorage.getItem('token');
         axios.post('https://stagiaire.herokuapp.com/api/freelancer/update/' + id, formData,{headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
+            console.log(res)
             console.log("hh");
             history.push("/freelancer/" + id);
         })
@@ -186,7 +188,7 @@ function FreelancerUpdate(){
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >CV</label>
                                     <input type="file" name="CV" placeholder={freelancer.CV}
-                                           onChange={(e) => setFormData({...formData, CV: e.target.files[0]})}
+                                           onChange={(e) => setFormData({...formData, CV: e.target.files[0].name})}
                                            ></input>
                                 </div>
                             </div>

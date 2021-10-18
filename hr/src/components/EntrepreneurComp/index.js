@@ -115,7 +115,7 @@ function EntrepreneurComp(){
             <div className="header">
                 <div className="logo"><img src={logo} alt="teck-57-log"/></div>
                 <div id="user" className="user">
-                    <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.role}</span></div>
+                    <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.Role}</span></div>
                     <ul id="userNav" className="user-nav">
                         <li>Profile</li>
                         <Link to="../Setting">

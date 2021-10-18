@@ -13,6 +13,7 @@ import profileIcon from '../../images/icons/person.svg';
 import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
 import stagiaireIcon from '../../images/icons/stagiaire.svg';
 import freelancerIcon from '../../images/icons/freelancer.svg';
+import Freelancer from '../freelancer';
 
 
 
@@ -93,6 +94,7 @@ function Home(){
                 <div className="dashborde">
                     <Stagiaire />
                     <Entrepreneur />
+                    <Freelancer />
                 </div>
             </div>
         </div>

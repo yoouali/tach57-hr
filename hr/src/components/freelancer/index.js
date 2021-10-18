@@ -11,12 +11,14 @@ function Freelancer(){
         const token = localStorage.getItem('token');
         axios.get('https://stagiaire.herokuapp.com/api/freelancer/isFinish/1', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
-            setAttestation(res.data.data);
+            console.log(res);
+            setAttestation(res.data);
         })
         .catch(err => {console.log(err)})
         axios.get('https://stagiaire.herokuapp.com/api/freelancer/notActive', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
-            setFreelancer(res.data.data);
+            console.log(res);
+            setFreelancer(res.data);
             setLoading(false);
         })
         .catch(err => {console.log(err)})

@@ -24,7 +24,7 @@ function FreelancerUpdate(){
         const [formData, setFormData] = useState({
             Prenom: '',Nom: '',Email: '',CIN: '',TEL: '',Adresse:'',
             Sujet: '', DateDeDebut:'', DateDeFin: '',
-            CV: '', Portefolio: '',
+            CV: null, Portefolio: '',
         })
 
 
@@ -185,9 +185,9 @@ function FreelancerUpdate(){
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >CV</label>
-                                    <input type="text" name="CIN" placeholder={freelancer.CV}
-                                           onChange={(e) => setFormData({...formData, CV: e.target.value})}
-                                           value={formData.CV}></input>
+                                    <input type="file" name="CV" placeholder={freelancer.CV}
+                                           onChange={(e) => setFormData({...formData, CV: e.target.files[0]})}
+                                           ></input>
                                 </div>
                             </div>
                             <div className="entrepreneurUpdateFormButoon">

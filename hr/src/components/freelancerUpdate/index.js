@@ -165,13 +165,15 @@ function FreelancerUpdate(){
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date de Debut</label>
-                                    <input type="text" name="CIN" placeholder={freelancer.DateDeDebut}
+                                    <input   name="CIN" placeholder={freelancer.DateDeDebut}
+                                           onFocus={target => {target.target.type = "date"}} onBlur={target => {target.target.type = "text"}}
                                            onChange={(e) => setFormData({...formData, DateDeDebut: e.target.value})}
                                            value={formData.DateDeDebut}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date De Fin</label>
                                     <input type="text" name="CIN" placeholder={freelancer.DateDeFin}
+                                           onFocus={target => {target.target.type = "date"}} onBlur={target => {target.target.type = "text"}}
                                            onChange={(e) => setFormData({...formData, DateDeFin: e.target.value})}
                                            value={formData.DateDeFin}></input>
                                 </div>

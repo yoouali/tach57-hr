@@ -151,6 +151,7 @@ function StagiaireUpdate(){
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date de naissance</label>
                                     <input type="text" name="DateDeNaissance" placeholder={stagiaire.DateDeNaissance}
+                                           onFocus={target => {target.target.type = "date"}} onBlur={target => {target.target.type = "text"}}
                                            onChange={(e) => setFormData({...formData, DateDeNaissance: e.target.value})}
                                            value={formData.DateDeNaissance}></input>
                                 </div>
@@ -172,12 +173,14 @@ function StagiaireUpdate(){
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date de Debut</label>
                                     <input type="text" name="CIN" placeholder={stagiaire.DateDeDebut}
+                                           onFocus={target => {target.target.type = "date"}} onBlur={target => {target.target.type = "text"}}
                                            onChange={(e) => setFormData({...formData, DateDeDebut: e.target.value})}
                                            value={formData.DateDeDebut}></input>
                                 </div>
                                 <div className="entrepreneurUpdateInputGroupe">
                                     <label >Date De Fin</label>
                                     <input type="text" name="CIN" placeholder={stagiaire.DateDeFin}
+                                           onFocus={target => {target.target.type = "date"}} onBlur={target => {target.target.type = "text"}}
                                            onChange={(e) => setFormData({...formData, DateDeFin: e.target.value})}
                                            value={formData.DateDeFin}></input>
                                 </div>

@@ -26,6 +26,7 @@
     margin: 0  auto;
     border: none;
     border-top: 1px solid #117DB0;
+    margin-bottom: 20px;
 }
 
 .updateUserLeftBarTitle{
@@ -34,4 +35,17 @@
     font-family: 'Rajdhani';
     font-size: large;
     font-weight: 800;
+}
+.updateUserLeftBarSection{
+    height: 80px;
+    padding-top: 10%;
+    font-family: 'Rajdhani';
+    font-size: medium;
+    font-weight: 800;
+    text-decoration-line: underline;
+    color: #117DB0;
+    cursor: pointer;
+}
+.updateUserLeftBarSection:hover{
+    font-size: large;
 }

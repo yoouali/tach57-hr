@@ -86,6 +86,8 @@ function Setting(){
                         <div className="updateUserLeftBar">
                             <div className="updateUserLeftBarTitle">Profile Management</div>
                             <hr></hr>
+                            <div className="updateUserLeftBarSection"> <p className="updateUserLeftBarSectionChose">Information</p></div>
+                            <div className="updateUserLeftBarSection">Password</div>
                         </div>
                         <div className="updateUserRightBar"></div>
                     </div>

@@ -49,3 +49,49 @@
 .updateUserLeftBarSection:hover{
     font-size: large;
 }
+
+
+.updateUserFormSection{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    border: 2px solid #117DB0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.updateUserInputGroupe{
+    width: 250px;
+    text-align: left;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.updateUserInputGroupe input{
+    width: 100%;
+    height: 40px;
+    padding-left: 2px;
+    border: none;
+    border: 2px solid #117DB0;
+    border-radius: 2px;
+    font-family: 'Poppins';
+    font-size: medium;
+    color: #117DB0;
+    font-weight: 700;
+    outline: none;
+}
+.updateUserInputGroupe input::-webkit-calendar-picker-indicator {filter: invert(0.8);}
+.updateUserInputGroupe input:placeholder-shown{background-color: #ccc;}
+.updateUserInputGroupe input:focus{background-color: white;}
+
+.updateUserInputGroupe label{
+    font-family: 'Poppins';
+    font-size: small;
+    font-weight: bold;
+    color: #117DB0;
+    padding-left: 5px;
+}
+/* #555555 */

@@ -89,7 +89,43 @@ function Setting(){
                             <div className="updateUserLeftBarSection"> <p className="updateUserLeftBarSectionChose">Information</p></div>
                             <div className="updateUserLeftBarSection">Password</div>
                         </div>
-                        <div className="updateUserRightBar"></div>
+                        <div className="updateUserRightBar">
+                            <form id="perinfo">
+                            <div className="entrepreneurUpdateSectionTitle"><p> Personnelles Information</p></div>
+                            <div className="updateUserFormSection">
+                                <div className="updateUserInputGroupe">
+                                    <label>Prenom</label>
+                                    <input type="text" name="Prenom" placeholder={user.Prenom}
+                                          ></input>
+                                </div>
+                                <div className="updateUserInputGroupe">
+                                    <label >Nom</label>
+                                    <input type="text"  name="Nom" placeholder={user.Nom}
+                                          ></input>
+                                </div>
+                            </div>
+                            </form>
+                            <form id="passwordChange">
+                            <div className="entrepreneurUpdateSectionTitle"><p>Password Change</p></div>
+                            <div className="updateUserFormSection">
+                                <div className="updateUserInputGroupe">
+                                    <label>Old Password</label>
+                                    <input type="password" name="oldPassword" placeholder=""
+                                          ></input>
+                                </div>
+                                <div className="updateUserInputGroupe">
+                                    <label >New Password</label>
+                                    <input type="password"  name="newPassword" placeholder=""
+                                          ></input>
+                                </div>
+                                <div className="updateUserInputGroupe">
+                                    <label >New Password Confermation</label>
+                                    <input type="password"  name="newPasswordC" placeholder=""
+                                          ></input>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

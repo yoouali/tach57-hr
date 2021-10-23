@@ -69,7 +69,7 @@ function UserList(){
             if (name.Role === "admin"){
                 console.log("ddf");
                 return (
-                   <Link style={{ textDecoration: 'none' }} to={"/user/" + name.id}> <div key={name.id} id="userTableAdmin" className="userTable">
+                   <Link key={name.id} style={{ textDecoration: 'none' }} to={"/user/" + name.id}> <div key={name.id} id="userTableAdmin" className="userTable">
                         <div className="userTableRole">ADMIN</div>
                         <div className="userTableName"><p id="userTableNameAdmin">{name.Nom} {name.Prenom}</p></div>
                         {userStatus}
@@ -78,7 +78,7 @@ function UserList(){
             }
             if (name.Role === "rh"){
                 return (
-                   <Link style={{ textDecoration: 'none' }} to={"/user/" + name.id}> <div key={name.id} id="userTableRh" className="userTable">
+                   <Link key={name.id} style={{ textDecoration: 'none' }} to={"/user/" + name.id}> <div key={name.id} id="userTableRh" className="userTable">
                         <div className="userTableRole">RH</div>
                         <div className="userTableName"><p id="userTableNameRh">{name.Nom} {name.Prenom}</p></div>
                         {userStatus}

@@ -71,6 +71,21 @@ function Setting(){
             })
             .catch(err => {console.log(err)})
       }
+      function handelSubmit(e){
+          e.preventDefault()
+          const token = localStorage.getItem('token');
+          axios.post('https://stagiaire.herokuapp.com/api/user/update', formData,{headers: {"Authorization": `Bearer ${token}`}})
+          .then(res =>{
+              console.log(res)
+              console.log("hh");
+              if (res.data === "Mot de passe n'est pas correcte")
+                  console.log("error");
+              else 
+                  history.push("/");
+          })
+          .catch(err => {console.log(err)})
+          
+      }
 
 
 
@@ -107,11 +122,18 @@ function Setting(){
                         <div className="updateUserLeftBar">
                             <div className="updateUserLeftBarTitle">Profile Management</div>
                             <hr></hr>
-                            <div className="updateUserLeftBarSection"> <p className="updateUserLeftBarSectionChose">Information</p></div>
-                            <div className="updateUserLeftBarSection">Password</div>
+                            <div className="updateUserLeftBarSection"
+                                onClick={function(){document.getElementById("passwordChange").style.display="none";
+                                document.getElementById("perinfo").style.display="block"}}>
+                                <p className="updateUserLeftBarSectionChose">Information</p>
+                            </div>
+                            <div className="updateUserLeftBarSection"
+                                onClick={function(){document.getElementById("passwordChange").style.display="block";
+                                document.getElementById("perinfo").style.display="none"}}>
+                                Password</div>
                         </div>
                         <div className="updateUserRightBar">
-                            <form id="perinfo">
+                            <form onSubmit={handelSubmit} id="perinfo">
                             <div className="entrepreneurUpdateSectionTitle"><p> Personnelles Information</p></div>
                             <div className="updateUserFormSection">
                                 <div className="updateUserInputGroupe">
@@ -139,9 +161,9 @@ function Setting(){
                                 <div className="updateUserInputGroupe">
                                     <label >Email</label>
                                     <input type="text"  name="Email" placeholder={user.Email}
-                                        onChange={(e) => {setFormData({...formData, Email: e.target.value})
-                                        if(e.target.value == ""){document.getElementById("formDataPassword").style.display="none"}
-                                        else{document.getElementById("formDataPassword").style.display="flex"}}}
+                                        onChange={(e) => setFormData({...formData, Email: e.target.value})}
+                                        // if(e.target.value == ""){document.getElementById("formDataPassword").style.display="none"}
+                                        // else{document.getElementById("formDataPassword").style.display="flex"}}}
                                         value={formData.Email}></input>                                </div>
                                 <div id="formDataPassword" className="updateUserInputGroupe">
                                     <label >Password</label>

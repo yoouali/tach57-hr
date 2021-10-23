@@ -98,5 +98,8 @@
     color: #117DB0;
     padding-left: 5px;
 }
-#formDataPassword{display: none;}
-/* #555555 */
+#passwordChange{
+    display: none;
+}
+/* #formDataPassword{display: none;}
+#555555 */

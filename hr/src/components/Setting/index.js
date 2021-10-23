@@ -16,6 +16,8 @@ import Freelancer from '../freelancer';
 function Setting(){
     const [isLoading, setLoading] = useState(true);
     const [user, setUser] = useState();
+    const [formData, setFormData] = useState({ Prenom: '', Nom: '', CIN: '', TEL: '', Email: '', Role: '', Password: ''});
+    const [changePassword, setChangePassword] = useState({ oldPass: '', newPass: ''});
 
     useEffect(() => {
         const token = localStorage.getItem('token');

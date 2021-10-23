@@ -78,7 +78,7 @@ function Home(){
                             <li>Profile</li>
                             <Link to="../Setting">
                             <li>Setting</li></Link>
-                            <li className="logout">logout</li>
+                            <Link to="/login"><li  onClick={function(){localStorage.removeItem("token")}} className="logout">logout</li></Link>
                         </ul>
                     </div>
                 </div>

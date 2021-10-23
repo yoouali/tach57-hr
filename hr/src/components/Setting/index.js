@@ -98,13 +98,37 @@ function Setting(){
                                 <div className="updateUserInputGroupe">
                                     <label>Prenom</label>
                                     <input type="text" name="Prenom" placeholder={user.Prenom}
-                                          ></input>
-                                </div>
+                                        onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                        value={formData.Prenom}></input>                                </div>
                                 <div className="updateUserInputGroupe">
                                     <label >Nom</label>
                                     <input type="text"  name="Nom" placeholder={user.Nom}
-                                          ></input>
+                                        onChange={(e) => setFormData({...formData, Nom: e.target.value})}
+                                        value={formData.Nom}></input>                                </div>
+                                <div className="updateUserInputGroupe">
+                                    <label >CIN</label>
+                                    <input type="text"  name="CIN" placeholder={user.CIN}
+                                        onChange={(e) => setFormData({...formData, CIN: e.target.value})}
+                                        value={formData.CIN}></input>
                                 </div>
+                                <div className="updateUserInputGroupe">
+                                    <label >TEL</label>
+                                    <input type="text"  name="TEL" placeholder={user.TEL}
+                                        onChange={(e) => setFormData({...formData, TEL: e.target.value})}
+                                        value={formData.TEL}></input>
+                                </div>
+                                <div className="updateUserInputGroupe">
+                                    <label >Email</label>
+                                    <input type="text"  name="Email" placeholder={user.Email}
+                                        onChange={(e) => {setFormData({...formData, Email: e.target.value})
+                                        if(e.target.value == ""){document.getElementById("formDataPassword").style.display="none"}
+                                        else{document.getElementById("formDataPassword").style.display="flex"}}}
+                                        value={formData.Email}></input>                                </div>
+                                <div id="formDataPassword" className="updateUserInputGroupe">
+                                    <label >Password</label>
+                                    <input type="password"  name="Password" placeholder="***********"
+                                        onChange={(e) => setFormData({...formData, Password: e.target.value})}
+                                        value={formData.Password}></input>                                </div>
                             </div>
                             </form>
                             <form id="passwordChange">

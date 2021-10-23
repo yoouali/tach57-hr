@@ -2,6 +2,8 @@ import axios from "axios";
 import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
 import { Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
+
 
 import './style.css';
 
@@ -10,7 +12,6 @@ import profileIcon from '../../images/icons/person.svg';
 import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
 import stagiaireIcon from '../../images/icons/stagiaire.svg';
 import freelancerIcon from '../../images/icons/freelancer.svg';
-import Freelancer from '../freelancer';
 
 
 function Setting(){
@@ -30,7 +31,7 @@ function Setting(){
         .catch(err => {console.log(err)})
     }, []);
 
-
+    const history = useHistory();
     function handelUserNav(){
         let element = document.getElementById("userNav");
         if (element.style.display === "none")
@@ -56,11 +57,29 @@ function Setting(){
             document.getElementById("userNav").style.display = "none";
       });
 
+      function changePasswordSubmit(e){
+            e.preventDefault()
+            const token = localStorage.getItem('token');
+            axios.post('https://stagiaire.herokuapp.com/api/user/changePassword', changePassword,{headers: {"Authorization": `Bearer ${token}`}})
+            .then(res =>{
+                console.log(res)
+                console.log("hh");
+                if (res.data === "Mot de passe n'est pas correcte")
+                    console.log("error");
+                else 
+                    history.push("/");
+            })
+            .catch(err => {console.log(err)})
+      }
+
+
+
+
     if (isLoading) {return <div className="App">Loading...</div>;}
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
     return (
-<div className="box">
+        <div className="box">
             <section>
                 <div className="header">
                     <div className="logo"><img src={logo} alt="teck-57-log"/></div>
@@ -128,27 +147,38 @@ function Setting(){
                                     <label >Password</label>
                                     <input type="password"  name="Password" placeholder="***********"
                                         onChange={(e) => setFormData({...formData, Password: e.target.value})}
-                                        value={formData.Password}></input>                                </div>
+                                        value={formData.Password}></input>
+                                </div>
+                                <div className="entrepreneurUpdateFormButoon">
+                                    <button type="submit">Save</button>
+                                    <Link to={"/"}> <button >Cancel</button></Link>
+                               </div>  
                             </div>
                             </form>
-                            <form id="passwordChange">
+                            <form onSubmit={changePasswordSubmit} id="passwordChange">
                             <div className="entrepreneurUpdateSectionTitle"><p>Password Change</p></div>
                             <div className="updateUserFormSection">
                                 <div className="updateUserInputGroupe">
                                     <label>Old Password</label>
                                     <input type="password" name="oldPassword" placeholder=""
-                                          ></input>
+                                        onChange={(e) => setChangePassword({...changePassword, oldPass: e.target.value})}
+                                        value={changePassword.oldPass}></input>                             
                                 </div>
                                 <div className="updateUserInputGroupe">
                                     <label >New Password</label>
                                     <input type="password"  name="newPassword" placeholder=""
-                                          ></input>
+                                        onChange={(e) => setChangePassword({...changePassword, newPass: e.target.value})}
+                                        value={changePassword.newPass}></input>   
                                 </div>
                                 <div className="updateUserInputGroupe">
                                     <label >New Password Confermation</label>
                                     <input type="password"  name="newPasswordC" placeholder=""
                                           ></input>
                                 </div>
+                                <div className="entrepreneurUpdateFormButoon">
+                                    <button type="submit">Save</button>
+                                    <Link to={"/"}> <button >Cancel</button></Link>
+                               </div>  
                             </div>
                             </form>
                         </div>

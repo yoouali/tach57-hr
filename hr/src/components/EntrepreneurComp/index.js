@@ -1,6 +1,6 @@
 import {useState, useEffect, useCallback} from 'react';
 import { Redirect, useParams  } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import swal from 'sweetalert';
 
@@ -40,7 +40,7 @@ function EntrepreneurComp(){
         .catch(err => {console.log(err)})
     }, []);
 
-
+    const history = useHistory();
     function handelUserNav(){
         let element = document.getElementById("userNav");
         if (element.style.display === "none")
@@ -83,11 +83,20 @@ function EntrepreneurComp(){
     }
 
     function testRemove(e){
-        console.log("hh");
-        swal({
-            title: "Are you sure?",
-            text: "You will not be able to recover this imaginary file!",
-            type: "warning",
+        swal("are you sure you whant to remove this item")
+        .then((value) => {
+            if (value === true)
+            {
+                console.log("dfsdfsdf");
+                const token = localStorage.getItem('token');
+                const url = "https://stagiaire.herokuapp.com/api/auto-entrepreneur/delete/" + entrepreneur.id;
+                axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+                 .then(res =>{
+                     console.log(res);
+                     history.push("/Entrepreneurlist");
+                })
+                 .catch(err => {console.log(err)})
+            }
         })
     }
     function activeEntrepreneur(e){

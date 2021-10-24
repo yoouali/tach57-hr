@@ -17,7 +17,6 @@ function Login(){
       Email: emailAddress,
       Password: password
     }
-
     axios.post("https://stagiaire.herokuapp.com/api/login",data)
       .then(res => {
         console.log(res)
@@ -26,6 +25,7 @@ function Login(){
       })
       .catch(err => {
         console.log(err)
+        document.getElementById("FormError").innerText="Email or Password Incorect";
       })
   };
 
@@ -39,15 +39,14 @@ function Login(){
           <div className="form">
             <p>Login</p>
             <p id="FormError" className="FormError"></p>
-
             <div className="input-groupe">
-              <input type="email" className="input" placeholder="" 
+              <input required type="email" className="input" placeholder="" 
               onChange={({ target }) => setEmailAddress(target.value)}
               value={emailAddress}/>
               <label className="label"><span>Email Address</span></label>
             </div>
             <div className="input-groupe">
-              <input type="password" className="input" placeholder=""
+              <input required type="password" className="input" placeholder=""
               onChange={({ target }) => setPassword(target.value)}
               value={password}/>
               <label className="label"><span>Password</span></label>

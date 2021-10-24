@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import { Redirect, useParams  } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import swal from 'sweetalert';
 import axios from "axios";
 
 import './style.css';
@@ -39,6 +40,7 @@ function FreelancerComp(){
         .catch(err => {console.log(err)})
     }, []);
 
+    const history = useHistory();
     function handelUserNav(){
         let element = document.getElementById("userNav");
         if (element.style.display === "none")
@@ -63,6 +65,26 @@ function FreelancerComp(){
         if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
             document.getElementById("userNav").style.display = "none";
       });
+
+
+
+      function freelancerRemove(){
+        swal("are you sure you whant to remove this item")
+        .then((value) => {
+            if (value === true)
+            {
+                console.log("dfsdfsdf");
+                const token = localStorage.getItem('token');
+                const url = "https://stagiaire.herokuapp.com/api/freelancer/delete/" + id;
+                axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+                 .then(res =>{
+                     console.log(res);
+                     history.push("/FreelancerList");
+                })
+                 .catch(err => {console.log(err)})
+            }
+        })
+      }
 
     
     const isLogged = localStorage.getItem('token');
@@ -151,7 +173,7 @@ function FreelancerComp(){
                             <div className="stageFile"><p>CV</p></div>
                             {Attestation}
                             <div className="stageButton"><Link to={"/FreelancerUpdate/" + freelancer.id}><button>Edit</button></Link></div>
-                            <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
+                            <div className="stageButton"><button onClick={freelancerRemove} id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">
                             <div className="stageDate">

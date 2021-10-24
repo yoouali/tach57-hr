@@ -52,7 +52,7 @@ function Login(){
               value={password}/>
               <label className="label"><span>Password</span></label>
             </div>
-            <Link to="/ForgetPassword"><p id="ForgetPassword">Forget password?</p></Link>
+            <Link style={{ textDecoration: 'none' }} to="/ForgetPassword"><p id="ForgetPassword">Forget password?</p></Link>
             <button type="submit">submit</button>
           </div>
         </form>

@@ -127,6 +127,7 @@ button:active{
     flex-direction: row;
     justify-content: space-around;
 }
+
 #ForgetPassword {
     font-size: small !important;
 }

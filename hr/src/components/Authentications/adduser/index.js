@@ -17,7 +17,7 @@ import freelancerIcon from '../../../images/icons/freelancer.svg';
 function AddUser(){
     const [isLoading, setLoading] = useState(true);
     const [user, setUser] = useState();
-   
+    const [formData, setFormData] = useState({ Prenom: '', Nom: '', CIN: '', TEL: '', Email: '', Role: '',});
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -88,7 +88,50 @@ function AddUser(){
                 <Link to="/FreelancerList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
                 </div>
                 <div className="dashborde">
-
+                    <div className="addUserForm">
+                    <form id="perinfo">
+                        <div className="addUserFormTitle"><p>New Staff</p></div>
+                        <div className="addUserFormInputs">
+                            <div className="addUserFormGroupeInput">
+                                <label>Prenom</label>
+                                <input required type="text" name="Prenom" 
+                                        onChange={(e) => setFormData({...formData, Prenom: e.target.value})}
+                                value={formData.Prenom}></input>                                
+                            </div>
+                            <div className="addUserFormGroupeInput">
+                                <label >Nom</label>
+                                <input required type="text"  name="Nom" 
+                                    onChange={(e) => setFormData({...formData, Nom: e.target.value})}
+                                    value={formData.Nom}></input>                                
+                            </div>
+                            <div className="addUserFormGroupeInput">
+                                <label >Email</label>
+                                <input required type="email"  name="Email" 
+                                    onChange={(e) => setFormData({...formData, Email: e.target.value})}
+                                    value={formData.Email}></input>                                
+                            </div>
+                            <div className="addUserFormGroupeInput">
+                                <label >CIN</label>
+                                <input type="text"  name="CIN" 
+                                    onChange={(e) => setFormData({...formData, CIN: e.target.value})}
+                                    value={formData.CIN}></input>                                
+                            </div>
+                            <div className="addUserFormGroupeInput">
+                                <label >TEL</label>
+                                <input type="text"  name="TEL" 
+                                    onChange={(e) => setFormData({...formData, TEL: e.target.value})}
+                                    value={formData.TEL}></input>                                
+                            </div>
+                            <div className="addUserFormGroupeInput">
+                                <label required >Role</label>
+                                <input type="text"  name="Role" 
+                                    onChange={(e) => setFormData({...formData, Role: e.target.value})}
+                                    value={formData.Role}></input>                                
+                            </div>
+                            <button type="submit">Save</button>
+                        </div>
+                    </form>
+                    </div>
                 </div>
             </div>
         </div>

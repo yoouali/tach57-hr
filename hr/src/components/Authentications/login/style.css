@@ -115,9 +115,9 @@ button:active{
 }
 
 .FormError{
-    color: #d93025;
-    font-family: 'Roboto', sans-serif;
-    font-size: medium;
+    color: #d93025 !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: medium !important;
     /* visibility: hidden; */
 }
 .loginLastSection{

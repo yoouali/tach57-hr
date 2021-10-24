@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { Redirect  } from "react-router";
 import axios from 'axios';
 import './style.css';
@@ -52,7 +52,7 @@ function Login(){
               value={password}/>
               <label className="label"><span>Password</span></label>
             </div>
-            <p id="ForgetPassword">Forget password?</p>
+            <Link to="/ForgetPassword"><p id="ForgetPassword">Forget password?</p></Link>
             <button type="submit">submit</button>
           </div>
         </form>

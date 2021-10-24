@@ -5,11 +5,11 @@ import axios from "axios";
 
 import './style.css';
 
-import logo from './logo.png';
-import profileIcon from '../../images/icons/person.svg';
-import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
-import stagiaireIcon from '../../images/icons/stagiaire.svg';
-import freelancerIcon from '../../images/icons/freelancer.svg';
+import logo from '../../../images/logo.png';
+import profileIcon from '../../../images/icons/person.svg';
+import entrepreneurIcon from '../../../images/icons/entrepreneur.svg';
+import stagiaireIcon from '../../../images/icons/stagiaire.svg';
+import freelancerIcon from '../../../images/icons/freelancer.svg';
 
 
 

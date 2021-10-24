@@ -9,7 +9,7 @@ function Freelancer(){
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get('https://stagiaire.herokuapp.com/api/freelancer/isFinish/0', {headers: {"Authorization": `Bearer ${token}`}})
+        axios.get('https://stagiaire.herokuapp.com/api/freelancer/isFinish/1', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
             console.log(res);
             setAttestation(res.data);
@@ -37,15 +37,15 @@ function Freelancer(){
     }
     function attestationActive(e){
         console.log(attestation);
-        // const token = localStorage.getItem('token');
-        // const url = "https://stagiaire.herokuapp.com/api/stagiaire/attestation/" + e;
-        // console.log(url);
+        const token = localStorage.getItem('token');
+        const url = "https://stagiaire.herokuapp.com/api/freelancer/attestation/" + e;
+        console.log(url);
 
-        // axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
-        //  .then(res =>{console.log(res);
-        //         removeAttestation(e);
-        // })
-        //  .catch(err => {console.log(err)})
+        axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+         .then(res =>{console.log(res);
+                removeAttestation(e);
+        })
+         .catch(err => {console.log(err)})
     }
     
     function removeAttestation(e){

@@ -78,24 +78,24 @@ function FreelancerComp(){
             stageBox = <div id="stageNotActive" className="stageStatus"><p id="boxstagiaireactive1">Not Active</p><p id="boxstagiaireactive2"> &#10007;</p></div>
         if (freelancer.Active === 1 && freelancer.Finir === 0)
             stageBox = <div id="stageActive" className="stageStatus"><p>in progress</p><p> &#9991;</p></div>
-        // if (freelancer.Active === 1 && freelancer.Finir === 1 && freelancer.Attestation === 0)
-        //     stageBox = <div id="stageOver" className="stageStatus"><p id="boxstagefinshed1">Over</p><p  id="boxstagefinshed2"> &#10003;</p></div>
-        if (freelancer.Active === 1 && freelancer.Finir === 1)
+        if (freelancer.Active === 1 && freelancer.Finir === 1 && freelancer.Attestation === 0)
+            stageBox = <div id="stageOver" className="stageStatus"><p id="boxstagefinshed1">Over</p><p  id="boxstagefinshed2"> &#10003;</p></div>
+        if (freelancer.Active === 1 && freelancer.Finir === 1 && freelancer.Attestation === 1)
             stageBox = <div id="stageFineshd" className="stageStatus"><p> Finshed </p><p> &#10003;</p></div>
         var Attestation = null
         if (freelancer.Active === 0)
             Attestation = <div id="activeSctiveButton" className="stageButton"><button onClick={activeStagiaire}>Active</button></div>
-        // if (freelancer.Active === 1 && freelancer.Finir === 1 && freelancer.Attestation === 0)
-        //     Attestation = <div id="attestationStagiaireButtoon" className="stageButton"><button onClick={attestationStagiaire}>Attestation</button></div>
-        // if (freelancer.Active === 1 && freelancer.Finir === 1 && freelancer.Attestation === 1)
-        //     Attestation = <div className="stageFile"><p>Attestation</p></div>
+        if (freelancer.Active === 1 && freelancer.Finir === 1 && freelancer.Attestation === 0)
+            Attestation = <div id="attestationStagiaireButtoon" className="stageButton"><button onClick={attestationStagiaire}>Attestation</button></div>
+        if (freelancer.Active === 1 && freelancer.Finir === 1 && freelancer.Attestation === 1)
+            Attestation = <div className="stageFile"><p>Attestation</p></div>
     }
 
     function activeStagiaire(){
         console.log(freelancer.id);
         const token = localStorage.getItem('token');
         const url = "https://stagiaire.herokuapp.com/api/freelancer/active/" + freelancer.id;
-        axios.post(url, null,{headers: {"Authorization": `Bearer ${token}`}})
+        axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
          .then(res =>{
                 document.getElementById("activeSctiveButton").style.display="none";
                 document.getElementById("stageNotActive").style.backgroundColor="#117DB0";
@@ -104,18 +104,18 @@ function FreelancerComp(){
         })
          .catch(err => {console.log(err)})
     }
-    // function attestationStagiaire(){
-    //     const token = localStorage.getItem('token');
-    //     const url = "https://stagiaire.herokuapp.com/api/stagiaire/attestation/" + freelancer.id;
-    //     axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
-    //      .then(res =>{
-    //             document.getElementById("attestationStagiaireButtoon").style.display="none";
-    //             document.getElementById("stageOver").style.backgroundColor="#11B03E";
-    //             document.getElementById("boxstagefinshed1").innerText="finshed";
-    //             document.getElementById("boxstagefinshed2").innerText="✓";
-    //     })
-    //      .catch(err => {console.log(err)})
-    // }
+    function attestationStagiaire(){
+        const token = localStorage.getItem('token');
+        const url = "https://stagiaire.herokuapp.com/api/freelancer/attestation/" + freelancer.id;
+        axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+         .then(res =>{
+                document.getElementById("attestationStagiaireButtoon").style.display="none";
+                document.getElementById("stageOver").style.backgroundColor="#11B03E";
+                document.getElementById("boxstagefinshed1").innerText="finshed";
+                document.getElementById("boxstagefinshed2").innerText="✓";
+        })
+         .catch(err => {console.log(err)})
+    }
 
     return(
         <div className="box">

@@ -14,6 +14,7 @@ import FreelancerComp from './components/FreelancerComp';
 import StagiaireUpdate from './components/stagiaireUpdate';
 import FreelancerUpdate from './components/freelancerUpdate';
 import ForgetPassword from './components/Authentications/forgetPassword';
+import AddUser from './components/Authentications/adduser';
 
 import './style.css';
 
@@ -36,6 +37,7 @@ function App() {
       <Route exact path="/Stagiaireupdate/:id"> <StagiaireUpdate/></Route>
       <Route exact path="/FreelancerUpdate/:id"> <FreelancerUpdate/></Route>
       <Route exact path="/ForgetPassword"> <ForgetPassword/></Route>
+      <Route exact path="/AddUser"> <AddUser/></Route>
 
       </BrowserRouter>
     </div>

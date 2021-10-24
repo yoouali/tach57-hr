@@ -32,12 +32,14 @@ function Login(){
   const isLogged = localStorage.getItem('token');
   if (isLogged && isLogged !== undefined) {return (<Redirect to="/" />)}
   return(
-    <div>
+    <div className="box">
       <div className="container">
         <div className="entrepreneur-form">
         <form onSubmit={handleSubmit}>
           <div className="form">
             <p>Login</p>
+            <p id="FormError" className="FormError"></p>
+
             <div className="input-groupe">
               <input type="email" className="input" placeholder="" 
               onChange={({ target }) => setEmailAddress(target.value)}
@@ -50,7 +52,7 @@ function Login(){
               value={password}/>
               <label className="label"><span>Password</span></label>
             </div>
-            <p id="FormError" className="FormError"></p>
+            <p id="ForgetPassword">Forget password?</p>
             <button type="submit">submit</button>
           </div>
         </form>

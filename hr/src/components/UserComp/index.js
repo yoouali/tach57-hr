@@ -63,8 +63,17 @@ function UserComp(){
       });
 
     
-    // if (isLo)
-
+    if (!isLoading && !isLoading2 && userComp)
+    {
+        var userBox = null;
+        var userStatus = null;
+        if (userComp.Active === 1){
+            userBox = <div id="stageFineshd" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>;
+            userStatus = <div className="stageButton"><button>d'active</button></div>;}
+        else{
+            userBox = <div id="stageFineshd" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>;
+            userStatus = <div className="stageButton"><button>active</button></div>;}
+    }
     
     
     const isLogged = localStorage.getItem('token');
@@ -102,7 +111,8 @@ function UserComp(){
                     <div className="stageTitle">{userComp.Nom} {userComp.Prenom}</div>
                     <div className="stageInfo">
                         <div className="leftInfo">
-                            <div id="stageFineshd" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>
+                            {userBox}                            
+                            {userStatus}
                             <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">

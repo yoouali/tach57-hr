@@ -13,6 +13,7 @@ import FreelancerList from './components/FreelancerList';
 import FreelancerComp from './components/FreelancerComp';
 import StagiaireUpdate from './components/stagiaireUpdate';
 import FreelancerUpdate from './components/freelancerUpdate';
+import ForgetPassword from './components/Authentications/forgetPassword';
 
 import './style.css';
 
@@ -34,6 +35,7 @@ function App() {
       <Route exact path="/Entrepreneurupdate/:id"> <EntrepreneurUpdate/></Route>
       <Route exact path="/Stagiaireupdate/:id"> <StagiaireUpdate/></Route>
       <Route exact path="/FreelancerUpdate/:id"> <FreelancerUpdate/></Route>
+      <Route exact path="/ForgetPassword"> <ForgetPassword/></Route>
 
       </BrowserRouter>
     </div>

@@ -75,7 +75,7 @@ function Home(){
                     <div id="user" className="user">
                         <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.Role}</span></div>
                         <ul id="userNav" className="user-nav">
-                            <li>Profile</li>
+                            <li>New Staff</li>
                             <Link to="../Setting">
                             <li>Setting</li></Link>
                             <Link to="/login"><li  onClick={function(){localStorage.removeItem("token")}} className="logout">logout</li></Link>

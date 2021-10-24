@@ -16,6 +16,8 @@ function ForgetPassword(){
     const data = {
       Email: emailAddress,
     }
+    document.getElementById("forgetPasswordEmail").style.display="block";
+    document.getElementById("forgetPasswordForm").style.display="none";
 
 //     axios.post("https://stagiaire.herokuapp.com/api/login",data)
 //       .then(res => {
@@ -34,7 +36,7 @@ function ForgetPassword(){
     <div className="box">
       <div className="container">
         <div className="entrepreneur-form">
-        <form onSubmit={handleSubmit}>
+        <form id="forgetPasswordForm" onSubmit={handleSubmit}>
           <div className="form">
             <p>Forget Password</p>
             <p id="FormError" className="FormError"></p>
@@ -48,6 +50,12 @@ function ForgetPassword(){
             <button type="submit">submit</button>
           </div>
         </form>
+        <div id="forgetPasswordEmail">
+            <p>If your email exist we wel send a lnik to restore </p><p>your password in your email</p>
+            <br></br>
+            <hr></hr>
+            <Link style={{ textDecoration: 'none' }} to="/login"> <p className="forgetPasswordLogin">Login</p> </Link>
+        </div>
         </div>
       </div>
     </div>

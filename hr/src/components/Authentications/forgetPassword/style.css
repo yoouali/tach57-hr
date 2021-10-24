@@ -1,0 +1,13 @@
+#forgetPasswordEmail{
+    display: none;
+    color: white;
+}
+#forgetPasswordEmail hr{
+    margin-bottom: 10px;
+}
+
+.forgetPasswordLogin{
+    color: white;
+    font-size: medium;
+    text-decoration: underline;
+}

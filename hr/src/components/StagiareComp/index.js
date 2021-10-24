@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import { Redirect, useParams  } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import swal from 'sweetalert';
 import axios from "axios";
 
 import './style.css';
@@ -39,6 +40,7 @@ function StagiaireComp(){
         .catch(err => {console.log(err)})
     }, []);
 
+    const history = useHistory();
     function handelUserNav(){
         let element = document.getElementById("userNav");
         if (element.style.display === "none")
@@ -103,6 +105,24 @@ function StagiaireComp(){
             Attestation = <div className="stageFile"><p>Attestation</p></div>
     }
 
+    function stagiaireRemove(){
+        swal("are you sure you whant to remove this item")
+        .then((value) => {
+            if (value === true)
+            {
+                console.log("dfsdfsdf");
+                const token = localStorage.getItem('token');
+                const url = "https://stagiaire.herokuapp.com/api/stagiaire/delete/" + id;
+                axios.get(url, {headers: {"Authorization": `Bearer ${token}`}})
+                 .then(res =>{
+                     console.log(res);
+                     history.push("/Stagiairelist");
+                })
+                 .catch(err => {console.log(err)})
+            }
+        })
+    }
+
     function activeStagiaire(){
         const token = localStorage.getItem('token');
         const url = "https://stagiaire.herokuapp.com/api/stagiaire/active/" + stage.id;
@@ -165,7 +185,7 @@ function StagiaireComp(){
 
                             {Attestation}
                             <div className="stageButton"><Link to={"/StagiaireUpdate/"+stage.id}> <button>Edit</button></Link></div>
-                            <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
+                            <div className="stageButton"><button onClick={stagiaireRemove} id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">
                             <div className="stageDate">

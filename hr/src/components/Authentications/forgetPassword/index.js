@@ -6,28 +6,26 @@ import './style.css';
 
 
 
-function Login(){
+function ForgetPassword(){
   const history = useHistory();
   const [emailAddress, setEmailAddress] = useState('');
-  const [password, setPassword] = useState('');
+
 
   function handleSubmit(e) {
     e.preventDefault();
     const data = {
       Email: emailAddress,
-      Password: password
     }
-    axios.post("https://stagiaire.herokuapp.com/api/login",data)
-      .then(res => {
-        console.log(res)
-        localStorage.setItem('token', res.data.data.token);
-        history.push("/")
-      })
-      .catch(err => {
-        console.log(err)
-        document.getElementById("FormError").innerText="Email or Password Incorect";
-        setTimeout(function(){document.getElementById("FormError").innerText="";}, 2000)
-      })
+
+//     axios.post("https://stagiaire.herokuapp.com/api/login",data)
+//       .then(res => {
+//         console.log(res)
+//         localStorage.setItem('token', res.data.data.token);
+//         history.push("/")
+//       })
+//       .catch(err => {
+//         console.log(err)
+//       })
   };
 
   const isLogged = localStorage.getItem('token');
@@ -38,21 +36,15 @@ function Login(){
         <div className="entrepreneur-form">
         <form onSubmit={handleSubmit}>
           <div className="form">
-            <p>Login</p>
+            <p>Forget Password</p>
             <p id="FormError" className="FormError"></p>
             <div className="input-groupe">
-              <input required type="email" className="input" placeholder="" 
+              <input type="email" className="input" placeholder="" 
               onChange={({ target }) => setEmailAddress(target.value)}
               value={emailAddress}/>
               <label className="label"><span>Email Address</span></label>
             </div>
-            <div className="input-groupe">
-              <input required type="password" className="input" placeholder=""
-              onChange={({ target }) => setPassword(target.value)}
-              value={password}/>
-              <label className="label"><span>Password</span></label>
-            </div>
-            <p id="ForgetPassword">Forget password?</p>
+            <p id="ForgetPassword">Login</p>
             <button type="submit">submit</button>
           </div>
         </form>
@@ -62,4 +54,4 @@ function Login(){
   )
 }
 
-export default Login
+export default ForgetPassword

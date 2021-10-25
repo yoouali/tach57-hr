@@ -9,7 +9,7 @@ function Freelancer(){
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get('https://stagiaire.herokuapp.com/api/freelancer/isFinish/0', {headers: {"Authorization": `Bearer ${token}`}})
+        axios.get('https://stagiaire.herokuapp.com/api/freelancer/isFinish/1', {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
             console.log(res);
             setAttestation(res.data);

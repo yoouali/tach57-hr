@@ -15,7 +15,7 @@ function ResetPassword(){
   function handleSubmit(e) {
     e.preventDefault();
     const data = {
-      Password: password,
+      Password: Password,
     }
   };
 
@@ -32,14 +32,14 @@ function ResetPassword(){
             <div className="input-groupe">
               <input type="password" className="input" placeholder="" 
               onChange={({ target }) => setPassword(target.value)}
-              value={password}/>
+              value={Password}/>
               <label className="label"><span>New Password</span></label>
             </div>
             <div className="input-groupe">
               <input type="password" className="input" placeholder="" 
               onChange={({ target }) => setPasswordC(target.value)}
-              value={passwordc}/>
-              <label className="label"><span>New Password</span></label>
+              value={Passwordc}/>
+              <label className="label"><span>Confirme New Password</span></label>
             </div>
             <Link style={{ textDecoration: 'none' }} to="/login"> <p id="ForgetPassword">Login</p> </Link>
             <button type="submit">submit</button>

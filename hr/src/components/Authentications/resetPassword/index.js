@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from "react-router-dom";
-import { Redirect  } from "react-router";
+import { Redirect, useParams  } from "react-router";
 import axios from 'axios';
 import './style.css';
 
 
 
 function ResetPassword(){
+    const {id} = useParams();
   const history = useHistory();
   const [Password, setPassword] = useState('');
   const [Passwordc, setPasswordC] = useState('');
@@ -17,6 +18,8 @@ function ResetPassword(){
     const data = {
       Password: Password,
     }
+    console.log("Token : ", id);
+    console.log("Data : ", data);
   };
 
   const isLogged = localStorage.getItem('token');

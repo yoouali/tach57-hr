@@ -39,7 +39,7 @@ function App() {
       <Route exact path="/FreelancerUpdate/:id"> <FreelancerUpdate/></Route>
       <Route exact path="/ForgetPassword"> <ForgetPassword/></Route>
       <Route exact path="/AddUser"> <AddUser/></Route>
-      <Route exact path="/ResetPassword"> <ResetPassword/></Route>
+      <Route exact path="/ResetPassword/:id"> <ResetPassword/></Route>
 
       </BrowserRouter>
     </div>

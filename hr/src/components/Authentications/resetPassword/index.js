@@ -15,7 +15,7 @@ function ResetPassword(){
   function handleSubmit(e) {
     e.preventDefault();
     const data = {
-      Email: emailAddress,
+      Password: password,
     }
   };
 

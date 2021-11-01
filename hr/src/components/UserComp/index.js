@@ -79,7 +79,14 @@ function UserComp(){
         console.log("hh");
     }
     function userStatusChange(){
-        console.log("hhh");
+        const data= {Active: 0,}
+        const token = localStorage.getItem('token');
+        axios.post('https://stagiaire.herokuapp.com/api/user/active/' + id, data,{headers: {"Authorization": `Bearer ${token}`}})
+        .then(res =>{
+            console.log(res)
+            console.log("hh");
+        })
+        .catch(err => {console.log(err)})
     }
     
     const isLogged = localStorage.getItem('token');

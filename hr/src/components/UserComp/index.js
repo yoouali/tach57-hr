@@ -67,6 +67,9 @@ function UserComp(){
     {
         var userBox = null;
         var userStatus = null;
+        var remove = null;
+        if (userComp.id !== user.id)
+            remove = <div className="stageButton"><button onClick={userRemove} id="stageButtonRemove">Remove</button></div>;
         if (userComp.Active === 1){
             userBox = <div id="userStatusBox" className="userBoxActive"><p> {userComp.Role} </p><p id="userStatusSymbole"> &#10003;</p></div>;
             userStatus = <div className="stageButton"><button id="userStatusButton" value={0} onClick={userStatusChange}>d'active</button></div>;}
@@ -140,7 +143,7 @@ function UserComp(){
                         <div className="leftInfo">
                             {userBox}                            
                             {userStatus}
-                            <div className="stageButton"><button onClick={userRemove} id="stageButtonRemove">Remove</button></div>
+                            {remove}
                         </div>
                         <div className="rightInfo">
                             <div className="perInfo">

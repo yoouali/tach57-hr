@@ -54,7 +54,20 @@ function AddUser(){
         if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
             document.getElementById("userNav").style.display = "none";
       });
-
+    
+      
+    function handleSubmit(e) {
+        e.preventDefault();
+        const data = {
+            Prenom: formData.Prenom,
+            Nom: formData.Nom,
+            Email: formData.Email,
+            CIN: formData.CIN,
+            TEL: formData.TEL,
+            Role: formData.Role,
+        }
+        console.log(data);
+    }
     
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
@@ -89,7 +102,7 @@ function AddUser(){
                 </div>
                 <div className="dashborde">
                     <div className="addUserForm">
-                    <form id="perinfo">
+                    <form onSubmit={handleSubmit} id="perinfo">
                         <div className="addUserFormTitle"><p>New Staff</p></div>
                         <div className="addUserFormInputs">
                             <div className="addUserFormGroupeInput">

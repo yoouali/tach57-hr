@@ -6,6 +6,7 @@
 .updateUserBox{
     width: 90%;
     background-color: white;
+    border: 1px solid #f7f7f7;
     border-radius: 2px;
     padding: 10px;
     display: flex;

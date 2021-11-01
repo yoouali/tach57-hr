@@ -141,8 +141,8 @@ function AddUser(){
                                     onChange={(e) => setFormData({...formData, Role: e.target.value})}
                                     value={formData.Role}></input>                                
                             </div>
-                            <button type="submit">Save</button>
                         </div>
+                        <button className="adduserButton" type="submit">Save</button>
                     </form>
                     </div>
                 </div>

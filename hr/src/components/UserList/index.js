@@ -65,9 +65,10 @@ function UserList(){
         console.log(userList);
         var nameList = userList.map(function(name){
         var userStatus = <div className="userTableStatus">active✓</div>
-        console.log(name);
-            if (name.Role === "admin"){
-                console.log("ddf");
+        if (name.Active === 0)
+            userStatus = <div className="userTableStatus">deactive✗</div>
+            console.log(name, "hh");
+            if (name.Role === "admin" && name.Active === 1){
                 return (
                    <Link key={name.id} style={{ textDecoration: 'none' }} to={"/user/" + name.id}> <div key={name.id} id="userTableAdmin" className="userTable">
                         <div className="userTableRole">ADMIN</div>
@@ -76,7 +77,7 @@ function UserList(){
                     </div></Link>
                 )
             }
-            if (name.Role === "rh"){
+            if (name.Role === "rh"  && name.Active === 1){
                 return (
                    <Link key={name.id} style={{ textDecoration: 'none' }} to={"/user/" + name.id}> <div key={name.id} id="userTableRh" className="userTable">
                         <div className="userTableRole">RH</div>
@@ -84,6 +85,16 @@ function UserList(){
                         {userStatus}
                     </div></Link>
                 )
+            }
+            if (name.Active === 0){
+                console.log("hadi");
+                return (
+                    <Link key={name.id} style={{ textDecoration: 'none' }} to={"/user/" + name.id}> <div key={name.id} id="userTableda" className="userTable">
+                         <div className="userTableRole">{name.Role}</div>
+                         <div className="userTableName"><p id="userTableNameda">{name.Nom} {name.Prenom}</p></div>
+                         {userStatus}
+                     </div></Link>
+                 )
             }
         })
     }

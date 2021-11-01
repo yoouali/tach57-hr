@@ -25,6 +25,7 @@
     cursor: pointer;
 }
 #userTableAdmin{background-color: #117DB0;}
+#userTableda{background-color: #6A7C92;}
 #userTableRh{background-color: #11B03E;}
 
 .userTableRole{
@@ -49,6 +50,7 @@
 .userTableName p{margin: auto;}
 #userTableNameAdmin{color: #117DB0;}
 #userTableNameRh{color: #11B03E;}
+#userTableNameda{color: #6A7C92;}
 
 
 .userTableStatus{

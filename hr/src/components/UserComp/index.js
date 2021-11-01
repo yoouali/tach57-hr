@@ -69,12 +69,18 @@ function UserComp(){
         var userStatus = null;
         if (userComp.Active === 1){
             userBox = <div id="stageFineshd" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>;
-            userStatus = <div className="stageButton"><button>d'active</button></div>;}
+            userStatus = <div className="stageButton"><button  onClick={userStatusChange}>d'active</button></div>;}
         else{
-            userBox = <div id="stageFineshd" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>;
+            userBox = <div id="userDeactive" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>;
             userStatus = <div className="stageButton"><button>active</button></div>;}
     }
     
+    function userRemove(){
+        console.log("hh");
+    }
+    function userStatusChange(){
+        console.log("hhh");
+    }
     
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
@@ -113,7 +119,7 @@ function UserComp(){
                         <div className="leftInfo">
                             {userBox}                            
                             {userStatus}
-                            <div className="stageButton"><button id="stageButtonRemove">Remove</button></div>
+                            <div className="stageButton"><button onClick={userRemove} id="stageButtonRemove">Remove</button></div>
                         </div>
                         <div className="rightInfo">
                             <div className="perInfo">

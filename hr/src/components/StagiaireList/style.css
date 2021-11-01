@@ -5,6 +5,7 @@
 .list{
     width: 90%;
     background-color: white;
+    border: 1px solid #f7f7f7;
     border-radius: 5px;
     overflow: hidden;
     display: flex;

@@ -5,11 +5,10 @@ import './style.css';
 import logo from '../../images/logo.png';
 import { Link } from "react-router-dom";
 
-import profileIcon from '../../images/icons/person.svg';
-import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
-import stagiaireIcon from '../../images/icons/stagiaire.svg';
-import freelancerIcon from '../../images/icons/freelancer.svg';
-
+import profileIcon from '../../images/icons/person.png';
+import entrepreneurIcon from '../../images/icons/entrepreneur.png';
+import stagiaireIcon from '../../images/icons/stagiaire.png';
+import freelancerIcon from '../../images/icons/freelancer.png';
 function UserList(){
     const [isLoading, setLoading] = useState(true);
     const [isLoading2, setLoading2] = useState(true);

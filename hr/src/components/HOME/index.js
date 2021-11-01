@@ -5,15 +5,15 @@ import axios from "axios";
 
 import Entrepreneur from '../entrepreneur';
 import Stagiaire from "../stagiaire";
+import Freelancer from '../freelancer';
 
 import './style.css';
 
 import logo from './logo.png';
-import profileIcon from '../../images/icons/person.svg';
-import entrepreneurIcon from '../../images/icons/entrepreneur.svg';
-import stagiaireIcon from '../../images/icons/stagiaire.svg';
-import freelancerIcon from '../../images/icons/freelancer.svg';
-import Freelancer from '../freelancer';
+import profileIcon from '../../images/icons/person.png';
+import entrepreneurIcon from '../../images/icons/entrepreneur.png';
+import stagiaireIcon from '../../images/icons/stagiaire.png';
+import freelancerIcon from '../../images/icons/freelancer.png';
 
 
 

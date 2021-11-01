@@ -68,23 +68,37 @@ function UserComp(){
         var userBox = null;
         var userStatus = null;
         if (userComp.Active === 1){
-            userBox = <div id="stageFineshd" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>;
-            userStatus = <div className="stageButton"><button  onClick={userStatusChange}>d'active</button></div>;}
+            userBox = <div id="userStatusBox" className="userBoxActive"><p> {userComp.Role} </p><p id="userStatusSymbole"> &#10003;</p></div>;
+            userStatus = <div className="stageButton"><button id="userStatusButton" value={0} onClick={userStatusChange}>d'active</button></div>;}
         else{
-            userBox = <div id="userDeactive" className="stageStatus"><p> {userComp.Role} </p><p> &#10003;</p></div>;
-            userStatus = <div className="stageButton"><button>active</button></div>;}
+            userBox = <div id="userStatusBox" className="userBoxDeactive"><p> {userComp.Role} </p><p id="userStatusSymbole"> &#10007;</p></div>;
+            userStatus = <div className="stageButton"><button id="userStatusButton" value={1} onClick={userStatusChange}>active</button></div>;}
     }
     
     function userRemove(){
         console.log("hh");
     }
-    function userStatusChange(){
-        const data= {Active: 0,}
+    function userStatusChange(e){
+        console.log(e.target.value);
+        const data= {Active: e.target.value,}
         const token = localStorage.getItem('token');
         axios.post('https://stagiaire.herokuapp.com/api/user/active/' + id, data,{headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{
-            console.log(res)
-            console.log("hh");
+            console.log(res);
+            if (e.target.value === "0"){
+                console.log(e.target.value, "inside the res");
+                document.getElementById("userStatusBox").style.backgroundColor="#6A7C92";
+                document.getElementById("userStatusSymbole").innerText="✗";
+                document.getElementById("userStatusButton").innerText="active";
+                document.getElementById("userStatusButton").value = 1;
+            }
+            else if (e.target.value === "1"){
+                console.log(e.target.value, "inside the res");
+                document.getElementById("userStatusBox").style.backgroundColor="#11B03E";
+                document.getElementById("userStatusSymbole").innerText="✓";
+                document.getElementById("userStatusButton").innerText="d'active";
+                document.getElementById("userStatusButton").value = 0;
+            }
         })
         .catch(err => {console.log(err)})
     }

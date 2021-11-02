@@ -19,15 +19,13 @@ function ForgetPassword(){
     document.getElementById("forgetPasswordEmail").style.display="block";
     document.getElementById("forgetPasswordForm").style.display="none";
 
-//     axios.post("https://stagiaire.herokuapp.com/api/login",data)
-//       .then(res => {
-//         console.log(res)
-//         localStorage.setItem('token', res.data.data.token);
-//         history.push("/")
-//       })
-//       .catch(err => {
-//         console.log(err)
-//       })
+    axios.post("https://stagiaire.herokuapp.com/api/forgetPass",data)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   };
 
   const isLogged = localStorage.getItem('token');

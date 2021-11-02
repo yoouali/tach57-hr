@@ -17,9 +17,15 @@ function ResetPassword(){
     e.preventDefault();
     const data = {
       Password: Password,
+      Token: id,
     }
-    console.log("Token : ", id);
-    console.log("Data : ", data);
+    axios.post("https://stagiaire.herokuapp.com/api/resetPass",data)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
   };
 
   const isLogged = localStorage.getItem('token');

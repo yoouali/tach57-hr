@@ -152,6 +152,14 @@ function AddUser(){
                         </div>
                         <button className="adduserButton" type="submit">Save</button>
                     </form>
+                    <div className="addUserLaoding">
+                        <svg width="407" height="99" viewBox="0 0 407 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M66.5 2.20856H0V19.2086H23.5V96.2086H44V19.2086H66.5V2.20856Z" fill="#117DB0" className="svg-elem-1"></path>
+                            <path d="M160 2.20856H104.5V96.7086H160V79.2086H125V55.2086H160V37.7086H125V19.2086H160V2.20856Z" fill="#117DB0" className="svg-elem-2"></path>
+                            <path d="M201 48.7086C203 -17.2919 282 1.20856 282 6.20856V26.2086C282 23.209 223 4.70898 223 48.7086C223 92.7082 282 75.209 282 70.7086V90.7086C282 98.209 199 114.709 201 48.7086Z" fill="#117DB0" className="svg-elem-3"></path>
+                            <path d="M346 2.20898H325.5V96.209H346V57.709H386V96.209H406.5V2.20898H386V39.709H346V2.20898Z" fill="#117DB0" className="svg-elem-4"></path>
+                        </svg>  
+                    </div>
                     </div>
                 </div>
             </div>

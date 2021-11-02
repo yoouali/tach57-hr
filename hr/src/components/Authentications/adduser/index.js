@@ -58,6 +58,7 @@ function AddUser(){
       
     function handleSubmit(e) {
         e.preventDefault();
+        const token = localStorage.getItem('token');
         const data = {
             Prenom: formData.Prenom,
             Nom: formData.Nom,
@@ -67,6 +68,13 @@ function AddUser(){
             Role: formData.Role,
         }
         console.log(data);
+        axios.post("https://stagiaire.herokuapp.com/api/addUser",data,{headers: {"Authorization": `Bearer ${token}`}})
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
     
     const isLogged = localStorage.getItem('token');

@@ -72,3 +72,11 @@
   margin: auto;
   text-align: center;
 }
+
+#addUserLogo{
+}
+
+
+#addUserLogo path:nth-child(3){
+    stroke-dasharray: 30px;
+}

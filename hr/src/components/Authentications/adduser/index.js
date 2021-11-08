@@ -66,6 +66,7 @@ function AddUser(){
             CIN: formData.CIN,
             TEL: formData.TEL,
             Role: formData.Role,
+            Token: token,
         }
         console.log(data);
         axios.post("https://stagiaire.herokuapp.com/api/addUser",data,{headers: {"Authorization": `Bearer ${token}`}})

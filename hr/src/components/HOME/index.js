@@ -7,6 +7,7 @@ import Entrepreneur from '../entrepreneur';
 import Stagiaire from "../stagiaire";
 import Freelancer from '../freelancer';
 import Header from '../Header';
+import SideBar from '../SideBar';
 
 import './style.css';
 
@@ -80,6 +81,7 @@ function Home(){
                 <Link to="/FreelancerList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
                 <Link to="/CallCenterList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
                 </div>
+                <SideBar user={user}/>
                 <div className="dashborde">
                     <Stagiaire />
                     <Entrepreneur />

@@ -71,20 +71,6 @@ function Home(){
     return(
         <div className="box">
             <Header user={user}/>
-            {/* <section>
-                <div className="header">
-                    <div className="logo"><img src={logo} alt="teck-57-log"/></div>
-                    <div id="user" className="user">
-                        <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.Role}</span></div>
-                        <ul id="userNav" className="user-nav">
-                            <Link to="/AddUser"><li>New Staff</li></Link>
-                            <Link to="../Setting">
-                            <li>Setting</li></Link>
-                            <Link to="/login"><li  onClick={function(){localStorage.removeItem("token")}} className="logout">logout</li></Link>
-                        </ul>
-                    </div>
-                </div>
-            </section> */}
             <div className="homeContainer">
                 <div className="sideBar">
                 <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>

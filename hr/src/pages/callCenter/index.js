@@ -92,9 +92,7 @@ function CallCenter(){
                 <Link to="/FreelancerList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
                 </div>
                 <div className="dashborde">
-                    <Stagiaire />
-                    <Entrepreneur />
-                    <Freelancer />
+                    TEST
                 </div>
             </div>
         </div>

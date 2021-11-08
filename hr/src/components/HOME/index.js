@@ -73,14 +73,6 @@ function Home(){
         <div className="box">
             <Header user={user}/>
             <div className="homeContainer">
-                <div className="sideBar">
-                <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Userlist">  <div><img src={profileIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
-                <Link to="/FreelancerList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
-                <Link to="/CallCenterList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
-                </div>
                 <SideBar user={user}/>
                 <div className="dashborde">
                     <Stagiaire />

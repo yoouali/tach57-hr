@@ -6,6 +6,7 @@ import axios from "axios";
 import Entrepreneur from '../entrepreneur';
 import Stagiaire from "../stagiaire";
 import Freelancer from '../freelancer';
+import Header from '../Header';
 
 import './style.css';
 
@@ -69,7 +70,8 @@ function Home(){
 
     return(
         <div className="box">
-            <section>
+            <Header user={user}/>
+            {/* <section>
                 <div className="header">
                     <div className="logo"><img src={logo} alt="teck-57-log"/></div>
                     <div id="user" className="user">
@@ -82,7 +84,7 @@ function Home(){
                         </ul>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <div className="homeContainer">
                 <div className="sideBar">
                 <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
@@ -90,6 +92,7 @@ function Home(){
                 <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
                 <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
                 <Link to="/FreelancerList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
+                <Link to="/CallCenterList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
                 </div>
                 <div className="dashborde">
                     <Stagiaire />

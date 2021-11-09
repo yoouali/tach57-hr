@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Redirect, useParams  } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import Swal from 'sweetalert2'
 
@@ -36,7 +36,7 @@ function UserComp(){
         .catch(err => {console.log(err)})
     }, []);
 
-
+    const history = useHistory();
     function handelUserNav(){
         let element = document.getElementById("userNav");
         if (element.style.display === "none")
@@ -82,34 +82,27 @@ function UserComp(){
         console.log("hh");
         Swal.fire({
             title: 'Submit your Github username',
-            input: 'text',
+            input: 'password',
             inputAttributes: {
               autocapitalize: 'off'
             },
             showCancelButton: true,
             confirmButtonText: 'Look up',
             showLoaderOnConfirm: true,
-            preConfirm: (login) => {
-              return fetch(`//api.github.com/users/${login}`)
-                .then(response => {
-                  if (!response.ok) {
-                    throw new Error(response.statusText)
-                  }
-                  return response.json()
-                })
-                .catch(error => {
-                  Swal.showValidationMessage(
-                    `Request failed: ${error}`
-                  )
-                })
+            preConfirm: (password) => {
+                const data= {Password: password,}
+                const token = localStorage.getItem('token');
+              return  axios.post('https://stagiaire.herokuapp.com/api/user/delete/' + userComp.id, data,{headers: {"Authorization": `Bearer ${token}`}})
+                .then(res =>{if (res.data === "Mot de passe n'est pas correcte") {throw new Error(res.data)}return res.data})
+                .catch(err =>{ Swal.showValidationMessage(`Request failed: ${err}`)})
             },
             allowOutsideClick: () => !Swal.isLoading()
           }).then((result) => {
+              console.log(result);  
             if (result.isConfirmed) {
               Swal.fire({
-                title: `${result.value.login}'s avatar`,
-                imageUrl: result.value.avatar_url
-              })
+                title: result.value,
+              }).then((result) =>{history.push("/Userlist");})
             }
           })
     }

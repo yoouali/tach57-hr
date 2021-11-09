@@ -93,7 +93,7 @@ function UserComp(){
                 const data= {Password: password,}
                 const token = localStorage.getItem('token');
               return  axios.post('https://stagiaire.herokuapp.com/api/user/delete/' + userComp.id, data,{headers: {"Authorization": `Bearer ${token}`}})
-                .then(res =>{if (res.data === "Mot de passe n'est pas correcte") {throw new Error(res.data)}return res.data})
+                .then(res =>{if (res.data !== "Ce utilisateur a ete supprimer avec succes") {throw new Error(res.data)}return res.data})
                 .catch(err =>{ Swal.showValidationMessage(`Request failed: ${err}`)})
             },
             allowOutsideClick: () => !Swal.isLoading()

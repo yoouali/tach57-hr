@@ -81,42 +81,34 @@ function UserComp(){
     function userRemove(){
         console.log("hh");
         Swal.fire({
-            title: 'Submit your Password',
-            input: 'password',
+            title: 'Submit your Github username',
+            input: 'text',
             inputAttributes: {
               autocapitalize: 'off'
             },
             showCancelButton: true,
             confirmButtonText: 'Look up',
             showLoaderOnConfirm: true,
-            preConfirm: (password) => {
-                const data= {Password: password,}
-                const token = localStorage.getItem('token');
-                var result = null;
-                axios.post('https://stagiaire.herokuapp.com/api/user/delete/' + userComp.id, data,{headers: {"Authorization": `Bearer ${token}`}})
-                .then(res =>{console.log(res);result = res.data})
-                .catch(err => {console.log(err); result = err})
-                return result 
-
-                //   return fetch(`//api.github.com/users/${login}`)
-                //     .then(response => {
-                //       if (!response.ok) {
-                //         throw new Error(response.statusText)
-                //       }
-                //       return response.json()
-                //     })
-                //     .catch(error => {
-                //       Swal.showValidationMessage(
-                //         `Request failed: ${error}`
-                //       )
-                //     })
+            preConfirm: (login) => {
+              return fetch(`//api.github.com/users/${login}`)
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error(response.statusText)
+                  }
+                  return response.json()
+                })
+                .catch(error => {
+                  Swal.showValidationMessage(
+                    `Request failed: ${error}`
+                  )
+                })
             },
             allowOutsideClick: () => !Swal.isLoading()
           }).then((result) => {
             if (result.isConfirmed) {
               Swal.fire({
-                title: `lgombola`,
-                imageUrl: 'google.com'
+                title: `${result.value.login}'s avatar`,
+                imageUrl: result.value.avatar_url
               })
             }
           })

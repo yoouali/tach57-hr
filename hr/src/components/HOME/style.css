@@ -104,3 +104,12 @@
     flex-direction: row;
     justify-content:space-around;
 }
+.dactiveDashBorde{
+    font-family: 'Rajdhani';
+    font-size: x-large;
+    font-weight:600;
+    color: #117DB0;
+}
+.dactiveDashBorde span{
+    color: #F1C40F;
+}

@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import { Redirect, useParams  } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Swal from 'sweetalert2'
 
 import './style.css';
 
@@ -79,6 +80,46 @@ function UserComp(){
     
     function userRemove(){
         console.log("hh");
+        Swal.fire({
+            title: 'Submit your Password',
+            input: 'password',
+            inputAttributes: {
+              autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Look up',
+            showLoaderOnConfirm: true,
+            preConfirm: (password) => {
+                const data= {Password: password,}
+                const token = localStorage.getItem('token');
+                var result = null;
+                axios.post('https://stagiaire.herokuapp.com/api/user/delete/' + userComp.id, data,{headers: {"Authorization": `Bearer ${token}`}})
+                .then(res =>{console.log(res);result = res.data})
+                .catch(err => {console.log(err); result = err})
+                return result 
+
+                //   return fetch(`//api.github.com/users/${login}`)
+                //     .then(response => {
+                //       if (!response.ok) {
+                //         throw new Error(response.statusText)
+                //       }
+                //       return response.json()
+                //     })
+                //     .catch(error => {
+                //       Swal.showValidationMessage(
+                //         `Request failed: ${error}`
+                //       )
+                //     })
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: `lgombola`,
+                imageUrl: 'google.com'
+              })
+            }
+          })
     }
     function userStatusChange(e){
         console.log(e.target.value);

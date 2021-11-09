@@ -30,3 +30,8 @@
     margin-bottom: 10px;
     background-color: #6A7C92;
 }
+.swal2-actions button{width: 100px;height: 40px;}
+.swal2-styled.swal2-confirm{background-color: #117DB0;}
+.swal2-styled.swal2-cancel{background-color: #6A7C92;}
+.swal2-title{font-family: 'rajdhani';color: #117DB0;}
+.swal2-input{width: 80%;max-width: 300px; height: 40px; margin:auto; border:1px solid #117DB0;}

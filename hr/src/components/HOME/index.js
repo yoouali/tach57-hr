@@ -61,13 +61,7 @@ function Home(){
             document.getElementById("userNav").style.display = "none";
       });
 
-    if (!isLoading){
-        var dashboard = null;
-        if (user.Active === 1)
-            dashboard = <div className="dashborde"><Stagiaire /><Entrepreneur /><Freelancer /></div>
-        else
-            dashboard = <div className="dashborde"><div className="dactiveDashBorde"><span>&#9888;  </span>your account is deactive ples contact the admin</div></div>
-    }
+
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
 
@@ -80,7 +74,11 @@ function Home(){
             <Header user={user}/>
             <div className="homeContainer">
                 <SideBar user={user}/>
-                {dashboard}
+                <div className="dashborde">
+                    <Stagiaire />
+                    <Entrepreneur />
+                    <Freelancer />
+                </div>
             </div>
         </div>
     )

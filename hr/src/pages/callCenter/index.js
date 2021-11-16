@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar';
 
 import './style.css';
-
 
 
 function CallCenter(){
@@ -24,7 +24,8 @@ function CallCenter(){
         .catch(err => {console.log(err)})
     }, []);
 
-    
+
+
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
 

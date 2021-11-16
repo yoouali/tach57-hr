@@ -69,30 +69,10 @@ function CallCenter(){
 
     return(
         <div className="box">
-            <section>
-                <div className="header">
-                    <div className="logo"><img src={logo} alt="teck-57-log"/></div>
-                    <div id="user" className="user">
-                        <div id="userRole" onClick={handelUserNav} className="user-role"><span>{user.Role}</span></div>
-                        <ul id="userNav" className="user-nav">
-                            <Link to="/AddUser"><li>New Staff</li></Link>
-                            <Link to="../Setting">
-                            <li>Setting</li></Link>
-                            <Link to="/login"><li  onClick={function(){localStorage.removeItem("token")}} className="logout">logout</li></Link>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <Header user={user}/>
             <div className="homeContainer">
-                <div className="sideBar">
-                <Link to="/"> <div><img src={profileIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Userlist">  <div><img src={profileIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Stagiairelist">  <div><img src={stagiaireIcon} alt="profileicon" /></div> </Link>
-                <Link to="/Entrepreneurlist"> <div><img src={entrepreneurIcon} alt="profileicon" /></div> </Link>
-                <Link to="/FreelancerList"><div><img src={freelancerIcon} alt="profileicon" /></div></Link>
-                </div>
+                <SideBar user={user}/>
                 <div className="dashborde">
-                    TEST
                 </div>
             </div>
         </div>

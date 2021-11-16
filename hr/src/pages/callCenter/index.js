@@ -1,20 +1,10 @@
 import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
-import { Link } from "react-router-dom";
 import axios from "axios";
-
-import Entrepreneur from '../entrepreneur';
-import Stagiaire from "../stagiaire";
-import Freelancer from '../freelancer';
+import Header from '../../components/Header';
+import SideBar from '../../components/SideBar';
 
 import './style.css';
-
-import logo from './logo.png';
-import profileIcon from '../../images/icons/person.png';
-import entrepreneurIcon from '../../images/icons/entrepreneur.png';
-import stagiaireIcon from '../../images/icons/stagiaire.png';
-import freelancerIcon from '../../images/icons/freelancer.png';
-
 
 
 
@@ -33,31 +23,6 @@ function CallCenter(){
         })
         .catch(err => {console.log(err)})
     }, []);
-
-    function handelUserNav(){
-        let element = document.getElementById("userNav");
-        if (element.style.display === "none")
-            element.style.display="block";
-        else
-            element.style.display="none";
-        
-    }
-    document.addEventListener("click", function(evt) {
-        let flyoutEl = document.getElementById('user'),
-          targetEl = evt.target; // clicked element      
-        do {
-          if(targetEl === flyoutEl) {
-            // This is a click inside, does nothing, just return.
-           console.log("click inside");
-            return;
-          }
-          // Go up the DOM
-          targetEl = targetEl.parentNode;
-        } while (targetEl);
-        // This is a click outside.
-        if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
-            document.getElementById("userNav").style.display = "none";
-      });
 
     
     const isLogged = localStorage.getItem('token');

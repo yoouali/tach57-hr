@@ -16,6 +16,7 @@ import FreelancerUpdate from './components/freelancerUpdate';
 import ForgetPassword from './components/Authentications/forgetPassword';
 import AddUser from './components/Authentications/adduser';
 import ResetPassword from './components/Authentications/resetPassword';
+import CallCenter from './pages/callCenter';
 
 import './style.css';
 
@@ -40,6 +41,7 @@ function App() {
       <Route exact path="/ForgetPassword"> <ForgetPassword/></Route>
       <Route exact path="/AddUser"> <AddUser/></Route>
       <Route exact path="/ResetPassword/:id"> <ResetPassword/></Route>
+      <Route exact path="CallCenterList"> <CallCenter/> </Route>
 
       </BrowserRouter>
     </div>

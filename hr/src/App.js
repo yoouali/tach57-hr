@@ -41,7 +41,7 @@ function App() {
       <Route exact path="/ForgetPassword"> <ForgetPassword/></Route>
       <Route exact path="/AddUser"> <AddUser/></Route>
       <Route exact path="/ResetPassword/:id"> <ResetPassword/></Route>
-      <Route exact path="CallCenterList"> <CallCenter/> </Route>
+      <Route exact path="/CallCenterList"> <CallCenter/> </Route>
 
       </BrowserRouter>
     </div>

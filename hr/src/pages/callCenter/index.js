@@ -39,6 +39,26 @@ function CallCenter(){
             <div className="homeContainer">
                 <SideBar user={user}/>
                 <div className="dashborde">
+                    <div className="list">
+                        <div className="listHeader">
+                            <div >
+                                <form className="serchBar">
+                                    <div className="serchInput">
+                                        <input type="text"  placeholder="serch" className="Serch"/>
+                                    </div>
+                                    <button className="serchButton">Serch</button>
+                                </form>
+                            </div>
+                            <div className="Filter">
+                                <div className="filterTitle">Filters : </div>
+                                <div className="filterOptions">
+                                    <p>New</p>
+                                    <p>Fineshd</p>
+                                    <p>On progrese</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

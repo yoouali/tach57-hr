@@ -39,9 +39,13 @@ function CallCenter(){
             <div className="homeContainer">
                 <SideBar user={user}/>
                 <div className="dashborde">
-                    <div className="list">
-                        <div className="listHeader">
-                            <div >
+                    <div className="callCenterlist">
+                        <div className="callCenterNavBar">
+                            <div className="callCenterNavBarItem">Calls</div>
+                            <div className="callCenterNavBarItem">Contacts</div>
+                        </div>
+                        {/* <div className="listHeader">
+                            <div>
                                 <form className="serchBar">
                                     <div className="serchInput">
                                         <input type="text"  placeholder="serch" className="Serch"/>
@@ -57,7 +61,7 @@ function CallCenter(){
                                     <p>On progrese</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

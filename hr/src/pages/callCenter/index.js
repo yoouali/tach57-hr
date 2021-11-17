@@ -44,6 +44,15 @@ function CallCenter(){
                             <div className="callCenterNavBarItem">Calls</div>
                             <div className="callCenterNavBarItem">Contacts</div>
                         </div>
+                        <div className="callsList">
+                            <div className="callsListHeader">
+                                <div><p>contact</p></div>
+                                <div>client</div>
+                                <div>Date</div>
+                                <div>sttaf</div>
+                            </div>
+                            <div className="callsListItem"></div>
+                        </div>
                         {/* <div className="listHeader">
                             <div>
                                 <form className="serchBar">

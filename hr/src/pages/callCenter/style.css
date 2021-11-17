@@ -15,16 +15,38 @@
     flex-direction: row;
     justify-content: space-around;
     margin: 0 auto;
+    cursor: pointer;
 }
 .callCenterNavBarItem{
     min-width: 100px;
     margin: 5px;
     padding: 5px 10px;
+    background-color: #117DB0;
     text-align: center;
-    border: 1px solid #117db0;
+    border: 2px solid #f7f7f7;
     border-radius: 5px;
     font-family: 'Rajdhani';
     font-size: large;
     font-weight: 700;
-    color: #117DB0;
+    color: white;
+}
+
+.callsList{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.callsListHeader{
+    width: 100%;
+    height: 40px;
+    margin: 0 10px;
+    padding: 20px 10px;
+    background-color: tomato;
+    border-bottom: 2px solid #117DB0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

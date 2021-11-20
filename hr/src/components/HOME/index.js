@@ -33,34 +33,10 @@ function Home(){
             setUser(res.data);
             setLoading(false);
         })
-        .catch(err => {console.log(err)})
+        .catch(err => {
+            localStorage.removeItem("token");
+            console.log(err)})
     }, []);
-
-    function handelUserNav(){
-        let element = document.getElementById("userNav");
-        if (element.style.display === "none")
-            element.style.display="block";
-        else
-            element.style.display="none";
-        
-    }
-    document.addEventListener("click", function(evt) {
-        let flyoutEl = document.getElementById('user'),
-          targetEl = evt.target; // clicked element      
-        do {
-          if(targetEl === flyoutEl) {
-            // This is a click inside, does nothing, just return.
-           console.log("click inside");
-            return;
-          }
-          // Go up the DOM
-          targetEl = targetEl.parentNode;
-        } while (targetEl);
-        // This is a click outside.
-        if (document.getElementById("userNav") && document.getElementById("userNav").style.display === "block")
-            document.getElementById("userNav").style.display = "none";
-      });
-
 
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}

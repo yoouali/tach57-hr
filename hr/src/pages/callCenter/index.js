@@ -41,8 +41,11 @@ function CallCenter(){
                 <div className="dashborde">
                     <div className="callCenterlist">
                         <div className="callCenterNavBar">
-                            <div className="callCenterNavBarItem">Calls</div>
-                            <div className="callCenterNavBarItem">Contacts</div>
+                            <div className="callCenterNavBarTitle">Call Center</div>
+                            <div className="callCenterNavBarItemes">
+                                <div className="callCenterNavBarIteme">calls</div>
+                                <div className="callCenterNavBarIteme">contacts</div>
+                            </div>
                         </div>
                         <div className="callsList">
                             <div className="callsListHeader">
@@ -53,24 +56,6 @@ function CallCenter(){
                             </div>
                             <div className="callsListItem"></div>
                         </div>
-                        {/* <div className="listHeader">
-                            <div>
-                                <form className="serchBar">
-                                    <div className="serchInput">
-                                        <input type="text"  placeholder="serch" className="Serch"/>
-                                    </div>
-                                    <button className="serchButton">Serch</button>
-                                </form>
-                            </div>
-                            <div className="Filter">
-                                <div className="filterTitle">Filters : </div>
-                                <div className="filterOptions">
-                                    <p>New</p>
-                                    <p>Fineshd</p>
-                                    <p>On progrese</p>
-                                </div>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>

@@ -10,26 +10,33 @@
     padding-bottom: 20px;
 }
 .callCenterNavBar{
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    width: 95%;
+    padding: 5px 10px;
     margin: 0 auto;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
-.callCenterNavBarItem{
-    min-width: 100px;
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: #117DB0;
-    text-align: center;
-    border: 2px solid #f7f7f7;
-    border-radius: 5px;
+.callCenterNavBarItemes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.callCenterNavBarTitle{
     font-family: 'Rajdhani';
     font-size: large;
-    font-weight: 700;
-    color: white;
+    font-weight: bold;
 }
+.callCenterNavBarIteme{
+    padding: 10px;
+    font-family: 'Rajdhani';
+}
+.callCenterNavBarIteme:hover{
+    font-weight: bold;
+}
+
 
 .callsList{
     width: 95%;

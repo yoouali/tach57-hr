@@ -25,7 +25,7 @@
     justify-content: space-between;
 }
 .callCenterNavBarTitle{
-    font-family: 'Rajdhani';
+    font-family: 'Rajdhani  ';
     font-size: large;
     font-weight: bold;
 }
@@ -33,6 +33,7 @@
     padding: 10px;
     font-family: 'Rajdhani';
 }
+.callCenterNavBarItemBar{font-weight: bold;}
 .callCenterNavBarIteme:hover{
     font-weight: bold;
 }
@@ -57,3 +58,4 @@
     justify-content: space-between;
     align-items: center;
 }
+

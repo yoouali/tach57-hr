@@ -24,8 +24,8 @@ function CallCenter(){
         .catch(err => {console.log(err)})
     }, []);
 
-
-
+    function changeBar(e){
+    }
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
 
@@ -43,16 +43,16 @@ function CallCenter(){
                         <div className="callCenterNavBar">
                             <div className="callCenterNavBarTitle">Call Center</div>
                             <div className="callCenterNavBarItemes">
-                                <div className="callCenterNavBarIteme">calls</div>
-                                <div className="callCenterNavBarIteme">contacts</div>
+                                <div id="callCenterBarCalls" className="callCenterNavBarIteme" >calls</div>
+                                <div id="callsCenterBarContacts" className="callCenterNavBarIteme" >contacts</div>
                             </div>
                         </div>
                         <div className="callsList">
                             <div className="callsListHeader">
-                                <div><p>contact</p></div>
-                                <div>client</div>
-                                <div>Date</div>
-                                <div>sttaf</div>
+                                <div className="callsListContact"><p>contact</p></div>
+                                <div className="callsListClient">client</div>
+                                <div className="callsListDate">Date</div>
+                                <div className="callsListStaff">sttaf</div>
                             </div>
                             <div className="callsListItem"></div>
                         </div>

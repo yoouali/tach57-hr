@@ -57,7 +57,12 @@ function CallCenter(){
                             </div>
                             <div className="callsListItem">
                                 <div className="callsListContact">
-                                    <div className="callsTypeIcon"><img src={outgoingCall} alt="profileicon" /></div>
+                                    <div className="callsTypeIcon">
+                                        <div className="text-on-image">
+                                            zbi hh
+                                        </div>
+                                        <img  src={outgoingCall} alt="profileicon"/>
+                                    </div>
                                     <div className="callsContact"></div>
                                 </div>
                             </div>

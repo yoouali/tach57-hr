@@ -1,85 +1,118 @@
-.callCenterlist{
-    width: 90%;
-    background-color: white;
-    border: 1px solid #f7f7f7;
-    border-radius: 5px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    padding-top: 5px;
-    padding-bottom: 20px;
+.callCenterlist {
+  width: 90%;
+  background-color: white;
+  border: 1px solid #f7f7f7;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  padding-bottom: 20px;
 }
-.callCenterNavBar{
-    width: 95%;
-    padding: 5px 10px;
-    margin: 0 auto;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.callCenterNavBar {
+  width: 95%;
+  padding: 5px 10px;
+  margin: 0 auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.callCenterNavBarItemes{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.callCenterNavBarItemes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.callCenterNavBarTitle{
-    font-family: 'Rajdhani  ';
-    font-size: large;
-    font-weight: bold;
+.callCenterNavBarTitle {
+  font-family: "Rajdhani  ";
+  font-size: large;
+  font-weight: bold;
 }
-.callCenterNavBarIteme{
-    padding: 10px;
-    font-family: 'Rajdhani';
+.callCenterNavBarIteme {
+  padding: 10px;
+  font-family: "Rajdhani";
 }
-.callCenterNavBarItemBar{font-weight: bold;}
-.callCenterNavBarIteme:hover{
-    font-weight: bold;
+.callCenterNavBarItemBar {
+  font-weight: bold;
+}
+.callCenterNavBarIteme:hover {
+  font-weight: bold;
 }
 
+.callsList {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.callsListHeader {
+  width: 100%;
+  height: 40px;
+  padding: 20px 10px;
+  border-bottom: 2px solid #117db0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Rajdhani";
+  font-weight: 600;
+  color: #117db0;
+}
+.callsListContact {
+  width: 200px;
+}
+.callsListDate {
+  width: 100px;
+}
+.callsListTime {
+  width: 50px;
+}
+.callsListClient {
+  width: 150px;
+}
+.callsListStaff {
+  width: 100px;
+}
 
-.callsList{
-    width: 95%;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.callsListItem {
+  width: 100%;
+  height: 40px;
+  padding: 20px 10px;
+  border-bottom: 2px solid #117db0;
+  border-right: 2px solid #117db0;
+  border-left: 2px solid #117db0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Rajdhani";
+  font-weight: 600;
+  color: #117db0;
 }
-.callsListHeader{
-    width: 100%;
-    height: 40px;
-    padding: 20px 10px;
-    border-bottom: 2px solid #117DB0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Rajdhani';
-    font-weight: 600;
-    color: #117DB0;
+.callsTypeIcon {
+  width: 40px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
-.callsListContact{width: 200px;}
-.callsListDate{width: 100px;}
-.callsListTime{width:50px;}
-.callsListClient{width: 150px;}
-.callsListStaff{width: 100px;}
+.callsTypeIcon img {
+  width: 40%;
+}
 
-.callsListItem{
-    width: 100%;
-    height: 40px;
-    padding: 20px 10px;
-    border-bottom: 2px solid #117DB0;
-    border-right: 2px solid #117DB0;
-    border-left: 2px solid #117DB0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Rajdhani';
-    font-weight: 600;
-    color: #117DB0;
+.callsTypeIcon .text-on-image {
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    /* transform: translate(-50%, -50%); */
+    width: fit-content;
+    text-align: center;
+    opacity: 0;
+    transition: all .2s ease-in-out;
 }
-.callsTypeIcon{
-    width: 40px;
+
+.callsTypeIcon:hover > .text-on-image {
+    opacity: 1;
 }

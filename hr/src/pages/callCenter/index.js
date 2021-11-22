@@ -6,7 +6,7 @@ import Header from '../../components/Header';
 import SideBar from '../../components/SideBar';
 
 import './style.css';
-
+import outgoingCall from '../../images/icons/outgoingcall.png';
 
 function CallCenter(){
     const [isLoading, setLoading] = useState(true);
@@ -49,12 +49,18 @@ function CallCenter(){
                         </div>
                         <div className="callsList">
                             <div className="callsListHeader">
-                                <div className="callsListContact"><p>contact</p></div>
-                                <div className="callsListClient">client</div>
+                                <div className="callsListContact">contact</div>
                                 <div className="callsListDate">Date</div>
+                                <div className="callsListTime">Time</div>
+                                <div className="callsListClient">client</div>
                                 <div className="callsListStaff">sttaf</div>
                             </div>
-                            <div className="callsListItem"></div>
+                            <div className="callsListItem">
+                                <div className="callsListContact">
+                                    <div className="callsTypeIcon"><img src={outgoingCall} alt="profileicon" /></div>
+                                    <div className="callsContact"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

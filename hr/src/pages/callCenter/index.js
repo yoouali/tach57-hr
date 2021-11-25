@@ -56,14 +56,12 @@ function CallCenter(){
                                 <div className="callsListStaff">sttaf</div>
                             </div>
                             <div className="callsListItem">
-                                <div className="callsListContact">
+                                <div className="callsListItemContact">
                                     <div className="callsTypeIcon">
-                                        <div className="text-on-image">
-                                            zbi hh
-                                        </div>
-                                        <img  src={outgoingCall} alt="profileicon"/>
+                                        <div className="callTypeIconText">outgoing call</div>
+                                        <img className="test"  src={outgoingCall} alt="profileicon"/>
                                     </div>
-                                    <div className="callsContact"></div>
+                                    <div className="callsContact">+212 777672016</div>
                                 </div>
                             </div>
                         </div>

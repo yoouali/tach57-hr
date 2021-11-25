@@ -25,7 +25,7 @@
   justify-content: space-between;
 }
 .callCenterNavBarTitle {
-  font-family: "Rajdhani  ";
+  font-family: "Rajdhani";
   font-size: large;
   font-weight: bold;
 }
@@ -99,20 +99,26 @@
   position: relative;
 }
 .callsTypeIcon img {
-  width: 40%;
+  width: 50%;
 }
 
-.callsTypeIcon .text-on-image {
+.callsTypeIcon .callTypeIconText {
     position: absolute;
     left: 8px;
     top: 4px;
-    /* transform: translate(-50%, -50%); */
-    width: fit-content;
+    width: 80px;
+    transform: translate(0, -50%);
     text-align: center;
-    opacity: 0;
-    transition: all .2s ease-in-out;
+    display: none;    
+    font-size: small;
+    background-color: #f7f7f7;
 }
 
-.callsTypeIcon:hover > .text-on-image {
-    opacity: 1;
+.callsTypeIcon:hover .callTypeIconText{display: block;}
+
+.callsListItemContact{
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

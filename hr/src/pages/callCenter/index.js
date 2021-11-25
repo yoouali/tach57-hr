@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar';
 import Calls from '../../components/Calls';
+import Contacts from '../../components/Contacts';
 
 import './style.css';
 
@@ -32,7 +33,7 @@ function CallCenter(){
         if (e === "callsCenterBarContacts"){
             document.getElementById(e).style.fontWeight = "bold";
             document.getElementById("callCenterBarCalls").style.fontWeight = "500";
-            setBar(<div>Hello!</div>)
+            setBar(<Contacts />)
         }
     }
     const isLogged = localStorage.getItem('token');

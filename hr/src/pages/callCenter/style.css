@@ -61,19 +61,19 @@
   color: #117db0;
 }
 .callsListContact {
-  width: 200px;
+  width: 150px;
 }
 .callsListDate {
   width: 100px;
 }
 .callsListTime {
-  width: 50px;
+  width: 80px;
 }
 .callsListClient {
   width: 150px;
 }
 .callsListStaff {
-  width: 100px;
+  width: 150px;
 }
 
 .callsListItem {
@@ -117,8 +117,10 @@
 .callsTypeIcon:hover .callTypeIconText{display: block;}
 
 .callsListItemContact{
-  width: 200px;
+  width: 150px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
+#callCenterBarCalls{font-weight: bold;}

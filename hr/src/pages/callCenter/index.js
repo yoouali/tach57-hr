@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react';
 import { Redirect  } from "react-router";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar';
+import Calls from '../../components/Calls';
 
 import './style.css';
 import outgoingCall from '../../images/icons/outgoingcall.png';
@@ -23,7 +23,7 @@ function CallCenter(){
         })
         .catch(err => {console.log(err)})
     }, []);
-
+    var Bar = <Calls/>
     function changeBar(e){
     }
     const isLogged = localStorage.getItem('token');
@@ -47,24 +47,7 @@ function CallCenter(){
                                 <div id="callsCenterBarContacts" className="callCenterNavBarIteme" >contacts</div>
                             </div>
                         </div>
-                        <div className="callsList">
-                            <div className="callsListHeader">
-                                <div className="callsListContact">contact</div>
-                                <div className="callsListDate">Date</div>
-                                <div className="callsListTime">Time</div>
-                                <div className="callsListClient">client</div>
-                                <div className="callsListStaff">sttaf</div>
-                            </div>
-                            <div className="callsListItem">
-                                <div className="callsListItemContact">
-                                    <div className="callsTypeIcon">
-                                        <div className="callTypeIconText">outgoing call</div>
-                                        <img className="test"  src={outgoingCall} alt="profileicon"/>
-                                    </div>
-                                    <div className="callsContact">+212 777672016</div>
-                                </div>
-                            </div>
-                        </div>
+                        {Bar}
                     </div>
                 </div>
             </div>

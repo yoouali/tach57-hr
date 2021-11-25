@@ -6,11 +6,11 @@ import SideBar from '../../components/SideBar';
 import Calls from '../../components/Calls';
 
 import './style.css';
-import outgoingCall from '../../images/icons/outgoingcall.png';
 
 function CallCenter(){
     const [isLoading, setLoading] = useState(true);
     const [user, setUser] = useState();
+    const [Bar, setBar] = useState(<Calls />);
    
 
     useEffect(() => {
@@ -23,8 +23,17 @@ function CallCenter(){
         })
         .catch(err => {console.log(err)})
     }, []);
-    var Bar = <Calls/>
     function changeBar(e){
+        if (e === "callCenterBarCalls"){
+            document.getElementById(e).style.fontWeight = "bold";
+            document.getElementById("callsCenterBarContacts").style.fontWeight = "500";
+            setBar(<Calls/>)
+        }
+        if (e === "callsCenterBarContacts"){
+            document.getElementById(e).style.fontWeight = "bold";
+            document.getElementById("callCenterBarCalls").style.fontWeight = "500";
+            setBar(<div>Hello!</div>)
+        }
     }
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
@@ -43,8 +52,8 @@ function CallCenter(){
                         <div className="callCenterNavBar">
                             <div className="callCenterNavBarTitle">Call Center</div>
                             <div className="callCenterNavBarItemes">
-                                <div id="callCenterBarCalls" className="callCenterNavBarIteme" >calls</div>
-                                <div id="callsCenterBarContacts" className="callCenterNavBarIteme" >contacts</div>
+                                <div onClick={({target})=>changeBar(target.id)} id="callCenterBarCalls" className="callCenterNavBarIteme" >calls</div>
+                                <div onClick={({target})=>changeBar(target.id)} id="callsCenterBarContacts" className="callCenterNavBarIteme" >contacts</div>
                             </div>
                         </div>
                         {Bar}

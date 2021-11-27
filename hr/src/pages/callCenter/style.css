@@ -141,20 +141,66 @@
 
 .contactsListItem{
   width: 150px;
-  border: 1px solid #117db0;
+  background-color: #117db0;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  font-family: 'Rajdhani';
 }
-.contactsListItemOperation{
-  width: 100%;
+.contactsListItemName{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 5px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
+  font-size: medium;
+  font-weight: 700;
+  color: white;
 }
+.contactsListItemName p{font-size: xx-small;padding-right: 2px;}
+.contactsListItemNumber{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: medium;
+  font-weight: 700;
+  color: white;
+}
+.contactsListItemNumber p{font-size: xx-small;padding-right: 2px;}
+.contactsListItemOperation{
+  width: 80%;
+  display: flex;
+  margin: auto;
+  margin-top: 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+#contactListOperationDelete{color: red;}
+#contactListOperationEdit{color: white;}
 .contactsListItemDetails{
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 10px;
 }
+.contactsListItemDetailsCalls{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contactsListItemDetailsCalls p{font-size: x-small; color: white;}
+
+.contactsListItemDetailsTime{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contactsListItemDetailsTime p{font-size: x-small; color: white;}

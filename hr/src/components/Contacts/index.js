@@ -9,7 +9,6 @@ function Contacts(){
             <input type="text" className="contactsInputSerch" placeholder="Serch"/>
             <button className="contactsButton">Serch</button>
         </form>
-        <div className="contacsSerch"></div>
     </div>
     <div className="contactsList">
         <div className="contactsListItem">

@@ -3,6 +3,14 @@ import outgoingCall from '../../images/icons/outgoingcall.png';
 
 function Contacts(){
     return(
+    <div className="contacts">
+    <div className="contactsHeader">
+        <form className="contactsSerch">
+            <input type="text" className="contactsInputSerch" placeholder="Serch"/>
+            <button className="contactsButton">Serch</button>
+        </form>
+        <div className="contacsSerch"></div>
+    </div>
     <div className="contactsList">
         <div className="contactsListItem">
             <div className="contactsListItemOperation">
@@ -16,6 +24,7 @@ function Contacts(){
                 <div className="contactsListItemDetailsTime"><p>&#128336;</p>15.20 min</div>
             </div>
         </div>
+    </div>
     </div>
     )
 }

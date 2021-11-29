@@ -3,6 +3,9 @@ import outgoingCall from '../../images/icons/outgoingcall.png';
 
 function Calls(){
     return (
+    <div className="calls">
+    <div className="callsHeader">
+    </div>
     <div className="callsList">
         <div className="callsListHeader">
             <div className="callsListContact">contact</div>
@@ -37,6 +40,7 @@ function Calls(){
             <div className="callsListClient">- - - - - - - - -</div>
             <div className="callsListStaff">youssef ouali</div>
         </div>
+    </div>
     </div>
     )
 }

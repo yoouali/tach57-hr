@@ -240,3 +240,47 @@
   align-items: center;
 }
 .contactsListItemDetailsTime p{font-size: x-small; color: white;}
+
+.callBoard{
+  width: 90%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: -1px 1px 2px rgba(227, 227, 227, 0.2), 1px -1px 2px rgba(227, 227, 227, 0.2), -1px -1px 2px rgba(255, 255, 255, 0.9), 1px 1px 3px rgba(227, 227, 227, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+.callHeader{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.callBack{
+  width: 60px;
+  height: 40px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.callBack img{
+  width: 40%;
+  padding-top: 8px;
+}
+
+.callBoard .Board{
+  width: 80%;
+  background-color:#117db0;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.callClient{
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Rajdhani';
+  font-size: xx-large;
+}

@@ -1,4 +1,5 @@
 import outgoingCall from '../../images/icons/outgoingcall.png';
+import { Link } from "react-router-dom";
 
 
 function Calls(){
@@ -14,6 +15,7 @@ function Calls(){
             <div className="callsListClient">client</div>
             <div className="callsListStaff">sttaf</div>
         </div>
+        <Link to={"/Call/1"}>
         <div className="callsListItem">
             <div className="callsListItemContact">
                 <div className="callsTypeIcon">
@@ -27,6 +29,7 @@ function Calls(){
             <div className="callsListClient">youssef ouali</div>
             <div className="callsListStaff">youssef ouali</div>
         </div>
+        </Link>
         <div className="callsListItem">
             <div className="callsListItemContact">
                 <div className="callsTypeIcon">

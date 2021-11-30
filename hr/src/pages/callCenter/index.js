@@ -54,7 +54,7 @@ function CallCenter(){
                             <div className="callCenterNavBarTitle">Call Center</div>
                             <div className="callCenterNavBarItemes">
                                 <div onClick={({target})=>changeBar(target.id)} id="callCenterBarCalls" className="callCenterNavBarIteme" >calls</div>
-                                <div onClick={({target})=>changeBar(target.id)} id="callsCenterBarContacts" className="callCenterNavBarIteme" >contacts</div>
+                                 <div onClick={({target})=>changeBar(target.id)} id="callsCenterBarContacts" className="callCenterNavBarIteme" >contacts</div>
                             </div>
                         </div>
                         {Bar}

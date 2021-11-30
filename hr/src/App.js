@@ -17,6 +17,7 @@ import ForgetPassword from './components/Authentications/forgetPassword';
 import AddUser from './components/Authentications/adduser';
 import ResetPassword from './components/Authentications/resetPassword';
 import CallCenter from './pages/callCenter';
+import Call from './pages/callCenter/Call';
 
 import './style.css';
 
@@ -42,6 +43,7 @@ function App() {
       <Route exact path="/AddUser"> <AddUser/></Route>
       <Route exact path="/ResetPassword/:id"> <ResetPassword/></Route>
       <Route exact path="/CallCenterList"> <CallCenter/> </Route>
+      <Route exact path="/Call/:id"> <Call/> </Route>
 
       </BrowserRouter>
     </div>

@@ -1,7 +1,23 @@
+import { useEffect, useState } from 'react';
 import outgoingCall from '../../images/icons/outgoingcall.png';
 
 
 function Contacts(){
+
+    const [isLoading, setLoading] = useState(true);
+    const [contacts, setContacts] = useState();
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+
+        axios.get('https://stagiaire.herokuapp.com/api/Client', {headers: {"Authorization": `Bearer ${token}`}})
+        .then(res =>{console.log(res);
+            setContacts(res.data);
+            setLoading(false);
+        })
+        .catch(err => {console.log(err)})
+    }, []);
+
     return(
     <div className="contacts">
     <div className="contactsHeader">

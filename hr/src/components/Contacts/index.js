@@ -20,10 +20,22 @@ function Contacts(){
         .catch(err => {console.log(err)})
     }, []);
 
+    function rightTime(e){
+        if (e === 0)return 0;
+        var min = parseInt(e / 60);
+        if (min === 0)return(e + "s");
+        if (min < 60 && (e - min * 60) !== 0) return(min + "."+(e-min*60)+"min")
+        if (min < 60)return(min+"min");
+        var h = parseInt(min / 60);
+        if ((min - h * 60) !== 0)return (h + "h" + (min - h * 60) + "min")
+        return(h + "h")
+    }
     if (isLoading === false)
     {
         var namesList = contacts.map(function(item){
-            return (<Link to={"/"} style={{ textDecoration: 'none' }}> <div key={item.id} className="contactsListItem">
+            var time = rightTime(item.DureeDappel);
+            console.log(time);
+            return (<Link key={item.id} to={"/"} style={{ textDecoration: 'none' }}> <div className="contactsListItem">
                         <div className="contactsListItemOperation">
                             <div id="contactListOperationEdit" className="contactsListItemOperationEdit">...</div>
                             <div id="contactListOperationDelete" className="contactsListItemOperationRemove">&#10007;</div>
@@ -32,7 +44,7 @@ function Contacts(){
                         <div className="contactsListItemNumber"><p>&#128241;</p>{item.TEL}</div>
                         <div className="contactsListItemDetails">
                             <div className="contactsListItemDetailsCalls"><p>&#128222;</p>{item.CallCount}</div>
-                            <div className="contactsListItemDetailsTime"><p>&#128336;</p>{item.DureDappel}</div>
+                            <div className="contactsListItemDetailsTime"><p>&#128336;</p>{time}</div>
                         </div>
                     </div></Link>)
         })

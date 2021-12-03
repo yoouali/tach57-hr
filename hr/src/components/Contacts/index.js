@@ -23,7 +23,7 @@ function Contacts(){
     if (isLoading === false)
     {
         var namesList = contacts.map(function(item){
-            return (<Link to={"/"}> <div key={item.id} className="contactsListItem">
+            return (<Link to={"/"} style={{ textDecoration: 'none' }}> <div key={item.id} className="contactsListItem">
                         <div className="contactsListItemOperation">
                             <div id="contactListOperationEdit" className="contactsListItemOperationEdit">...</div>
                             <div id="contactListOperationDelete" className="contactsListItemOperationRemove">&#10007;</div>

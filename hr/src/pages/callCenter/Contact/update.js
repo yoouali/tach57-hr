@@ -4,11 +4,12 @@ import axios from "axios";
 import Header from '../../components/Header';
 import SideBar from '../../components/SideBar';
 
-function Contact(){
+
+function ContactUpdate(){
     return(
         <div>
 
         </div>
     )
 }
-export default Contact
+export default ContactUpdate

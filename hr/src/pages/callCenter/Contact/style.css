@@ -1,0 +1,49 @@
+.ContactBorde{
+    width: 95%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: -9px 9px 18px rgba(230, 230, 230, 0.2), 9px -9px 18px rgba(230, 230, 230, 0.2), -9px -9px 18px rgba(255, 255, 255, 0.9), 9px 9px 23px rgba(230, 230, 230, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(230, 230, 230, 0.5);
+}
+.ContactCard{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ContactCardHeader{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+}
+
+.ContactInfo{
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.ContactPerss{
+    width: 300px;
+}
+.ContactPerssGroupe{
+    width: 100%;
+    height: 80px;
+}
+.ContactPerssGroupTitle{
+    font-family: 'Poppins';
+}
+.ContactPerssGroupData{
+    font-family: 'Rajdhani';
+}
+
+.ContactCount{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

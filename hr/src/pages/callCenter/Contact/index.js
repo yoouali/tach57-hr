@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, Text} from 'react';
 import { Redirect, useParams  } from "react-router";
 import axios from "axios";
 import Header from '../../../components/Header';
@@ -39,10 +39,46 @@ function Contact(){
     //COMPONENT FUNCTIONS
 
     function timeSecondTohmin(e){
+        if (e === 0)return 0;
+        var min = parseInt(e / 60);
+        if (min === 0)return(e + "s");
+        if (min < 60 && (e - min * 60) !== 0) return(min + "."+(e-min*60)+"min")
+        if (min < 60)return(min+"min");
+        var h = parseInt(min / 60);
+        if ((min - h * 60) !== 0)return (h + "h" + (min - h * 60) + "min")
+        return(h + "h")
     }
-    function uperCase(e){
-    }
+
+     ///filter calls history       
     function historyFilter(e){
+        console.log(document.getElementById(e+"Parent").style.border);
+        if (document.getElementById(e+"Parent").style.border === "1px solid rgb(17, 125, 176)"){
+            document.getElementById(e+"Parent").style.border="none";
+        }
+        else if (e == "incomingCall"){
+            document.getElementById("incomingCallParent").style.border="1px solid #117DB0";
+            document.getElementById("outgoingCallParent").style.border="none";
+            document.getElementById("rejectedCallParent").style.border="none";
+            document.getElementById("missedCallParent").style.border="none";
+        }
+        else if (e == "outgoingCall"){
+            document.getElementById("outgoingCallParent").style.border="1px solid #117DB0";
+            document.getElementById("incomingCallParent").style.border="none";
+            document.getElementById("rejectedCallParent").style.border="none";
+            document.getElementById("missedCallParent").style.border="none";
+        }
+        else if (e == "rejectedCall"){
+            document.getElementById("rejectedCallParent").style.border="1px solid #117DB0";
+            document.getElementById("incomingCallParent").style.border="none";
+            document.getElementById("outgoingCallParent").style.border="none";
+            document.getElementById("missedCallParent").style.border="none";
+        }
+        else if (e == "missedCall"){
+            document.getElementById("missedCallParent").style.border="1px solid #117DB0";
+            document.getElementById("incomingCallParent").style.border="none";
+            document.getElementById("rejectedCallParent").style.border="none";
+            document.getElementById("outgoingCallParent").style.border="none";
+        }
     }
     /////////////////////
 
@@ -73,29 +109,29 @@ function Contact(){
                                 <div className="ContactPerss">
                                     <div className="ContactPerssGroupe">
                                         <div className="ContactPerssGroupTitle">Client</div>
-                                        <div className="ContactPerssGroupData">OUALI YOUSSEF</div>
+                                        <div className="ContactPerssGroupData">{contact.Nom === null ? "" : (contact.Nom).toUpperCase()} {contact.Prenom === null ? "" : (contact.Prenom).toUpperCase()}</div>
                                     </div>
                                     <div className="ContactPerssGroupe">
                                         <div className="ContactPerssGroupTitle">Phone Number</div>
-                                        <div className="ContactPerssGroupData">0777672016</div>
+                                        <div className="ContactPerssGroupData">{contact.TEL}</div>
                                     </div>
                                     <div className="ContactPerssGroupe">
-                                        <div className="ContactPerssGroupTitle">Societ</div>
-                                        <div className="ContactPerssGroupData">My Kids</div>
+                                        <div className="ContactPerssGroupTitle">Societe</div>
+                                        <div className="ContactPerssGroupData">{contact.Societe}</div>
                                     </div>
                                 </div>
                                 <div className="ContactCount">
                                     <div className="ContactCountGroupe">
                                         <div className="ContactCountGroupIcon"><img src={phoneIcon} alt="phoneIcon"/></div>
                                         <div className="ContactCountGroupInfo">
-                                            <div className="ContactCountInfoData">250</div>
+                                            <div className="ContactCountInfoData">{contact.CallCount}</div>
                                             <div className="ContactCountInfoTitle">Total D'appels</div>
                                         </div>
                                     </div>
                                     <div className="ContactCountGroupe">
                                         <div className="ContactCountGroupIcon"><img src={clockIcon} alt="clockIcon"/></div>
                                         <div className="ContactCountGroupInfo">
-                                            <div className="ContactCountInfoData">100h 59min</div>
+                                            <div className="ContactCountInfoData">{timeSecondTohmin(contact.DureeDappel)}</div>
                                             <div className="ContactCountInfoTitle">Duree D'appels</div>
                                         </div>
                                     </div>
@@ -107,10 +143,10 @@ function Contact(){
                                     <div className="ContactHistSort">
                                         <div className="ContacHistSortTitle">Sort:</div>
                                         <div className="ContactHistSortItems">
-                                            <div id="incomingCall" className="ContactHistSortItem"><img title="incomingcall" src={incomingCall}/></div>
-                                            <div id="outgoingCall" className="ContactHistSortItem"><img title="outgoingcall" src={outgoingCall}/></div>
-                                            <div id="rejectedCall" className="ContactHistSortItem"><img title="rejectedcall" src={rejectedCall}/></div>
-                                            <div id="missedCall" className="ContactHistSortItem"><img title="missedcall" src={missedCall}/></div>
+                                            <div id="incomingCallParent" className="ContactHistSortItem"><img id="incomingCall" onClick={({target})=> historyFilter(target.id)} title="incomingcall" src={incomingCall}/></div>
+                                            <div id="outgoingCallParent" className="ContactHistSortItem"><img id="outgoingCall" onClick={({target})=> {historyFilter(target.id)}} title="outgoingcall" src={outgoingCall}/></div>
+                                            <div id="rejectedCallParent" className="ContactHistSortItem"><img id="rejectedCall" onClick={({target})=> {historyFilter(target.id)}} title="rejectedcall" src={rejectedCall}/></div>
+                                            <div id="missedCallParent" className="ContactHistSortItem"><img id="missedCall"  onClick={({target})=> {historyFilter(target.id)}} title="missedcall" src={missedCall}/></div>
                                         </div>
                                     </div>
                                 </div>

@@ -4,9 +4,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Header from '../../../components/Header';
 import SideBar from '../../../components/SideBar';
-import arrow from '../../../images/icons/Arrow 1.png';
+import arrow from '../../../images/icons/arrowBack.png';
 import edit from '../../../images/icons/edit.png';
-import outgoingcall from '../../../images/icons/outgoingcall.png'
+import outgoingcall from '../../../images/icons/outgoingCall.png'
 import '../style.css';
 
 function Call(){

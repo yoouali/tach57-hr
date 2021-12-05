@@ -18,7 +18,12 @@
     height: 40px;
     padding: 10px;
     margin-bottom: 20px;
+    display: flex; flex-direction: row; justify-content: space-between;
 }
+
+.ContactCardHeaderBack{}
+
+
 /* ******************************************************************************* */
 
 
@@ -127,6 +132,7 @@
 .ContactHistSortItems{width: 150px; height: 20px; display: flex; flex-direction: row; justify-content: space-between;}
 .ContactHistSortItem{width:20px; text-align: center; cursor: pointer;}
 .ContactHistSortItem img{width: 15px;}
+.ContacFilterSortItem{border:1px solid #117DB0;}
 
 .ContactHistList{width: 95%; margin: 0 auto;}
 .ContactHistListHeader{width: 100%; padding: 0 2px; margin-bottom: 10px; display: flex; flex-direction: row; justify-content: space-between; border-bottom: 1px solid #6A7C92; font-family: 'Rajdhani'; font-size: small; color: black;}

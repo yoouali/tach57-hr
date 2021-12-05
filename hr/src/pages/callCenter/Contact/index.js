@@ -4,6 +4,8 @@ import axios from "axios";
 import Header from '../../../components/Header';
 import SideBar from '../../../components/SideBar';
 import './style.css';
+import phoneIcon from '../../../images/icons/phoneIcon.png';
+import clockIcon from '../../../images/icons/clockIcon.png';
 
 
 function Contact(){
@@ -56,30 +58,30 @@ function Contact(){
                             <div className="ContactInfo">
                                 <div className="ContactPerss">
                                     <div className="ContactPerssGroupe">
-                                        <div className="ContactPerssGroupTitle">Name</div>
-                                        <div className="ContactPerssGroupData">data</div>
+                                        <div className="ContactPerssGroupTitle">Client</div>
+                                        <div className="ContactPerssGroupData">OUALI YOUSSEF</div>
                                     </div>
                                     <div className="ContactPerssGroupe">
-                                        <div className="ContactPerssGroupTitle">Number</div>
-                                        <div className="ContactPerssGroupData">data</div>
+                                        <div className="ContactPerssGroupTitle">Phone Number</div>
+                                        <div className="ContactPerssGroupData">0777672016</div>
                                     </div>
                                     <div className="ContactPerssGroupe">
                                         <div className="ContactPerssGroupTitle">Societ</div>
-                                        <div className="ContactPerssGroupData">data</div>
+                                        <div className="ContactPerssGroupData">My Kids</div>
                                     </div>
                                 </div>
                                 <div className="ContactCount">
                                     <div className="ContactCountGroupe">
-                                        <div className="ContactCountGroupIcon"></div>
+                                        <div className="ContactCountGroupIcon"><img src={phoneIcon} alt="phoneIcon"/></div>
                                         <div className="ContactCountGroupInfo">
-                                            <div className="ContactCountInfoData"></div>
+                                            <div className="ContactCountInfoData">250</div>
                                             <div className="ContactCountInfoTitle">Total D'appels</div>
                                         </div>
                                     </div>
                                     <div className="ContactCountGroupe">
-                                        <div className="ContactCountGroupIcon"></div>
+                                        <div className="ContactCountGroupIcon"><img src={clockIcon} alt="clockIcon"/></div>
                                         <div className="ContactCountGroupInfo">
-                                            <div className="ContactCountInfoData"></div>
+                                            <div className="ContactCountInfoData">100h 59min</div>
                                             <div className="ContactCountInfoTitle">Duree D'appels</div>
                                         </div>
                                     </div>

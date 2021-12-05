@@ -1,4 +1,4 @@
-import outgoingCall from '../../images/icons/outgoingcall.png';
+import outgoingCall from '../../images/icons/outgoingCall.png';
 import { Link } from "react-router-dom";
 
 

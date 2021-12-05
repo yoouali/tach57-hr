@@ -37,7 +37,7 @@ function Contact(){
         .catch(err => {console.log(err)})
         axios.get('https://stagiaire.herokuapp.com/api/Client/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
-            setContact(res.data);
+            setContact(res.data[0]);
             setLoading2(false);
         })
         .catch(err => {console.log(err)})

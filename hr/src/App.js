@@ -19,6 +19,7 @@ import ResetPassword from './components/Authentications/resetPassword';
 import CallCenter from './pages/callCenter';
 import Call from './pages/callCenter/Call';
 import Contact from './pages/callCenter/Contact';
+import ContactUpdate from './pages/callCenter/Contact/update';
 
 import './style.css';
 
@@ -46,6 +47,7 @@ function App() {
       <Route exact path="/CallCenterList"> <CallCenter/> </Route>
       <Route exact path="/Call/:id"> <Call/> </Route>
       <Route exact path="/Contact/:id"> <Contact /> </Route>
+      <Route exact path="/ContactUpdate/:id"> <ContactUpdate /> </Route>
 
       </BrowserRouter>
     </div>

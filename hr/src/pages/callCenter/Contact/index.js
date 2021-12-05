@@ -25,6 +25,8 @@ function Contact(){
     const [isLoading2, setLoading2] = useState(true);
     const [user, setUser] = useState();
     const [contact, setContact] = useState();
+    const [calls, setCalls] = useState();
+    const [contactHistory, setContactHistory] = useState();
    
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -38,6 +40,8 @@ function Contact(){
         axios.get('https://stagiaire.herokuapp.com/api/Client/show/' + id, {headers: {"Authorization": `Bearer ${token}`}})
         .then(res =>{console.log(res);
             setContact(res.data[0]);
+            setCalls(res.data);
+            setContactHistory(res.data);
             setLoading2(false);
         })
         .catch(err => {console.log(err)})
@@ -89,6 +93,34 @@ function Contact(){
     }
     /////////////////////
 
+    // CONTACT HISTORY LIST
+    if (contactHistory){
+        var key = 0;
+        var callsList = contactHistory.map(function(name){
+            key = key + 1;
+            var callType = <img src={outgoingCall}/>
+            var callTypeText = "outgoing call";
+            return (
+                <div key={key} className="ContactHistListItem">
+                    <div className="ContactHistListItemCall">
+                        <div className="ContactHistListItemCallType">{callType}</div>
+                        <div className="ContactHistListItemCallDetails">
+                            <div className="ContactHistListItemCallDate">{name.Heure}</div>
+                            <div className="ContactHistListItemCallTypeText">{callTypeText}</div>
+                        </div>
+                    </div>
+                    <div className="ContactHistListItemTime">{timeSecondTohmin(name.DureeDappel)}</div>
+                    <div className="ContactHistListItemDate">2021-12-29</div>
+                    <div className="ContactHitListItemStaff">youssef elouali</div>
+                </div>
+            )
+        })
+    }
+
+    /////////////////////////////////////
+
+
+
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
 
@@ -108,7 +140,7 @@ function Contact(){
                             <div className="ContactCardHeader">
                                 <div className="ContactCardHeaderBack"><Link to={"/CallCenterList"}><img src={arrowBack} alt="arrowBack" /></Link></div>
                                 <div className="ContactCardHeaderProp">
-                                    <div className="ContactCardHeaderEdit"><img src={editContact}/></div>
+                                    <div className="ContactCardHeaderEdit"><Link to={"/ContactUpdate/" + id}><img src={editContact}/></Link></div>
                                     <div className="ContactCardHeaderRemove"><img src={removeContact}/></div>
                                 </div>
                             </div>
@@ -164,18 +196,7 @@ function Contact(){
                                         <div className="onatctHistListHeaderTime">Date</div>
                                         <div className="ConatctHistListHeaderSttaf">Staff</div>
                                     </div>
-                                    <div className="ContactHistListItem">
-                                        <div className="ContactHistListItemCall">
-                                            <div className="ContactHistListItemCallType"><img src={outgoingCall}/></div>
-                                            <div className="ContactHistListItemCallDetails">
-                                                <div className="ContactHistListItemCallDate">15:34</div>
-                                                <div className="ContactHistListItemCallTypeText">outgoing call</div>
-                                            </div>
-                                        </div>
-                                        <div className="ContactHistListItemTime">100h 59min</div>
-                                        <div className="ContactHistListItemDate">2021-12-29</div>
-                                        <div className="ContactHitListItemStaff">youssef elouali</div>
-                                    </div>
+                                    {callsList}
                                 </div>
                             </div>
                         </div>

@@ -18,10 +18,13 @@
     height: 40px;
     padding: 10px;
     margin-bottom: 20px;
-    display: flex; flex-direction: row; justify-content: space-between;
+    display: flex; flex-direction: row; justify-content: space-between;align-items: center;
 }
 
-.ContactCardHeaderBack{}
+.ContactCardHeaderProp{display: flex; flex-direction: row; align-items: center;}
+.ContactCardHeaderBack img{width: 30px;margin-top: 2px; cursor: pointer;}
+.ContactCardHeaderEdit img{width: 20px; margin-right: 10px; cursor: pointer;}
+.ContactCardHeaderRemove img{width: 20px; height: 20px; cursor: pointer;}
 
 
 /* ******************************************************************************* */

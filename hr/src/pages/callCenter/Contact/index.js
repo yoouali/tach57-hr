@@ -1,15 +1,22 @@
 import {useState, useEffect, Text} from 'react';
 import { Redirect, useParams  } from "react-router";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import Header from '../../../components/Header';
 import SideBar from '../../../components/SideBar';
 import './style.css';
+
+
 import phoneIcon from '../../../images/icons/phoneIcon.png';
 import clockIcon from '../../../images/icons/clockIcon.png';
 import incomingCall from '../../../images/icons/incomingCall.png';
 import outgoingCall from '../../../images/icons/outgoingCall.png';
 import rejectedCall from '../../../images/icons/rejectedCall.png';
 import missedCall from '../../../images/icons/missedCall.png';
+import arrowBack from '../../../images/icons/arrowBack.png';
+import editContact from '../../../images/icons/editContact.png';
+import removeContact from '../../../images/icons/removeContact.png';
+
 
 
 function Contact(){
@@ -99,10 +106,10 @@ function Contact(){
                         {/* {isLoading2 === true ? <div className="ContactBordLoading">loading ...</div>: */}
                         <div className="ContactCard">
                             <div className="ContactCardHeader">
-                                <div className="ContactCardHeaderBack"></div>
+                                <div className="ContactCardHeaderBack"><Link to={"/CallCenterList"}><img src={arrowBack} alt="arrowBack" /></Link></div>
                                 <div className="ContactCardHeaderProp">
-                                    <div className="ContactCardHeaderEdit"></div>
-                                    <div className="ContactCardHeaderRemove"></div>
+                                    <div className="ContactCardHeaderEdit"><img src={editContact}/></div>
+                                    <div className="ContactCardHeaderRemove"><img src={removeContact}/></div>
                                 </div>
                             </div>
                             <div className="ContactInfo">

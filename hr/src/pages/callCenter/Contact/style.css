@@ -115,9 +115,27 @@
 .ContactHistHeader{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    width: 60px;
+    min-width: 60px;
     margin-bottom: 20px;
 }
+.ContactHistTitle{font-family: 'Rajdhani';font-size: large;color: #6A7C92;}
+.ContactHistSort{font-family: 'Rajdhani'; font-size: medium; color: #6A7C92;display: flex; flex-direction: row; align-items: center;}
+.ContacHistSortTitle{padding-right: 10px;}
+.ContactHistSortItems{width: 150px; height: 20px; display: flex; flex-direction: row; justify-content: space-between;}
+.ContactHistSortItem{width:20px; text-align: center; cursor: pointer;}
+.ContactHistSortItem img{width: 15px;}
+
+.ContactHistList{width: 95%; margin: 0 auto;}
+.ContactHistListHeader{width: 100%; padding: 0 2px; margin-bottom: 10px; display: flex; flex-direction: row; justify-content: space-between; border-bottom: 1px solid #6A7C92; font-family: 'Rajdhani'; font-size: small; color: black;}
+.ConatctHistListHeaderCall{width: 100px;}.ConatctHistListHeaderTime{width: 100px;}.onatctHistListHeaderTime{width: 100px} .ConatctHistListHeaderSttaf{width: 130px;}
+
+.ContactHistListItem{width: 100%; padding: 0 2px; margin-bottom: 5px; display: flex; flex-direction: row;justify-content: space-between; border-bottom: 1px solid #6A7C92; font-family: 'Rajdhani';}
+.ContactHistListItemCall{width: 100px; display: flex; flex-direction: row;}
+.ContactHistListItemCallType{text-align:center;}.ContactHistListItemCallType img{width: 20px;}
+.ContactHistListItemCallDate{font-size: medium; color: #117DB0;}
+.ContactHistListItemCallTypeText{font-size: x-small; color: #6A7C92; margin-top: -4px;}
+.ContactHistListItemTime{width: 100px; font-size: medium; color: #117DB0;}.ContactHitListItemStaff{width: 130px; color: #117DB0; font-size: medium;}.ContactHistListItemDate{width: 100px; font-size: medium;color: #117DB0;}
 /* *********************************************************************************************** */

@@ -6,6 +6,10 @@ import SideBar from '../../../components/SideBar';
 import './style.css';
 import phoneIcon from '../../../images/icons/phoneIcon.png';
 import clockIcon from '../../../images/icons/clockIcon.png';
+import incomingCall from '../../../images/icons/incomingCall.png';
+import outgoingCall from '../../../images/icons/outgoingCall.png';
+import rejectedCall from '../../../images/icons/rejectedCall.png';
+import missedCall from '../../../images/icons/missedCall.png';
 
 
 function Contact(){
@@ -31,6 +35,16 @@ function Contact(){
         })
         .catch(err => {console.log(err)})
     }, []);
+
+    //COMPONENT FUNCTIONS
+
+    function timeSecondTohmin(e){
+    }
+    function uperCase(e){
+    }
+    function historyFilter(e){
+    }
+    /////////////////////
 
     const isLogged = localStorage.getItem('token');
     if (!isLogged || isLogged === undefined) {return (<Redirect to="/login" />)}
@@ -91,23 +105,42 @@ function Contact(){
                                 <div className="ContactHistHeader">
                                     <div className="ContactHistTitle">History</div>
                                     <div className="ContactHistSort">
-                                        <div className="ContactHistSortTitle"></div>
+                                        <div className="ContacHistSortTitle">Sort:</div>
                                         <div className="ContactHistSortItems">
-                                            <div className="ContactHistSortItem"></div>
-                                            <div className="ContactHistSortItem"></div>
-                                            <div className="ContactHistSortItem"></div>
-                                            <div className="ContactHistSortItem"></div>
+                                            <div id="incomingCall" className="ContactHistSortItem"><img title="incomingcall" src={incomingCall}/></div>
+                                            <div id="outgoingCall" className="ContactHistSortItem"><img title="outgoingcall" src={outgoingCall}/></div>
+                                            <div id="rejectedCall" className="ContactHistSortItem"><img title="rejectedcall" src={rejectedCall}/></div>
+                                            <div id="missedCall" className="ContactHistSortItem"><img title="missedcall" src={missedCall}/></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="ContactHistList"></div>
+                                <div className="ContactHistList">
+                                    <div className="ContactHistListHeader">
+                                        <div className="ConatctHistListHeaderCall">Appel</div>
+                                        <div className="ConatctHistListHeaderTime">Duree D'appel</div>
+                                        <div className="onatctHistListHeaderTime">Date</div>
+                                        <div className="ConatctHistListHeaderSttaf">Staff</div>
+                                    </div>
+                                    <div className="ContactHistListItem">
+                                        <div className="ContactHistListItemCall">
+                                            <div className="ContactHistListItemCallType"><img src={outgoingCall}/></div>
+                                            <div className="ContactHistListItemCallDetails">
+                                                <div className="ContactHistListItemCallDate">15:34</div>
+                                                <div className="ContactHistListItemCallTypeText">outgoing call</div>
+                                            </div>
+                                        </div>
+                                        <div className="ContactHistListItemTime">100h 59min</div>
+                                        <div className="ContactHistListItemDate">2021-12-29</div>
+                                        <div className="ContactHitListItemStaff">youssef elouali</div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
                         </div>
                         {/* } */}
                         </div>
                     </div>
             </div>
-        </div>
     )
 }
 export default Contact

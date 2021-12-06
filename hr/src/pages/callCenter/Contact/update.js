@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Redirect, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Header from "../../../components/Header";
 import SideBar from "../../../components/SideBar";
@@ -13,6 +14,15 @@ function ContactUpdate() {
   const [isLoading2, setLoading2] = useState(true);
   const [user, setUser] = useState();
   const [contact, setContact] = useState();
+  const history = useHistory();
+  const [formData, setFormData] = useState({
+    Prenom: "",
+    Nom: "",
+    Email: "",
+    TEL: "",
+    Societe: "",
+  });
+
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -42,6 +52,39 @@ function ContactUpdate() {
       });
   }, []);
 
+  // COMPONENT FUNCTIONS
+
+  function handelSubmit(e) {
+    e.preventDefault();
+    console.log(formData);
+    if (
+      formData.Email === "" &&
+      formData.Nom === "" &&
+      formData.Prenom === "" &&
+      formData.TEL === "" &&
+      formData.Societe === ""
+    ) {
+      history.push("/Contact/" + id);
+    }
+    const token = localStorage.getItem("token");
+    axios
+      .post(
+        "https://stagiaire.herokuapp.com/api/Client/update/" + id,
+        formData,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((res) => {
+        console.log("hh");
+        history.push("/Contact/" + id);
+      })
+      .catch((err) => {
+        console.log("error");
+        console.log(err);
+      });
+  }
+
+  ///////////////////////////////////////////
+
   const isLogged = localStorage.getItem("token");
   if (!isLogged || isLogged === undefined) {
     return <Redirect to="/login" />;
@@ -68,37 +111,72 @@ function ContactUpdate() {
                 </div>
               </div>
               <div className="ContactUpdateBord">
-                <form>
+                <form onSubmit={handelSubmit}>
                   <div className="contactUpdateForm">
+                    <div className="contactUpdateFromError">her is error</div>
                     <div className="contactUpdateFormGroup">
                       <label>Phone Number (+6-7********)</label>
                       <input
                         type="tel"
                         pattern="[0-0]{1}[6-7]{1}[0-9]{8}"
                         placeholder={contact.TEL}
+                        onChange={(e) =>
+                          setFormData({ ...formData, TEL: e.target.value })
+                        }
+                        value={formData.TEL}
                       />
                     </div>
                     <div className="contactUpdateFormGroupDouble">
                       <div className="contactUpdateFormDoubleGroup">
                         <label>Nom</label>
-                        <input type="text" placeholder={contact.Nom} />
+                        <input
+                          type="text"
+                          placeholder={contact.Nom}
+                          onChange={(e) =>
+                            setFormData({ ...formData, Nom: e.target.value })
+                          }
+                          value={formData.Nom}
+                        />
                       </div>
                       <div className="contactUpdateFormDoubleGroup">
                         <label>Prenom</label>
-                        <input type="text" placeholder={contact.Prenom} />
+                        <input
+                          type="text"
+                          placeholder={contact.Prenom}
+                          onChange={(e) =>
+                            setFormData({ ...formData, Prenom: e.target.value })
+                          }
+                          value={formData.Prenom}
+                        />
                       </div>
                     </div>
                     <div className="contactUpdateFormGroup">
                       <label>Email Address</label>
-                      <input type="email" placeholder={contact.Email} />
+                      <input
+                        type="email"
+                        placeholder={contact.Email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, Email: e.target.value })
+                        }
+                        value={formData.Email}
+                      />
                     </div>
                     <div className="contactUpdateFormGroup">
                       <label>Societe</label>
-                      <input type="email" placeholder={contact.Societe} />
+                      <input
+                        type="text"
+                        placeholder={contact.Societe}
+                        onChange={(e) =>
+                          setFormData({ ...formData, Societe: e.target.value })
+                        }
+                        value={formData.Societe}
+                      />
                     </div>
                   </div>
                   <div className="contactUpdateButtons">
-                    <button>Cancel</button>
+                    <Link to={"/Contact/" + id}>
+                      <button>Cancel</button>
+                    </Link>
                     <button>Save</button>
                   </div>
                 </form>

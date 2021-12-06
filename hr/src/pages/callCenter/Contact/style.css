@@ -360,4 +360,15 @@
   color: #117db0;
   cursor: pointer;
 }
+
+.contactUpdateFromError {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: medium;
+  color: #ff0033;
+  display: none;
+}
 /* *************************************************************** */ ;

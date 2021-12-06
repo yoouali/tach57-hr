@@ -1,150 +1,363 @@
-.ContactBorde{
-    width: 95%;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: -9px 9px 18px rgba(230, 230, 230, 0.2), 9px -9px 18px rgba(230, 230, 230, 0.2), -9px -9px 18px rgba(255, 255, 255, 0.9), 9px 9px 23px rgba(230, 230, 230, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(230, 230, 230, 0.5);
+.ContactBorde {
+  width: 95%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: -9px 9px 18px rgba(230, 230, 230, 0.2),
+    9px -9px 18px rgba(230, 230, 230, 0.2),
+    -9px -9px 18px rgba(255, 255, 255, 0.9),
+    9px 9px 23px rgba(230, 230, 230, 0.9),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 2px rgba(230, 230, 230, 0.5);
 }
-.ContactCard{
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+.ContactCard {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* CONTACT HEADER */
-.ContactCardHeader{
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    margin-bottom: 20px;
-    display: flex; flex-direction: row; justify-content: space-between;align-items: center;
+.ContactCardHeader {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.ContactCardHeaderProp{display: flex; flex-direction: row; align-items: center;}
-.ContactCardHeaderBack img{width: 30px;margin-top: 2px; cursor: pointer;}
-.ContactCardHeaderEdit img{width: 20px; margin-right: 10px; cursor: pointer;}
-.ContactCardHeaderRemove img{width: 20px; height: 20px; cursor: pointer;}
-
+.ContactCardHeaderProp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ContactCardHeaderBack img {
+  width: 30px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+.ContactCardHeaderEdit img {
+  width: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.ContactCardHeaderRemove img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
 
 /* ******************************************************************************* */
 
-
 /* CONTACT IFONRMATIONS */
-.ContactInfo{
-    width: 80%;
-    min-height: 250px;
-    max-width: 700px;
-    padding: 10px 20px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
+.ContactInfo {
+  width: 80%;
+  min-height: 250px;
+  max-width: 700px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
-.ContactPerss{
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.ContactPerss {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
-.ContactPerssGroupe{
-    width: 100%;
-    height: 60px;
+.ContactPerssGroupe {
+  width: 100%;
+  height: 60px;
 }
-.ContactPerssGroupTitle{
-    font-family: 'Rajdhani';
-    font-size: small;
-    color: #6A7C92;
+.ContactPerssGroupTitle {
+  font-family: "Rajdhani";
+  font-size: small;
+  color: #6a7c92;
 }
-.ContactPerssGroupData{
-    padding-left: 10px;
-    font-size: x-large;
-    font-family: 'Rajdhani';
-    color: #117DB0;
-}
-
-.ContactCount{
-    width: 250px;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.ContactCountGroupe{
-    width: 100%;
-    height: 80px;
-    border-radius: 5px;
-    box-shadow: -5px 5px 10px rgba(242, 242, 242, 0.2), 5px -5px 10px rgba(242, 242, 242, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(242, 242, 242, 0.9);    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 10px;
+.ContactPerssGroupData {
+  padding-left: 10px;
+  font-size: x-large;
+  font-family: "Rajdhani";
+  color: #117db0;
 }
 
-.ContactCountGroupIcon{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    padding: 5px;
-    background-color: #117DB0;
-    text-align: center;
-    margin-right: 10px;
+.ContactCount {
+  width: 250px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.ContactCountGroupIcon img{width: 40px;}
-.ContactCountGroupInfo{
-    width: 150px;
+.ContactCountGroupe {
+  width: 100%;
+  height: 80px;
+  border-radius: 5px;
+  box-shadow: -5px 5px 10px rgba(242, 242, 242, 0.2),
+    5px -5px 10px rgba(242, 242, 242, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 13px rgba(242, 242, 242, 0.9);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
 }
-.ContactCountInfoTitle{
-    font-family: 'Rajdhani';
-    font-size: small;
-    color: #6A7C92;
+
+.ContactCountGroupIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #117db0;
+  text-align: center;
+  margin-right: 10px;
 }
-.ContactCountInfoData{
-    font-family: 'Rajdhani';
-    font-size: x-large;
-    color: #117DB0;
+.ContactCountGroupIcon img {
+  width: 40px;
+}
+.ContactCountGroupInfo {
+  width: 150px;
+}
+.ContactCountInfoTitle {
+  font-family: "Rajdhani";
+  font-size: small;
+  color: #6a7c92;
+}
+.ContactCountInfoData {
+  font-family: "Rajdhani";
+  font-size: x-large;
+  color: #117db0;
 }
 /* *********************************************************************************************** */
 
 /* CONTACT HISTORY */
 
-.ContactHist{
-    width: 80%;
-    max-width: 700px;
-    padding: 10px 20px;
-    margin: 0 auto;
-    box-shadow: -10px 10px 20px rgba(242, 242, 242, 0.2), 10px -10px 20px rgba(242, 242, 242, 0.2), -10px -10px 20px rgba(255, 255, 255, 0.9), 10px 10px 25px rgba(242, 242, 242, 0.9);
-    border-radius: 5px;
+.ContactHist {
+  width: 80%;
+  max-width: 700px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  box-shadow: -10px 10px 20px rgba(242, 242, 242, 0.2),
+    10px -10px 20px rgba(242, 242, 242, 0.2),
+    -10px -10px 20px rgba(255, 255, 255, 0.9),
+    10px 10px 25px rgba(242, 242, 242, 0.9);
+  border-radius: 5px;
 }
 
-.ContactHistHeader{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    min-width: 60px;
-    margin-bottom: 20px;
+.ContactHistHeader {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 60px;
+  margin-bottom: 20px;
 }
-.ContactHistTitle{font-family: 'Rajdhani';font-size: large;color: #6A7C92;}
-.ContactHistSort{font-family: 'Rajdhani'; font-size: medium; color: #6A7C92;display: flex; flex-direction: row; align-items: center;}
-.ContacHistSortTitle{padding-right: 10px;}
-.ContactHistSortItems{width: 150px; height: 20px; display: flex; flex-direction: row; justify-content: space-between;}
-.ContactHistSortItem{width:20px; text-align: center; cursor: pointer;}
-.ContactHistSortItem img{width: 15px;}
-.ContacFilterSortItem{border:1px solid #117DB0;}
+.ContactHistTitle {
+  font-family: "Rajdhani";
+  font-size: large;
+  color: #6a7c92;
+}
+.ContactHistSort {
+  font-family: "Rajdhani";
+  font-size: medium;
+  color: #6a7c92;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ContacHistSortTitle {
+  padding-right: 10px;
+}
+.ContactHistSortItems {
+  width: 150px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ContactHistSortItem {
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.ContactHistSortItem img {
+  width: 15px;
+}
+.ContacFilterSortItem {
+  border: 1px solid #117db0;
+}
 
-.ContactHistList{width: 95%; margin: 0 auto;}
-.ContactHistListHeader{width: 100%; padding: 0 2px; margin-bottom: 10px; display: flex; flex-direction: row; justify-content: space-between; border-bottom: 1px solid #6A7C92; font-family: 'Rajdhani'; font-size: small; color: black;}
-.ConatctHistListHeaderCall{width: 100px;}.ConatctHistListHeaderTime{width: 100px;}.onatctHistListHeaderTime{width: 100px} .ConatctHistListHeaderSttaf{width: 130px;}
+.ContactHistList {
+  width: 95%;
+  margin: 0 auto;
+}
+.ContactHistListHeader {
+  width: 100%;
+  padding: 0 2px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #6a7c92;
+  font-family: "Rajdhani";
+  font-size: small;
+  color: black;
+}
+.ConatctHistListHeaderCall {
+  width: 100px;
+}
+.ConatctHistListHeaderTime {
+  width: 100px;
+}
+.onatctHistListHeaderTime {
+  width: 100px;
+}
+.ConatctHistListHeaderSttaf {
+  width: 130px;
+}
 
-.ContactHistListItem{width: 100%; padding: 0 2px; margin-bottom: 5px; display: flex; flex-direction: row;justify-content: space-between; border-bottom: 1px solid #6A7C92; font-family: 'Rajdhani';}
-.ContactHistListItemCall{width: 100px; display: flex; flex-direction: row;}
-.ContactHistListItemCallType{text-align:center;}.ContactHistListItemCallType img{width: 20px;}
-.ContactHistListItemCallDate{font-size: medium; color: #117DB0;}
-.ContactHistListItemCallTypeText{font-size: x-small; color: #6A7C92; margin-top: -4px;}
-.ContactHistListItemTime{width: 100px; font-size: medium; color: #117DB0;}.ContactHitListItemStaff{width: 130px; color: #117DB0; font-size: medium;}.ContactHistListItemDate{width: 100px; font-size: medium;color: #117DB0;}
+.ContactHistListItem {
+  width: 100%;
+  padding: 0 2px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #6a7c92;
+  font-family: "Rajdhani";
+}
+.ContactHistListItemCall {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+}
+.ContactHistListItemCallType {
+  text-align: center;
+}
+.ContactHistListItemCallType img {
+  width: 20px;
+}
+.ContactHistListItemCallDate {
+  font-size: medium;
+  color: #117db0;
+}
+.ContactHistListItemCallTypeText {
+  font-size: x-small;
+  color: #6a7c92;
+  margin-top: -4px;
+}
+.ContactHistListItemTime {
+  width: 100px;
+  font-size: medium;
+  color: #117db0;
+}
+.ContactHitListItemStaff {
+  width: 130px;
+  color: #117db0;
+  font-size: medium;
+}
+.ContactHistListItemDate {
+  width: 100px;
+  font-size: medium;
+  color: #117db0;
+}
 /* *********************************************************************************************** */
+
+/* UPDATE CONTACT */
+.ContactUpdateBord {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 5px;
+  box-shadow: -5px 5px 10px rgba(242, 242, 242, 0.2),
+    5px -5px 10px rgba(242, 242, 242, 0.2),
+    -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 13px rgba(242, 242, 242, 0.9);
+}
+
+.contactUpdateForm {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.contactUpdateFormGroup {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.contactUpdateFormGroup input {
+  width: 100%;
+  height: 40px;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+  border: 1px solid #6a7c92;
+  border-radius: 2px;
+  font-family: "Rajdhani";
+  font-size: x-large;
+  color: #117db0;
+}
+.contactUpdateFormGroup label {
+  font-family: "Rajdhani";
+  font-size: small;
+  color: #6a7c92;
+}
+
+.contactUpdateFormGroupDouble {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.contactUpdateFormDoubleGroup {
+  width: 49%;
+}
+.contactUpdateFormDoubleGroup input {
+  width: 100%;
+  height: 40px;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+  border: 1px solid #6a7c92;
+  border-radius: 2px;
+  font-family: "Rajdhani";
+  font-size: x-large;
+  color: #117db0;
+}
+.contactUpdateFormDoubleGroup label {
+  font-family: "Rajdhani";
+  font-size: small;
+  color: #6a7c92;
+}
+
+.contactUpdateButtons {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contactUpdateButtons button {
+  background: none;
+  width: fit-content;
+  height: fit-content;
+  color: #117db0;
+  cursor: pointer;
+}
+/* *************************************************************** */ ;

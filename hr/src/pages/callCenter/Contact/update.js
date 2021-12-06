@@ -71,24 +71,30 @@ function ContactUpdate() {
                 <form>
                   <div className="contactUpdateForm">
                     <div className="contactUpdateFormGroup">
-                      <label>Phone Number</label>
-                      <input type="text" placeholder={contact.TEL} />
+                      <label>Phone Number (+6-7********)</label>
+                      <input
+                        type="tel"
+                        pattern="[0-0]{1}[6-7]{1}[0-9]{8}"
+                        placeholder={contact.TEL}
+                      />
+                    </div>
+                    <div className="contactUpdateFormGroupDouble">
+                      <div className="contactUpdateFormDoubleGroup">
+                        <label>Nom</label>
+                        <input type="text" placeholder={contact.Nom} />
+                      </div>
+                      <div className="contactUpdateFormDoubleGroup">
+                        <label>Prenom</label>
+                        <input type="text" placeholder={contact.Prenom} />
+                      </div>
                     </div>
                     <div className="contactUpdateFormGroup">
-                      <label>Nom</label>
-                      <input type="text" placeholder={contact.Nom} />
-                    </div>
-                    <div className="contactUpdateFormGroup">
-                      <label>Prenom</label>
-                      <input type="text" placeholder={contact.Prenom} />
-                    </div>
-                    <div className="contactUpdateFormGroup">
-                      <label>Email</label>
-                      <input type="text" placeholder={contact.Email} />
+                      <label>Email Address</label>
+                      <input type="email" placeholder={contact.Email} />
                     </div>
                     <div className="contactUpdateFormGroup">
                       <label>Societe</label>
-                      <input type="text" placeholder={contact.Societe} />
+                      <input type="email" placeholder={contact.Societe} />
                     </div>
                   </div>
                   <div className="contactUpdateButtons">

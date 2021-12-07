@@ -110,7 +110,7 @@ function Call() {
     return <Redirect to="/login" />;
   }
 
-  if (isLoading || isLoading2 || isLoading3) {
+  if (isLoading || isLoading2 || isLoading3 || !contact) {
     return <div className="App">Loading...</div>;
   }
 
@@ -171,7 +171,7 @@ function Call() {
                   <div className="callInfoPerssDoubleGroup">
                     <div className="callInfoPersDoubleData">
                       <div className="callInfoPersDataTitle">STTAF</div>
-                      <div className="callInfoPersData">{contact.Staff}</div>
+                      <div className="callInfoPersData">{call.Staff}</div>
                     </div>
                     <div className="callInfoPersDoubleData">
                       <div className="callInfoPersDataTitle">SOCIETE</div>

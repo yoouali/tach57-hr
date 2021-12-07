@@ -56,6 +56,34 @@ function CallUpdate() {
 
   // COMPONEWNT FUCNTIONS
 
+  function handelSubmit(e) {
+    e.preventDefault();
+    console.log(formData);
+    if (
+      formData.CallType === "" &&
+      formData.Date === "" &&
+      formData.Heure === "" &&
+      formData.Description === "" &&
+      formData.DureeDappel === ""
+    ) {
+      history.push("/Call/" + id);
+      return;
+    }
+    const token = localStorage.getItem("token");
+    axios
+      .post("https://stagiaire.herokuapp.com/api/Call/update/" + id, formData, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log("hh");
+        history.push("/Call/" + id);
+      })
+      .catch((err) => {
+        console.log("error");
+        console.log(err);
+      });
+  }
+
   // //////////////////////////////////
 
   const isLogged = localStorage.getItem("token");
@@ -94,7 +122,10 @@ function CallUpdate() {
                           type="text"
                           placeholder={call.CallType}
                           onChange={(e) =>
-                            setFormData({ ...formData, Date: e.target.value })
+                            setFormData({
+                              ...formData,
+                              CallType: e.target.value,
+                            })
                           }
                           value={formData.CallType}
                         />
@@ -105,7 +136,10 @@ function CallUpdate() {
                           type="text"
                           placeholder={call.DureeDappel}
                           onChange={(e) =>
-                            setFormData({ ...formData, Prenom: e.target.value })
+                            setFormData({
+                              ...formData,
+                              DureeDappel: e.target.value,
+                            })
                           }
                           value={formData.DureeDappel}
                         />
@@ -146,7 +180,7 @@ function CallUpdate() {
                           type="text"
                           placeholder={call.Heure}
                           onChange={(e) =>
-                            setFormData({ ...formData, Prenom: e.target.value })
+                            setFormData({ ...formData, Heure: e.target.value })
                           }
                           value={formData.Heure}
                         />

@@ -1,14 +1,8 @@
-import {useState, useEffect} from 'react';
-import { Redirect  } from "react-router";
+import { useState, useEffect } from "react";
+import { Redirect } from "react-router";
 import axios from "axios";
-import Header from '../../components/Header';
-import SideBar from '../../components/SideBar';
 
-function CallUpdate(){
-    return(
-        <div>
-
-        </div>
-    )
+function CallUpdate() {
+  return <div></div>;
 }
-export default CallUpdate
+export default CallUpdate;

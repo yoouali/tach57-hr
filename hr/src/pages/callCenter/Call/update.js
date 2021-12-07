@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Redirect, useParams } from "react-router";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Header from "../../../components/Header";
 import SideBar from "../../../components/SideBar";
 import "../style.css";
@@ -14,8 +14,16 @@ function CallUpdate() {
   const { id } = useParams();
   const [isLoading, setLoading] = useState(true);
   const [isLoading2, setLoading2] = useState(true);
+  const history = useHistory();
   const [user, setUser] = useState();
   const [call, setCall] = useState();
+  const [formData, setFormData] = useState({
+    CallType: "",
+    Date: "",
+    Description: "",
+    DureeDappel: "",
+    Heure: "",
+  });
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -46,6 +54,10 @@ function CallUpdate() {
       });
   }, []);
 
+  // COMPONEWNT FUCNTIONS
+
+  // //////////////////////////////////
+
   const isLogged = localStorage.getItem("token");
   if (!isLogged || isLogged === undefined) {
     return <Redirect to="/login" />;
@@ -72,7 +84,75 @@ function CallUpdate() {
                 </div>
               </div>
               <div className="ContactUpdateBord">
-                <form>
+                <form onSubmit={handelSubmit} id="callUpdate">
+                  <div className="contactUpdateForm">
+                    <div className="contactUpdateFromError">her is error</div>
+                    <div className="contactUpdateFormGroupDouble">
+                      <div className="contactUpdateFormDoubleGroup">
+                        <label>CallType</label>
+                        <input
+                          type="text"
+                          placeholder={call.CallType}
+                          onChange={(e) =>
+                            setFormData({ ...formData, Date: e.target.value })
+                          }
+                          value={formData.CallType}
+                        />
+                      </div>
+                      <div className="contactUpdateFormDoubleGroup">
+                        <label>DureeDappel(with secondes)</label>
+                        <input
+                          type="text"
+                          placeholder={call.DureeDappel}
+                          onChange={(e) =>
+                            setFormData({ ...formData, Prenom: e.target.value })
+                          }
+                          value={formData.DureeDappel}
+                        />
+                      </div>
+                    </div>
+                    <div className="callUpdateFormGroup">
+                      <label>Description</label>
+                      <textarea
+                        rows="4"
+                        cols="50"
+                        name="description"
+                        form="callUpdate"
+                        placeholder={call.Description}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            Description: e.target.value,
+                          })
+                        }
+                        value={formData.Description}
+                      />
+                    </div>
+                    <div className="contactUpdateFormGroupDouble">
+                      <div className="contactUpdateFormDoubleGroup">
+                        <label>Date</label>
+                        <input
+                          type="text"
+                          placeholder={call.Date}
+                          onChange={(e) =>
+                            setFormData({ ...formData, Date: e.target.value })
+                          }
+                          value={formData.Date}
+                        />
+                      </div>
+                      <div className="contactUpdateFormDoubleGroup">
+                        <label>Heure</label>
+                        <input
+                          type="text"
+                          placeholder={call.Heure}
+                          onChange={(e) =>
+                            setFormData({ ...formData, Prenom: e.target.value })
+                          }
+                          value={formData.Heure}
+                        />
+                      </div>
+                    </div>
+                  </div>
                   <div className="contactUpdateButtons">
                     <Link to={"/Call/" + id}>
                       <button>Cancel</button>

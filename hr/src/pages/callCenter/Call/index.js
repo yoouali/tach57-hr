@@ -72,6 +72,18 @@ function Call() {
 
   // COMPONENT FUNCTIONS
 
+  function timeSecondTohmin(e) {
+    if (e === 0) return 0;
+    var min = parseInt(e / 60);
+    if (min === 0) return e + "s";
+    if (min < 60 && e - min * 60 !== 0)
+      return min + "." + (e - min * 60) + "min";
+    if (min < 60) return min + "min";
+    var h = parseInt(min / 60);
+    if (min - h * 60 !== 0) return h + "h" + (min - h * 60) + "min";
+    return h + "h";
+  }
+
   if (!isLoading2) {
     var callType = null;
     if (call.CallType === 1)
@@ -143,11 +155,14 @@ function Call() {
               </div>
               <div className="callInfo">
                 <div className="callInfoDetails">
-                  <div className="callInfoName">OUALI YOUSSEF</div>
+                  <div className="callInfoName">
+                    {contact.Nom}
+                    {contact.Prenom}
+                  </div>
                   {callType}
                   <div className="callInfoTime">
                     <img src={clockIcon} />
-                    10.15 min
+                    {timeSecondTohmin(call.DureeDappel)}
                   </div>
                 </div>
                 <div className="callInfoPerss">
@@ -158,16 +173,14 @@ function Call() {
                     </div>
                     <div className="callInfoPersDoubleData">
                       <div className="callInfoPersDataTitle">DATE</div>
-                      <div className="callInfoPersData">12-77-2021 67:18</div>
+                      <div className="callInfoPersData">
+                        {call.Date} {call.Heure}
+                      </div>
                     </div>
                   </div>
                   <div className="callInfoPerssGroup">
                     <div className="callInfoPersDataTitle">DESCRIPTION</div>
-                    <div className="callInfoPersData">
-                      lksdfhasjdl lajdljasldj ljal jdaljd ljalj dlajdlajd fd
-                      jksadhksahk kjashdkhk ha dkahskdhaskhdk a
-                      jaksdhkjashdkjhsakjhdksja.
-                    </div>
+                    <div className="callInfoPersData">{call.Description}</div>
                   </div>
                   <div className="callInfoPerssDoubleGroup">
                     <div className="callInfoPersDoubleData">

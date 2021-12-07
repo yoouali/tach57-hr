@@ -39,7 +39,7 @@
 .callCenterNavBarIteme:hover {
   font-weight: bold;
 }
-.calls{
+.calls {
   width: 95%;
   margin: 0 auto;
   display: flex;
@@ -108,63 +108,65 @@
 }
 
 .callsTypeIcon .callTypeIconText {
-    position: absolute;
-    left: 8px;
-    top: 4px;
-    width: 80px;
-    transform: translate(0, -50%);
-    text-align: center;
-    display: none;    
-    font-size: small;
-    background-color: #f7f7f7;
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 80px;
+  transform: translate(0, -50%);
+  text-align: center;
+  display: none;
+  font-size: small;
+  background-color: #f7f7f7;
 }
 
-.callsTypeIcon:hover .callTypeIconText{display: block;}
+.callsTypeIcon:hover .callTypeIconText {
+  display: block;
+}
 
-.callsListItemContact{
+.callsListItemContact {
   width: 150px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-#callCenterBarCalls{font-weight: bold;}
+#callCenterBarCalls {
+  font-weight: bold;
+}
 
-.contacts{
+.contacts {
   width: 95%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-.contactsHeader{
+.contactsHeader {
   width: 100%;
   margin: auto;
 }
-.contactsSerch{
+.contactsSerch {
   height: 40px;
   float: right;
   margin-bottom: 10px;
   text-align: left;
 }
-.contactsInputSerch{
+.contactsInputSerch {
   width: 60%;
   height: 100%;
   border: 1px solid #117db0;
   padding-left: 5px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 500;
   color: #117db0;
   outline: none;
-
 }
 
-.contactsButton{
+.contactsButton {
   width: 100px;
   height: 100%;
 }
 
-
-.contactsList{
+.contactsList {
   width: 100%;
   margin-top: 20px;
   padding-top: 20px;
@@ -175,15 +177,16 @@
   justify-content: space-between;
 }
 
-.contactsListItem{
+.contactsListItem {
   width: 150px;
   background-color: #117db0;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  font-family: 'Rajdhani';
+  font-family: "Rajdhani";
+  margin-bottom: 20px;
 }
-.contactsListItemName{
+.contactsListItemName {
   width: 80%;
   margin: auto;
   margin-bottom: 5px;
@@ -195,8 +198,11 @@
   font-weight: 700;
   color: white;
 }
-.contactsListItemName p{font-size: xx-small;padding-right: 2px;}
-.contactsListItemNumber{
+.contactsListItemName p {
+  font-size: xx-small;
+  padding-right: 2px;
+}
+.contactsListItemNumber {
   width: 80%;
   margin: auto;
   margin-bottom: 10px;
@@ -207,7 +213,10 @@
   font-weight: 700;
   color: white;
 }
-.contactsListItemNumber p{font-size: xx-small;padding-right: 2px;}
+.contactsListItemNumber p {
+  font-size: xx-small;
+  padding-right: 2px;
+}
 /* .contactsListItemOperation{
   width: 80%;
   display: flex;
@@ -218,85 +227,92 @@
 }
 #contactListOperationDelete{color: red;}
 #contactListOperationEdit{color: white;} */
-.contactsListItemDetails{
+.contactsListItemDetails {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 10px;
 }
-.contactsListItemDetailsCalls{
+.contactsListItemDetailsCalls {
   color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.contactsListItemDetailsCalls p{font-size: x-small; color: white;}
+.contactsListItemDetailsCalls p {
+  font-size: x-small;
+  color: white;
+}
 
-.contactsListItemDetailsTime{
+.contactsListItemDetailsTime {
   color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.contactsListItemDetailsTime p{font-size: x-small; color: white;}
+.contactsListItemDetailsTime p {
+  font-size: x-small;
+  color: white;
+}
 
-.callBoard{
+.callBoard {
   width: 90%;
   background-color: white;
   border-radius: 5px;
-  box-shadow: -1px 1px 2px rgba(227, 227, 227, 0.2), 1px -1px 2px rgba(227, 227, 227, 0.2), -1px -1px 2px rgba(255, 255, 255, 0.9), 1px 1px 3px rgba(227, 227, 227, 0.9);
+  box-shadow: -1px 1px 2px rgba(227, 227, 227, 0.2),
+    1px -1px 2px rgba(227, 227, 227, 0.2),
+    -1px -1px 2px rgba(255, 255, 255, 0.9), 1px 1px 3px rgba(227, 227, 227, 0.9);
   display: flex;
   flex-direction: column;
 }
-.callHeader{
+.callHeader {
   width: 100%;
   height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.callBack{
+.callBack {
   width: 60px;
   height: 40px;
   padding-left: 20px;
   cursor: pointer;
 }
-.callBack img{
+.callBack img {
   width: 40%;
   padding-top: 8px;
 }
 
-.callBoard .Board{
+.callBoard .Board {
   width: 80%;
-  background-color:#117db0;
+  background-color: #117db0;
   margin: 0 auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.callClient{
+.callClient {
   width: 80%;
   height: 50px;
   margin: 0 auto;
   text-align: center;
-  font-family: 'Rajdhani';
+  font-family: "Rajdhani";
   font-size: xx-large;
 }
-.call{
+.call {
   width: 80%;
-  
 }
 
-.ContactsLoading{
+.ContactsLoading {
   width: 100%;
   height: 100%;
   background-color: #117db0;
   text-align: center;
   margin: auto;
 }
-.ContactsLoading svg{
+.ContactsLoading svg {
   width: 100px;
   height: 100px;
 }
@@ -307,7 +323,7 @@
  * W. https://svgartista.net
  **************************************************/
 
- @keyframes animate-svg-stroke-1 {
+@keyframes animate-svg-stroke-1 {
   0% {
     stroke-dashoffset: 3064.314697265625px;
     stroke-dasharray: 3064.314697265625px;

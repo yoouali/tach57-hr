@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Header from "../../../components/Header";
 import SideBar from "../../../components/SideBar";
 import "../style.css";
+import "./style.css";
 
 import arrowBack from "../../../images/icons/arrowBack.png";
 import editContact from "../../../images/icons/editContact.png";
@@ -77,28 +78,28 @@ function Call() {
       callType = (
         <div className="callInfoTypeText">
           <img src={incomingCall} />
-          incoming call
+          <p>incoming call</p>
         </div>
       );
     if (call.CallType === 2)
       callType = (
         <div className="callInfoTypeText">
           <img src={outgoingCall} />
-          outgoing call
+          <p>outgoing call</p>
         </div>
       );
     if (call.CallType === 3)
       callType = (
         <div className="callInfoTypeText">
           <img src={rejectedCall} />
-          rejected call
+          <p>rejected call</p>
         </div>
       );
     if (call.CallType === 4)
       callType = (
         <div className="callInfoTypeText">
           <img src={missedCall} />
-          missedcall call
+          <p>missedcall call</p>
         </div>
       );
   }
@@ -153,11 +154,11 @@ function Call() {
                   <div className="callInfoPerssDoubleGroup">
                     <div className="callInfoPersDoubleData">
                       <div className="callInfoPersDataTitle">PHONE NUMBER</div>
-                      <div className="callInfoPersData">call.TEL</div>
+                      <div className="callInfoPersData">{call.TEL}</div>
                     </div>
                     <div className="callInfoPersDoubleData">
                       <div className="callInfoPersDataTitle">DATE</div>
-                      <div className="callInfoPersData">12-7-2021 6:18</div>
+                      <div className="callInfoPersData">12-77-2021 67:18</div>
                     </div>
                   </div>
                   <div className="callInfoPerssGroup">

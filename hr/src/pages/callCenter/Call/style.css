@@ -1,0 +1,86 @@
+.callInfo {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.callInfoDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.callInfoName {
+  font-family: "Rajdhani";
+  font-size: x-large;
+  color: #117db0;
+}
+.callInfoTypeText {
+  font-family: "Poppins";
+  font-size: medium;
+  color: #6a7c92;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.callInfoTypeText img {
+  width: 20px;
+  margin-right: 5px;
+}
+.callInfoTime {
+  font-family: "Rajdhani";
+  font-size: medium;
+  color: #117db0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.callInfoTime img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+/* CALL PERSSONNNELE INFORMATION */
+.callInfoPerss {
+  width: 70%;
+  margin: 0 auto;
+}
+.callInfoPerssDoubleGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.callInfoPersDoubleData {
+  min-height: 40px;
+  min-width: 60px;
+}
+.callInfoPersDataTitle {
+  font-family: "Rajdhani";
+  font-size: small;
+  color: #6a7c92;
+}
+.callInfoPersData {
+  font-family: "Rajdhani";
+  font-size: x-large;
+  color: #117db0;
+  padding-left: 10px;
+}
+
+.callInfoPerssGroup {
+  margin-bottom: 20px;
+}
+.callInfoPerssGroup .callInfoPersDataTitle {
+  max-width: 100px;
+}
+.callInfoPerssGroup .callInfoPersData {
+  border: 1px solid #117db0;
+  border-radius: 2px;
+  padding: 0;
+  margin-left: 10px;
+  padding-left: 5px;
+  overflow: hidden;
+}
+
+/* ********************************** */

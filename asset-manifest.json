@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/tach57-hr/static/css/main.f4e06c9c.chunk.css",
+    "main.js": "/tach57-hr/static/js/main.4a610332.chunk.js",
+    "main.js.map": "/tach57-hr/static/js/main.4a610332.chunk.js.map",
+    "runtime-main.js": "/tach57-hr/static/js/runtime-main.4f14fe55.js",
+    "runtime-main.js.map": "/tach57-hr/static/js/runtime-main.4f14fe55.js.map",
+    "static/js/2.d8e3def5.chunk.js": "/tach57-hr/static/js/2.d8e3def5.chunk.js",
+    "static/js/2.d8e3def5.chunk.js.map": "/tach57-hr/static/js/2.d8e3def5.chunk.js.map",
+    "static/js/3.caacc282.chunk.js": "/tach57-hr/static/js/3.caacc282.chunk.js",
+    "static/js/3.caacc282.chunk.js.map": "/tach57-hr/static/js/3.caacc282.chunk.js.map",
+    "index.html": "/tach57-hr/index.html",
+    "static/css/main.f4e06c9c.chunk.css.map": "/tach57-hr/static/css/main.f4e06c9c.chunk.css.map",
+    "static/js/2.d8e3def5.chunk.js.LICENSE.txt": "/tach57-hr/static/js/2.d8e3def5.chunk.js.LICENSE.txt",
+    "static/media/entrepreneur.b31c0082.png": "/tach57-hr/static/media/entrepreneur.b31c0082.png",
+    "static/media/logo.fd9abca4.png": "/tach57-hr/static/media/logo.fd9abca4.png",
+    "static/media/stagiaire.804cf944.png": "/tach57-hr/static/media/stagiaire.804cf944.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4f14fe55.js",
+    "static/js/2.d8e3def5.chunk.js",
+    "static/css/main.f4e06c9c.chunk.css",
+    "static/js/main.4a610332.chunk.js"
+  ]
+}

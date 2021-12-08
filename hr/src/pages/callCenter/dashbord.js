@@ -1,6 +1,6 @@
-import { useState, useEffect, Text } from "react";
+import { useState, useEffect } from "react";
 import { Redirect, useParams } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 
@@ -16,6 +16,88 @@ import removeContact from "../../images/icons/removeContact.png";
 import backgroundAdd from "../../images/background.jpg";
 
 function CallCenterDashBord({ user }) {
+  const history = useHistory();
+  const [CallData, setCallData] = useState({
+    TEL: "",
+    CallType: "",
+    DureeDappel: "",
+    Description: "",
+    Date: "",
+    Heure: "",
+  });
+  const [ContactData, setContactData] = useState({
+    TEL: "",
+    Nom: "",
+    Prenom: "",
+    Email: "",
+    Societe: "",
+  });
+
+  // COMPONENT FUNCTIONS
+
+  function handelCallSubmit(e) {
+    document.getElementById("addCallButton").style.display = "none";
+    e.preventDefault();
+    console.log(CallData);
+    const token = localStorage.getItem("token");
+    axios
+      .post("https://stagiaire.herokuapp.com/api/Call/store", CallData, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log("result");
+        console.log(res);
+        if (res.data === "Ce numero de telephone n'est pas existe") {
+          document.getElementById("addCallError").style.display = "block";
+          document.getElementById("addCallError").innerText = res.data;
+          setTimeout(() => {
+            document.getElementById("addCallError").style.display = "none";
+          }, 2000);
+        }
+        document.getElementById("addCallButton").style.display = "block";
+      })
+      .catch((err) => {
+        console.log("error");
+        console.log(err);
+        document.getElementById("addCallButton").style.display = "block";
+      });
+  }
+
+  function handelContactSubmit(e) {
+    document.getElementById("addContactButton").style.display = "none";
+    e.preventDefault();
+    console.log(ContactData);
+    const token = localStorage.getItem("token");
+    axios
+      .post("https://stagiaire.herokuapp.com/api/Client/store", ContactData, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        console.log("result");
+        console.log(res);
+        if (res.data === "Ce numero de telephone n'est pas existe") {
+          document.getElementById("addContactError").style.display = "block";
+          document.getElementById("addContactError").innerText = res.data;
+          setTimeout(() => {
+            document.getElementById("addContactError").style.display = "none";
+          }, 2000);
+        }
+        document.getElementById("addContactButton").style.display = "block";
+      })
+      .catch((err) => {
+        console.log("error");
+        console.log(err);
+        document.getElementById("addContactError").style.display = "block";
+        document.getElementById("addContactError").innerText = "Server Error";
+        setTimeout(() => {
+          document.getElementById("addContactError").style.display = "none";
+        }, 2000);
+        document.getElementById("addContactButton").style.display = "block";
+      });
+  }
+
+  // ////////////////////////////////////////////////
+
   return (
     <div className="callCenterAdd">
       <div className="callCenterAddHide">
@@ -39,19 +121,28 @@ function CallCenterDashBord({ user }) {
       </div>
       <div className="callCenterAddCall">
         <div className="callCenterAddTitle">ADD CALL</div>
-        <form id="addCall">
+        <form id="addCall" onSubmit={handelCallSubmit}>
           <div className="callCenterAddCallGroupe">
             <label>Phone Number </label>
             <input
               type="tel"
               pattern="[0-0]{1}[6-7]{1}[0-9]{8}"
               placeholder="(+6-7********)"
+              onChange={(e) =>
+                setCallData({ ...CallData, TEL: e.target.value })
+              }
+              value={CallData.TEL}
             />
           </div>
           <div className="callCenterAddCallDoubleGroup">
             <div className="callCenterAddCallDoubleInput">
               <label>CallType</label>
-              <select>
+              <select
+                onChange={(e) =>
+                  setCallData({ ...CallData, CallType: e.target.value })
+                }
+                value={CallData.CallType}
+              >
                 <option value="">Call Type</option>
                 <option value="1">incoming call</option>
                 <option value="2">outgoing call</option>
@@ -61,68 +152,121 @@ function CallCenterDashBord({ user }) {
             </div>
             <div className="callCenterAddCallDoubleInput">
               <label>Duree Dappel</label>
-              <input type="text" placeholder="duree dappel with seconds" />
+              <input
+                onChange={(e) =>
+                  setCallData({ ...CallData, DureeDappel: e.target.value })
+                }
+                value={CallData.DureeDappel}
+                type="text"
+                placeholder="duree dappel with seconds"
+              />
             </div>
           </div>
           <div className="callCenterAddCallGroupe">
             <label>Description</label>
             <textarea
+              onChange={(e) =>
+                setCallData({ ...CallData, Description: e.target.value })
+              }
+              value={CallData.Description}
               rows="4"
               cols="50"
               name="description"
-              form="callUpdate"
+              form="addCall"
               placeholder="call descreption"
             />
           </div>
           <div className="callCenterAddCallDoubleGroup">
             <div className="callCenterAddCallDoubleInput">
               <label>Date </label>
-              <input type="text" placeholder="yyyy-dd-mm" />
+              <input
+                onChange={(e) =>
+                  setCallData({ ...CallData, Date: e.target.value })
+                }
+                value={CallData.Date}
+                type="text"
+                placeholder="yyyy-dd-mm"
+              />
             </div>
             <div className="callCenterAddCallDoubleInput">
-              <label>Heur </label>
-              <input type="text" placeholder="HH-MM" />
+              <label>Heure </label>
+              <input
+                onChange={(e) =>
+                  setCallData({ ...CallData, Heure: e.target.value })
+                }
+                value={CallData.Heure}
+                type="text"
+                placeholder="HH-MM"
+              />
             </div>
           </div>
-          <div className="CallCenterAddError">this is error</div>
+          <div id="addCallError" className="CallCenterAddError"></div>
           <div className="CallCenterAddTail">
-            <button>Add</button>
+            <button id="addCallButton">Add</button>
           </div>
         </form>
       </div>
 
       <div className="callCenterAddCall">
         <div className="callCenterAddTitle">ADD CONTACT</div>
-        <form id="addContact">
+        <form id="addContact" onSubmit={handelContactSubmit}>
           <div className="callCenterAddCallGroupe">
             <label>Phone Number </label>
             <input
               type="tel"
               pattern="[0-0]{1}[6-7]{1}[0-9]{8}"
               placeholder="(+6-7********)"
+              onChange={(e) =>
+                setContactData({ ...ContactData, TEL: e.target.value })
+              }
+              value={ContactData.TEL}
             />
           </div>
           <div className="callCenterAddCallDoubleGroup">
             <div className="callCenterAddCallDoubleInput">
               <label>Nom</label>
-              <input placeholder="Nom" />
+              <input
+                placeholder="Nom"
+                onChange={(e) =>
+                  setContactData({ ...ContactData, Nom: e.target.value })
+                }
+                value={ContactData.Nom}
+              />
             </div>
             <div className="callCenterAddCallDoubleInput">
               <label>Prenom</label>
-              <input placeholder="Nom" />
+              <input
+                placeholder="Nom"
+                onChange={(e) =>
+                  setContactData({ ...ContactData, Prenom: e.target.value })
+                }
+                value={ContactData.Prenom}
+              />
             </div>
           </div>
           <div className="callCenterAddCallGroupe">
             <label>Email</label>
-            <input placeholder="Email" />
+            <input
+              placeholder="Email"
+              onChange={(e) =>
+                setContactData({ ...ContactData, Email: e.target.value })
+              }
+              value={ContactData.Email}
+            />
           </div>
           <div className="callCenterAddCallGroupe">
             <label>Societe</label>
-            <input placeholder="Societe" />
+            <input
+              placeholder="Societe"
+              onChange={(e) =>
+                setContactData({ ...ContactData, Societe: e.target.value })
+              }
+              value={ContactData.Societe}
+            />
           </div>
-          <div className="CallCenterAddError">this is error</div>
+          <div id="addContactError" className="CallCenterAddError"></div>
           <div className="CallCenterAddTail">
-            <button>Add</button>
+            <button id="addContactButton">Add</button>
           </div>
         </form>
       </div>

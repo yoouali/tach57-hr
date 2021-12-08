@@ -16,22 +16,20 @@ import removeContact from "../../images/icons/removeContact.png";
 
 function CallCenterDashBord({ user }) {
   return (
-    <div className="callCenterDashBord">
-      <div className="callCenterSttaf">
-        <div className="callCenterPerss"></div>
-        <div className="callCenterCount"></div>
-      </div>
+    <div className="callCenterAdd">
+      <div className="callCenterAddHide">::</div>
       <div className="callCenterAddCall">
         <form>
+          <div className="callCenterAddTitle">ADD CALL</div>
+          <div className="callCenterAddCallGroupe">
+            <label>Phone Number </label>
+            <input
+              type="tel"
+              pattern="[0-0]{1}[6-7]{1}[0-9]{8}"
+              placeholder="(+6-7********)"
+            />
+          </div>
           <div className="callCenterAddCallDoubleGroup">
-            <div className="callCenterAddCallDoubleInput">
-              <label>Phone Number </label>
-              <input
-                type="tel"
-                pattern="[0-0]{1}[6-7]{1}[0-9]{8}"
-                placeholder="(+6-7********)"
-              />
-            </div>
             <div className="callCenterAddCallDoubleInput">
               <label>CallType</label>
               <select>
@@ -47,7 +45,7 @@ function CallCenterDashBord({ user }) {
               <input type="text" placeholder="duree dappel with seconds" />
             </div>
           </div>
-          <div className="callCenterAddCallGroup">
+          <div className="callCenterAddCallGroupe">
             <label>Description</label>
             <textarea
               rows="4"
@@ -67,9 +65,50 @@ function CallCenterDashBord({ user }) {
               <input type="text" placeholder="HH-MM" />
             </div>
           </div>
+          <div className="CallCenterAddError">this is error</div>
+          <div className="CallCenterAddTail">
+            <button>Cancel</button>
+            <button>Add</button>
+          </div>
         </form>
       </div>
-      <div className="callCenterAddContact"></div>
+
+      <div className="callCenterAddCall">
+        <form>
+          <div className="callCenterAddTitle">ADD CONTACT</div>
+          <div className="callCenterAddCallGroupe">
+            <label>Phone Number </label>
+            <input
+              type="tel"
+              pattern="[0-0]{1}[6-7]{1}[0-9]{8}"
+              placeholder="(+6-7********)"
+            />
+          </div>
+          <div className="callCenterAddCallDoubleGroup">
+            <div className="callCenterAddCallDoubleInput">
+              <label>Nom</label>
+              <input placeholder="Nom" />
+            </div>
+            <div className="callCenterAddCallDoubleInput">
+              <label>Prenom</label>
+              <input placeholder="Nom" />
+            </div>
+          </div>
+          <div className="callCenterAddCallGroupe">
+            <label>Email</label>
+            <input placeholder="Email" />
+          </div>
+          <div className="callCenterAddCallGroupe">
+            <label>Societe</label>
+            <input placeholder="Societe" />
+          </div>
+          <div className="CallCenterAddError">this is error</div>
+          <div className="CallCenterAddTail">
+            <button>Cancel</button>
+            <button>Add</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useImperativeHandle } from "react";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -54,17 +54,16 @@ function Home() {
       <Header user={user} />
       <div className="homeContainer">
         <SideBar user={user} />
-        {user.Role !== "CallCenter" ? (
-          <div className="dashborde">
-            <Stagiaire />
-            <Entrepreneur />
-            <Freelancer />
-          </div>
-        ) : (
-          <div className="dashborde">
-            <CallCenterDashBord user={user} />{" "}
-          </div>
-        )}
+        <div className="dashborde">
+          {user.Role === "CallCenter" || user.Role === "admin" ? (
+            <CallCenterDashBord user={user} />
+          ) : (
+            <div></div>
+          )}
+          <Stagiaire />
+          <Entrepreneur />
+          <Freelancer />
+        </div>
       </div>
     </div>
   );

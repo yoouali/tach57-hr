@@ -385,7 +385,9 @@
 .callCenterAddTitle {
   width: 80%;
   margin: 0 auto;
-  font-family: "Roboto";
+  font-family: "Rajdhani";
+  font-weight: 700;
+  font-size: larger;
   color: white;
   margin-bottom: 10px;
 }

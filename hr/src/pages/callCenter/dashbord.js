@@ -13,14 +13,33 @@ import missedCall from "../../images/icons/missedCall.png";
 import arrowBack from "../../images/icons/arrowBack.png";
 import editContact from "../../images/icons/editContact.png";
 import removeContact from "../../images/icons/removeContact.png";
+import backgroundAdd from "../../images/background.jpg";
 
 function CallCenterDashBord({ user }) {
   return (
     <div className="callCenterAdd">
-      <div className="callCenterAddHide">::</div>
+      <div className="callCenterAddHide">
+        <p
+          id="downuparrow"
+          onClick={() => {
+            console.log("hh ");
+            if (document.getElementById("addCall").style.display !== "none") {
+              document.getElementById("addCall").style.display = "none";
+              document.getElementById("addContact").style.display = "none";
+              document.getElementById("downuparrow").innerText = "🢗";
+            } else {
+              document.getElementById("addCall").style.display = "block";
+              document.getElementById("addContact").style.display = "block";
+              document.getElementById("downuparrow").innerText = "🢕";
+            }
+          }}
+        >
+          🢗
+        </p>
+      </div>
       <div className="callCenterAddCall">
-        <form>
-          <div className="callCenterAddTitle">ADD CALL</div>
+        <div className="callCenterAddTitle">ADD CALL</div>
+        <form id="addCall">
           <div className="callCenterAddCallGroupe">
             <label>Phone Number </label>
             <input
@@ -67,15 +86,14 @@ function CallCenterDashBord({ user }) {
           </div>
           <div className="CallCenterAddError">this is error</div>
           <div className="CallCenterAddTail">
-            <button>Cancel</button>
             <button>Add</button>
           </div>
         </form>
       </div>
 
       <div className="callCenterAddCall">
-        <form>
-          <div className="callCenterAddTitle">ADD CONTACT</div>
+        <div className="callCenterAddTitle">ADD CONTACT</div>
+        <form id="addContact">
           <div className="callCenterAddCallGroupe">
             <label>Phone Number </label>
             <input
@@ -104,7 +122,6 @@ function CallCenterDashBord({ user }) {
           </div>
           <div className="CallCenterAddError">this is error</div>
           <div className="CallCenterAddTail">
-            <button>Cancel</button>
             <button>Add</button>
           </div>
         </form>

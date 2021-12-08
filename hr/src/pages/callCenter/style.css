@@ -349,6 +349,22 @@
   flex-wrap: wrap;
   background-color: white;
   align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f7f7f7;
+  background-image: url("../../images/background.jpg");
+}
+#downuparrow {
+  color: #117db0;
+  font-family: "Rajdhani";
+  width: fit-content;
+  font-size: large;
+  cursor: pointer;
+}
+#addCall {
+  display: none;
+}
+#addContact {
+  display: none;
 }
 .callCenterAddHide {
   width: 100%;
